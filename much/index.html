@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>muchitina推特 - 社交账号动态追踪与内容观察</title>
+<meta name="description" content="muchitina推特账号动态追踪与内容观察，汇总该账号近期推文走向、互动数据变化、圈内讨论热度与同类型账号对比，适合关注社交平台账号动态与文化现象追踪的读者查阅。">
+<meta name="keywords" content="muchitina推特">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d2b48'/%3E%3Cpath d='M18 44V20h7l7 12 7-12h7v24h-6V31l-8 13-8-13v13z' fill='%23f6c453'/%3E%3C/svg%3E">
+<style>
+:root{
+  --brand:#1d2b48;
+  --brand-light:#33476f;
+  --brand-deep:#131d33;
+  --accent:#f6c453;
+  --accent-soft:#fdf1d0;
+  --bg:#f5f6f8;
+  --panel:#ffffff;
+  --text-1:#1c2333;
+  --text-2:#4d5568;
+  --text-3:#8a91a3;
+  --line:#e2e5ec;
+  --radius-card:14px;
+  --radius-btn:8px;
+  --radius-tag:6px;
+  --radius-banner:18px;
+  --shadow-1:0 2px 10px rgba(25,35,60,.06);
+  --shadow-2:0 8px 26px rgba(25,35,60,.13);
+  --sticky-h:106px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sticky-h)}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  background:var(--bg);color:var(--text-1);
+  line-height:1.75;font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+/* ---------- 吸顶区 ---------- */
+.sticky-wrap{
+  position:sticky;top:0;z-index:60;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.notice-bar{
+  background:var(--brand-deep);color:#dfe5f2;
+  font-size:12.5px;line-height:1;
+  display:flex;align-items:center;gap:16px;
+  padding:8px 20px;overflow:hidden;
+}
+.notice-bar .nb-brand{
+  color:var(--accent);font-weight:700;letter-spacing:.4px;white-space:nowrap;
+}
+.notice-bar .nb-items{display:flex;gap:22px;flex:1;overflow:hidden}
+.notice-bar .nb-item{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#c3cbdd}
+.notice-bar .nb-item b{color:#fff;font-weight:600}
+.notice-bar .nb-time{color:#8e99b3;margin-right:6px}
+
+.site-header{
+  display:flex;align-items:center;gap:18px;
+  padding:12px 20px;max-width:1360px;margin:0 auto;
+}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo svg{width:36px;height:36px;flex-shrink:0}
+.logo-text{font-size:19px;font-weight:800;letter-spacing:.2px;color:var(--brand)}
+.main-nav{display:flex;gap:4px;flex:1;flex-wrap:wrap}
+.main-nav a{
+  font-size:13.5px;color:var(--text-2);padding:6px 11px;border-radius:var(--radius-btn);
+  transition:background .18s,color .18s;white-space:nowrap;
+}
+.main-nav a:hover{background:var(--accent-soft);color:var(--brand)}
+.header-tools{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.search-box{position:relative}
+.search-box input{
+  width:170px;padding:7px 12px;font-size:13px;
+  border:1px solid var(--line);border-radius:var(--radius-btn);
+  background:#fafbfd;color:var(--text-1);transition:border .18s,width .18s;
+}
+.search-box input:focus{border-color:var(--brand-light);width:200px;outline:none;background:#fff}
+.search-result{
+  position:absolute;top:calc(100% + 8px);right:0;width:300px;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-card);
+  box-shadow:var(--shadow-2);padding:8px;display:none;max-height:320px;overflow:auto;z-index:70;
+}
+.search-result.show{display:block}
+.search-result a{display:block;padding:8px 10px;border-radius:6px;font-size:13px;color:var(--text-2)}
+.search-result a:hover{background:var(--accent-soft);color:var(--brand)}
+.search-result .sr-empty{padding:14px 10px;font-size:13px;color:var(--text-3)}
+.search-result .sr-tag{font-size:11px;color:var(--text-3);margin-left:6px}
+.btn-submit{
+  background:var(--brand);color:#fff;border:none;
+  padding:8px 15px;border-radius:var(--radius-btn);font-size:13px;font-weight:600;
+  transition:background .18s,transform .18s;
+}
+.btn-submit:hover{background:var(--brand-light);transform:translateY(-1px)}
+.hamburger{
+  display:none;background:none;border:1px solid var(--line);
+  border-radius:var(--radius-btn);width:38px;height:34px;
+  padding:0;align-items:center;justify-content:center;flex-direction:column;gap:4px;
+}
+.hamburger span{display:block;width:17px;height:2px;background:var(--brand);border-radius:2px;transition:.2s}
+.hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#1d2b48 0%,#2a3d63 52%,#1a2740 100%);
+  color:#eef2fa;
+}
+.hero-inner{
+  max-width:1360px;margin:0 auto;padding:52px 20px 58px;
+  display:grid;grid-template-columns:1.25fr .95fr;gap:40px;align-items:center;
+  position:relative;z-index:2;
+}
+.hero h1{
+  font-size:clamp(30px,4.2vw,48px);line-height:1.18;font-weight:900;
+  letter-spacing:.5px;color:#fff;margin-bottom:18px;
+}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-desc{font-size:15px;line-height:1.85;color:#c2cce0;max-width:520px;margin-bottom:26px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.hero-actions a{
+  padding:10px 20px;border-radius:var(--radius-btn);font-size:14px;font-weight:600;
+  transition:transform .18s,background .18s,box-shadow .18s;
+}
+.hero-actions .primary{background:var(--accent);color:#2a2000}
+.hero-actions .primary:hover{background:#ffd873;transform:translateY(-2px);box-shadow:0 8px 20px rgba(246,196,83,.32)}
+.hero-actions .ghost{border:1px solid rgba(255,255,255,.34);color:#e6ecf8}
+.hero-actions .ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.hero-meta{display:flex;gap:26px;flex-wrap:wrap}
+.hero-meta div{font-size:12px;color:#93a1bd;line-height:1.5}
+.hero-meta b{display:block;font-size:20px;color:#fff;font-weight:800;letter-spacing:.4px}
+.hero-visual{position:relative;height:300px}
+.hero-visual svg{width:100%;height:100%;overflow:visible}
+.hero-visual .float-card{
+  position:absolute;background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.16);border-radius:12px;
+  padding:10px 14px;font-size:12px;line-height:1.5;color:#dbe3f4;
+  backdrop-filter:blur(4px);
+}
+.hero-visual .fc1{top:6px;right:6px;animation:floaty 7s ease-in-out infinite}
+.hero-visual .fc2{bottom:10px;left:0;animation:floaty 9s ease-in-out infinite reverse}
+.hero-visual .fc1 b,.hero-visual .fc2 b{color:var(--accent);display:block;font-size:13px}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+/* ---------- 主布局 ---------- */
+.layout{
+  max-width:1360px;margin:0 auto;padding:34px 20px 60px;
+  display:grid;grid-template-columns:212px minmax(0,1fr) 286px;gap:26px;
+  align-items:start;
+}
+.channel-side{
+  position:sticky;top:calc(var(--sticky-h) + 16px);
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:14px 10px;box-shadow:var(--shadow-1);
+}
+.channel-side h2{
+  font-size:12px;font-weight:700;color:var(--text-3);letter-spacing:1.4px;
+  padding:0 10px 10px;border-bottom:1px solid var(--line);margin-bottom:8px;
+}
+.channel-side ul{max-height:calc(100vh - 220px);overflow:auto}
+.channel-side a{
+  display:flex;align-items:center;gap:8px;
+  font-size:13.5px;color:var(--text-2);padding:8px 10px;border-radius:7px;
+  transition:background .16s,color .16s;
+}
+.channel-side a .dot{width:5px;height:5px;border-radius:50%;background:var(--text-3);flex-shrink:0;transition:background .16s}
+.channel-side a:hover{background:#f3f5f9;color:var(--brand)}
+.channel-side a.active{background:var(--accent-soft);color:var(--brand);font-weight:700}
+.channel-side a.active .dot{background:var(--accent)}
+
+.aux-side{display:flex;flex-direction:column;gap:20px;position:sticky;top:calc(var(--sticky-h) + 16px)}
+.aux-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:16px;box-shadow:var(--shadow-1);
+}
+.aux-card h3{
+  font-size:14px;font-weight:800;color:var(--brand);margin-bottom:12px;
+  padding-bottom:9px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:7px;
+}
+.aux-card h3::before{content:"";width:3px;height:13px;background:var(--accent);border-radius:2px}
+.hot-list li{display:flex;gap:9px;padding:7px 0;font-size:13px;line-height:1.55;align-items:flex-start}
+.hot-list .rank{
+  font-size:11px;font-weight:800;color:#fff;background:var(--text-3);
+  width:17px;height:17px;border-radius:4px;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:2px;
+}
+.hot-list li:nth-child(1) .rank{background:#e0533d}
+.hot-list li:nth-child(2) .rank{background:#e58a2f}
+.hot-list li:nth-child(3) .rank{background:#c8a02f}
+.hot-list a{color:var(--text-1);transition:color .16s}
+.hot-list a:hover{color:var(--brand-light);text-decoration:underline}
+.update-feed li{font-size:12.5px;padding:7px 0;border-bottom:1px dashed var(--line);color:var(--text-2);line-height:1.55}
+.update-feed li:last-child{border-bottom:none}
+.update-feed time{color:var(--text-3);font-size:11.5px;margin-right:6px;font-variant-numeric:tabular-nums}
+.aux-tag-cloud{display:flex;flex-wrap:wrap;gap:7px}
+.aux-tag-cloud a{
+  font-size:12px;padding:4px 10px;border-radius:var(--radius-tag);
+  background:#f1f3f8;color:var(--text-2);transition:background .16s,color .16s;
+}
+.aux-tag-cloud a:hover{background:var(--brand);color:#fff}
+
+/* ---------- 主内容板块通用 ---------- */
+.section{margin-bottom:44px;scroll-margin-top:var(--sticky-h)}
+.section:last-child{margin-bottom:0}
+.section-head{margin-bottom:16px}
+.section-head h2{
+  font-size:21px;font-weight:800;color:var(--brand);letter-spacing:.3px;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.section-head h2::before{content:"";width:5px;height:20px;background:var(--accent);border-radius:3px;flex-shrink:0}
+.section-head .sub{font-size:13px;color:var(--text-3);margin-top:5px;padding-left:15px}
+.section-head .count{
+  font-size:11.5px;font-weight:600;color:var(--brand-light);
+  background:var(--accent-soft);padding:2px 9px;border-radius:20px;
+}
+
+/* 概览 */
+.overview-panel{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:24px 26px;box-shadow:var(--shadow-1);
+  display:grid;grid-template-columns:1fr 200px;gap:24px;align-items:start;
+}
+.overview-panel p{font-size:14.5px;color:var(--text-2);line-height:1.95;margin-bottom:12px}
+.overview-panel p:last-child{margin-bottom:0}
+.overview-panel b{color:var(--brand);font-weight:700}
+.overview-figure img{border-radius:10px;width:100%;height:auto}
+.overview-figure figcaption{font-size:11.5px;color:var(--text-3);margin-top:7px;text-align:center;line-height:1.5}
+
+/* 精选卡片 */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.content-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  overflow:hidden;box-shadow:var(--shadow-1);
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+  display:flex;flex-direction:column;
+}
+.content-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-2);border-color:#cfd6e4}
+.content-card .thumb{position:relative;aspect-ratio:4/3;background:#e9ecf3;overflow:hidden}
+.content-card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.content-card:hover .thumb img{transform:scale(1.04)}
+.content-card .type-badge{
+  position:absolute;top:9px;left:9px;font-size:11px;font-weight:700;
+  background:rgba(29,43,72,.88);color:var(--accent);padding:3px 9px;border-radius:5px;
+  backdrop-filter:blur(2px);
+}
+.content-card .card-body{padding:13px 15px 15px;flex:1;display:flex;flex-direction:column}
+.content-card h3{font-size:15px;font-weight:800;color:var(--text-1);line-height:1.45;margin-bottom:7px}
+.content-card .card-desc{font-size:12.5px;color:var(--text-2);line-height:1.7;flex:1;margin-bottom:10px}
+.tag-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.tag-row span{font-size:11px;padding:2px 7px;border-radius:4px;background:#f1f3f8;color:var(--text-2)}
+.card-meta{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:11.5px;color:var(--text-3);border-top:1px dashed var(--line);padding-top:9px;
+}
+.card-meta .heat{color:#d9762c;font-weight:700}
+
+/* 动态列表 */
+.feed-list{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow-1)}
+.feed-list li{display:flex;gap:14px;padding:13px 18px;border-bottom:1px solid var(--line);align-items:flex-start;transition:background .16s}
+.feed-list li:last-child{border-bottom:none}
+.feed-list li:hover{background:#fafbfd}
+.feed-list .fl-time{font-size:12px;color:var(--text-3);font-variant-numeric:tabular-nums;flex-shrink:0;width:74px;padding-top:2px}
+.feed-list .fl-body{flex:1;min-width:0}
+.feed-list .fl-title{font-size:14px;font-weight:700;color:var(--text-1);margin-bottom:3px}
+.feed-list .fl-title:hover{color:var(--brand-light)}
+.feed-list .fl-sum{font-size:12.5px;color:var(--text-2);line-height:1.65}
+.feed-list .fl-kind{font-size:11px;padding:2px 8px;border-radius:4px;background:var(--accent-soft);color:#8a6a1c;flex-shrink:0;font-weight:600;align-self:center}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.cat-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:10px;
+  padding:14px 15px;transition:border-color .18s,box-shadow .18s,transform .18s;
+  display:block;
+}
+.cat-item:hover{border-color:var(--brand-light);box-shadow:var(--shadow-2);transform:translateY(-2px)}
+.cat-item .cat-name{font-size:14px;font-weight:800;color:var(--brand);margin-bottom:4px}
+.cat-item .cat-num{font-size:11.5px;color:var(--text-3)}
+
+/* 深度解析 */
+.deep-read{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);padding:28px 32px;box-shadow:var(--shadow-1)}
+.deep-read h3{font-size:17px;font-weight:800;color:var(--brand);margin:24px 0 11px;padding-left:12px;border-left:4px solid var(--accent);line-height:1.4}
+.deep-read h3:first-of-type{margin-top:4px}
+.deep-read p{font-size:14.5px;color:var(--text-2);line-height:1.95;margin-bottom:12px}
+.deep-read b{color:var(--text-1);font-weight:700}
+.deep-read ul{margin:10px 0 14px;padding-left:4px}
+.deep-read ul li{font-size:14px;color:var(--text-2);line-height:1.85;padding-left:18px;position:relative;margin-bottom:6px}
+.deep-read ul li::before{content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.data-table{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:13px}
+.data-table th,.data-table td{border:1px solid var(--line);padding:8px 11px;text-align:left;line-height:1.6}
+.data-table th{background:#f3f5f9;color:var(--brand);font-weight:700;font-size:12.5px}
+.data-table td{color:var(--text-2)}
+.data-table tr:nth-child(even) td{background:#fbfcfe}
+
+/* 指南步骤 */
+.guide-steps{counter-reset:gstep;display:flex;flex-direction:column;gap:14px}
+.guide-step{
+  counter-increment:gstep;background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius-card);padding:16px 18px 16px 60px;position:relative;box-shadow:var(--shadow-1);
+}
+.guide-step::before{
+  content:counter(gstep,decimal-leading-zero);
+  position:absolute;left:16px;top:16px;font-size:16px;font-weight:900;
+  color:var(--brand);background:var(--accent-soft);width:32px;height:32px;
+  border-radius:8px;display:flex;align-items:center;justify-content:center;
+}
+.guide-step h3{font-size:14.5px;font-weight:800;color:var(--text-1);margin-bottom:5px}
+.guide-step p{font-size:13.5px;color:var(--text-2);line-height:1.8}
+
+/* FAQ */
+.faq-wrap{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow-1)}
+.faq-wrap details{border-bottom:1px solid var(--line)}
+.faq-wrap details:last-child{border-bottom:none}
+.faq-wrap summary{
+  padding:15px 20px;font-size:14.5px;font-weight:700;color:var(--text-1);
+  cursor:pointer;list-style:none;position:relative;padding-right:46px;
+  transition:background .16s;
+}
+.faq-wrap summary::-webkit-details-marker{display:none}
+.faq-wrap summary::after{
+  content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);
+  font-size:19px;font-weight:400;color:var(--brand-light);transition:transform .2s;
+}
+.faq-wrap details[open] summary::after{content:"−"}
+.faq-wrap summary:hover{background:#fafbfd}
+.faq-answer{padding:0 20px 17px;font-size:13.5px;color:var(--text-2);line-height:1.9}
+.faq-answer b{color:var(--text-1)}
+
+/* 评论 */
+.comment-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.comment-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:10px;
+  padding:13px 15px;box-shadow:var(--shadow-1);display:flex;flex-direction:column;gap:7px;
+}
+.comment-head{display:flex;align-items:center;gap:9px}
+.avatar{
+  width:28px;height:28px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12.5px;font-weight:800;color:#fff;
+}
+.comment-head .nick{font-size:13px;font-weight:700;color:var(--text-1)}
+.comment-head .c-time{font-size:11px;color:var(--text-3);margin-left:auto;flex-shrink:0}
+.comment-body{font-size:13px;color:var(--text-2);line-height:1.72}
+.comment-body b{color:var(--text-1)}
+
+/* 资讯 */
+.news-list{display:flex;flex-direction:column;gap:12px}
+.news-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:15px 18px;display:grid;grid-template-columns:1fr 132px;gap:16px;align-items:center;
+  box-shadow:var(--shadow-1);transition:border-color .18s,box-shadow .18s;
+}
+.news-item:hover{border-color:#cfd6e4;box-shadow:var(--shadow-2)}
+.news-item h3{font-size:14.5px;font-weight:800;color:var(--text-1);line-height:1.5;margin-bottom:5px}
+.news-item .news-date{font-size:11.5px;color:var(--text-3);font-variant-numeric:tabular-nums;margin-bottom:4px}
+.news-item p{font-size:12.5px;color:var(--text-2);line-height:1.7}
+.news-item img{width:132px;height:88px;object-fit:cover;border-radius:8px}
+
+/* 相关推荐 */
+.rec-tags{display:flex;flex-wrap:wrap;gap:9px}
+.rec-tags a{
+  font-size:13px;padding:7px 14px;border-radius:var(--radius-tag);
+  border:1px solid var(--line);background:var(--panel);color:var(--text-2);
+  transition:background .16s,color .16s,border-color .16s;
+}
+.rec-tags a:hover{background:var(--brand);color:#fff;border-color:var(--brand)}
+.rec-tags a .rec-n{color:var(--text-3);font-size:11.5px;margin-left:5px}
+.rec-tags a:hover .rec-n{color:#c8d3e8}
+
+/* 时间线 */
+.timeline{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);padding:22px 26px 22px 24px;box-shadow:var(--shadow-1)}
+.timeline ol{position:relative;padding-left:20px}
+.timeline ol::before{content:"";position:absolute;left:4px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.timeline li{position:relative;padding:0 0 18px 12px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{
+  content:"";position:absolute;left:-20px;top:7px;width:10px;height:10px;border-radius:50%;
+  background:#fff;border:2.5px solid var(--brand-light);
+}
+.timeline li.hl::before{border-color:var(--accent);background:var(--accent)}
+.timeline .tl-date{font-size:12px;color:var(--text-3);font-weight:700;font-variant-numeric:tabular-nums;margin-bottom:2px}
+.timeline .tl-title{font-size:13.5px;font-weight:700;color:var(--text-1);margin-bottom:2px}
+.timeline .tl-desc{font-size:12.5px;color:var(--text-2);line-height:1.65}
+
+/* 投稿互动 */
+.contribute{
+  background:linear-gradient(120deg,#1d2b48,#2f4468 60%,#253756);
+  border-radius:var(--radius-banner);padding:28px 30px;color:#e6ecf8;
+  display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+}
+.contribute h2{font-size:19px;font-weight:800;color:#fff;margin-bottom:8px}
+.contribute p{font-size:13.5px;color:#bcc7dd;line-height:1.8;max-width:640px}
+.contribute .contribute-actions{display:flex;flex-direction:column;gap:9px}
+.contribute a{
+  text-align:center;padding:9px 22px;border-radius:var(--radius-btn);font-size:13.5px;font-weight:700;
+  transition:transform .18s,background .18s;
+}
+.contribute .c-primary{background:var(--accent);color:#2a2000}
+.contribute .c-primary:hover{background:#ffd873;transform:translateY(-2px)}
+.contribute .c-ghost{border:1px solid rgba(255,255,255,.32);color:#e6ecf8}
+.contribute .c-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+/* 页脚 */
+.site-footer{background:var(--brand-deep);color:#b7c2d8;margin-top:20px}
+.footer-inner{max-width:1360px;margin:0 auto;padding:40px 20px 24px;display:grid;grid-template-columns:1.3fr 2fr;gap:36px}
+.footer-brand .f-logo{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.footer-brand .f-logo svg{width:32px;height:32px}
+.footer-brand .f-logo span{font-size:17px;font-weight:800;color:#fff}
+.footer-brand p{font-size:13px;line-height:1.85;color:#93a1bd;max-width:340px}
+.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.footer-cols h4{font-size:13px;color:#fff;font-weight:700;margin-bottom:10px;letter-spacing:.5px}
+.footer-cols ul li{font-size:12.5px;line-height:2.05}
+.footer-cols a{color:#93a1bd;transition:color .16s}
+.footer-cols a:hover{color:var(--accent)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:26px;padding:16px 20px 22px;max-width:1360px;margin-left:auto;margin-right:auto;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;color:#7c89a5}
+.footer-bottom .fb-update b{color:#b7c2d8}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed;right:20px;bottom:24px;width:42px;height:42px;border-radius:50%;
+  background:var(--brand);color:#fff;border:none;display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow-2);opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:opacity .22s,transform .22s,visibility .22s,background .18s;z-index:50;
+}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:hover{background:var(--brand-light)}
+.to-top svg{width:18px;height:18px}
+
+/* 遮罩 */
+.overlay{
+  position:fixed;inset:0;background:rgba(15,22,38,.5);backdrop-filter:blur(2px);
+  opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s;z-index:55;
+}
+.overlay.show{opacity:1;visibility:visible}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:1180px){
+  .layout{grid-template-columns:196px minmax(0,1fr);gap:22px}
+  .aux-side{grid-column:1 / -1;position:static;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+  .channel-side{position:sticky}
+}
+@media (max-width:1024px){
+  :root{--sticky-h:100px}
+  .hero-inner{grid-template-columns:1fr;gap:30px}
+  .hero-visual{height:190px;order:-1}
+  .hero-visual .fc1,.hero-visual .fc2{display:none}
+  .main-nav{display:none}
+  .main-nav.open{
+    display:flex;position:absolute;top:100%;left:0;right:0;
+    background:#fff;flex-direction:column;padding:12px 16px 16px;
+    border-bottom:1px solid var(--line);box-shadow:var(--shadow-2);gap:2px;
+    max-height:70vh;overflow:auto;z-index:65;
+  }
+  .main-nav.open a{padding:10px 12px;font-size:14px}
+  .site-header{position:relative;flex-wrap:wrap}
+  .hamburger{display:flex}
+  .header-tools{margin-left:auto}
+  .search-box input{width:140px}
+  .search-box input:focus{width:170px}
+  .layout{grid-template-columns:minmax(0,1fr)}
+  .channel-side{position:static;order:2}
+  .channel-side ul{max-height:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:3px}
+  .channel-side h2{padding-left:4px}
+  .main-col{order:1}
+  .aux-side{order:3;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .overview-panel{grid-template-columns:1fr}
+  .overview-figure{max-width:320px}
+  .contribute{grid-template-columns:1fr}
+  .contribute .contribute-actions{flex-direction:row;flex-wrap:wrap}
+  .footer-inner{grid-template-columns:1fr;gap:26px}
+}
+@media (max-width:740px){
+  :root{--sticky-h:96px}
+  body{font-size:14.5px}
+  .notice-bar{padding:7px 14px;font-size:11.5px;gap:10px}
+  .notice-bar .nb-items{gap:16px}
+  .site-header{padding:10px 14px;gap:12px}
+  .logo-text{font-size:17px}
+  .search-box{display:none}
+  .layout{padding:22px 14px 46px;gap:20px}
+  .hero-inner{padding:34px 16px 40px}
+  .hero h1{font-size:30px}
+  .hero-desc{font-size:14px}
+  .hero-meta{gap:18px}
+  .hero-meta b{font-size:17px}
+  .overview-panel{padding:18px}
+  .deep-read{padding:20px 18px}
+  .deep-read h3{font-size:16px}
+  .card-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .comment-grid{grid-template-columns:1fr}
+  .news-item{grid-template-columns:1fr;gap:10px}
+  .news-item img{width:100%;height:150px}
+  .feed-list li{gap:10px;padding:12px 14px;flex-wrap:wrap}
+  .feed-list .fl-time{width:auto}
+  .contribute{padding:22px 18px}
+  .contribute .contribute-actions{flex-direction:column}
+  .contribute a{width:100%}
+  .footer-cols{grid-template-columns:repeat(2,1fr);gap:18px}
+  .footer-bottom{flex-direction:column;gap:8px}
+  .to-top{right:14px;bottom:16px;width:38px;height:38px}
+  .timeline{padding:18px 16px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-wrap" id="top">
+  <div class="notice-bar" aria-label="站内更新公告">
+    <span class="nb-brand">muchitina推特</span>
+    <div class="nb-items">
+      <span class="nb-item"><span class="nb-time">11-08</span>推文时间线已补入 <b>10 月 29 日</b> 起的 14 条更新</span>
+      <span class="nb-item"><span class="nb-time">11-07</span><b>互动数据对照表</b>新增 9 组样本</span>
+      <span class="nb-item"><span class="nb-time">11-06</span><b>同类型账号观察</b>频道开放投稿</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a class="logo" href="#top" aria-label="muchitina推特 首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1d2b48"/>
+        <path d="M17 45V19h7.4l7.6 13 7.6-13H47v26h-6.6V31.4l-8.4 13.8-8.4-13.8V45z" fill="#f6c453"/>
+        <circle cx="49" cy="15" r="5" fill="#f6c453"/>
+      </svg>
+      <span class="logo-text">muchitina推特</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="主题导航">
+      <a href="#overview">账号概览</a>
+      <a href="#featured">精选推文</a>
+      <a href="#feed">动态更新</a>
+      <a href="#categories">内容分类</a>
+      <a href="#deep">深度解析</a>
+      <a href="#guide">观察路径</a>
+      <a href="#faq">常见问题</a>
+      <a href="#comments">用户评论</a>
+      <a href="#news">相关资讯</a>
+    </nav>
+
+    <div class="header-tools">
+      <div class="search-box">
+        <input type="search" id="siteSearch" placeholder="查找条目 / 标签" aria-label="站内内容查找" autocomplete="off">
+        <div class="search-result" id="searchResult" role="listbox" aria-label="查找结果"></div>
+      </div>
+      <a class="btn-submit" href="#contribute">投稿</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mainNav" aria-label="打开导航菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+</div>
+
+<div class="overlay" id="overlay" hidden></div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>muchitina推特</h1>
+      <p class="hero-desc">围绕该账号在 X（原推特）上的推文脉络、互动数据与圈内回响做持续追踪：按时间梳理发布节奏，按主题拆解内容取向，并把同类型账号的横向对照一并放进来看。</p>
+      <div class="hero-actions">
+        <a class="primary" href="#featured">看精选推文</a>
+        <a class="ghost" href="#deep">读互动数据解析</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>14</b>近 10 天更新条目</div>
+        <div><b>9</b>互动样本组</div>
+        <div><b>8</b>内容分类频道</div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 420 300" role="presentation">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#f6c453" stop-opacity=".9"/>
+            <stop offset="100%" stop-color="#f6c453" stop-opacity=".12"/>
+          </linearGradient>
+          <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0%" stop-color="#7d94c4" stop-opacity=".55"/>
+            <stop offset="100%" stop-color="#7d94c4" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect x="16" y="26" width="300" height="230" rx="18" fill="url(#g2)" stroke="rgba(255,255,255,.14)"/>
+        <rect x="138" y="58" width="266" height="182" rx="16" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.16)"/>
+        <circle cx="76" cy="82" r="17" fill="url(#g1)"/>
+        <rect x="104" y="72" width="118" height="9" rx="4.5" fill="rgba(255,255,255,.32)"/>
+        <rect x="104" y="89" width="74" height="7" rx="3.5" fill="rgba(255,255,255,.16)"/>
+        <rect x="44" y="126" width="196" height="8" rx="4" fill="rgba(255,255,255,.22)"/>
+        <rect x="44" y="144" width="230" height="8" rx="4" fill="rgba(255,255,255,.14)"/>
+        <rect x="44" y="162" width="150" height="8" rx="4" fill="rgba(255,255,255,.14)"/>
+        <rect x="44" y="194" width="62" height="24" rx="7" fill="rgba(246,196,83,.22)" stroke="rgba(246,196,83,.5)"/>
+        <rect x="116" y="194" width="62" height="24" rx="7" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.18)"/>
+        <path d="M182 240 L214 206 L246 222 L286 172" fill="none" stroke="#f6c453" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="286" cy="172" r="5" fill="#f6c453"/>
+        <path d="M300 250 C332 240 344 210 340 176" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="2" stroke-dasharray="5 6"/>
+      </svg>
+      <div class="float-card fc1"><b>10-29 → 11-08</b>推文时间线连续更新</div>
+      <div class="float-card fc2"><b>互动样本 9 组</b>转评赞比例已整理</div>
+    </div>
+  </div>
+</section>
+
+<div class="layout">
+
+  <aside class="channel-side" aria-label="频道索引">
+    <h2>频道索引</h2>
+    <ul id="channelList">
+      <li><a href="#overview" class="active"><span class="dot"></span>账号概览</a></li>
+      <li><a href="#featured"><span class="dot"></span>精选推文</a></li>
+      <li><a href="#feed"><span class="dot"></span>动态更新</a></li>
+      <li><a href="#categories"><span class="dot"></span>内容分类</a></li>
+      <li><a href="#deep"><span class="dot"></span>深度解析</a></li>
+      <li><a href="#guide"><span class="dot"></span>观察路径</a></li>
+      <li><a href="#faq"><span class="dot"></span>常见问题</a></li>
+      <li><a href="#comments"><span class="dot"></span>用户评论</a></li>
+      <li><a href="#news"><span class="dot"></span>相关资讯</a></li>
+      <li><a href="#timeline"><span class="dot"></span>发布时间线</a></li>
+      <li><a href="#related"><span class="dot"></span>相关推荐</a></li>
+      <li><a href="#contribute"><span class="dot"></span>投稿与交流</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-col">
+
+    <!-- 1 主题领域概览 -->
+    <section class="section" id="overview">
+      <div class="section-head">
+        <h2>账号内容概览</h2>
+        <div class="sub">这个账号在发什么、被谁看、为什么被反复引用</div>
+      </div>
+      <div class="overview-panel">
+        <div>
+          <p>在 X 平台上，一个带有个人风格的账号被持续讨论，通常不是靠单条爆款，而是靠<b>稳定的发布节奏和可辨认的内容取向</b>。围绕这一账号的公开内容，大体可以分成几类：日常短评与即时反应、带图的创作分享、转发他人并附一句点评、以及间隔较长但信息密度更高的长帖。前两类占据多数，后两类才是被截图搬运、在中文社区二次传播的主要来源。</p>
+          <p>中文圈对这类账号的关注，往往集中在三个具体问题上：<b>发布频率是否稳定</b>、<b>原创与转发的比例</b>、<b>互动数据是否与内容质量匹配</b>。10 月 29 日到 11 月 8 日这段时间里，可观察到的更新以短评和图片分享为主，长帖只出现 2 次，其中 11 月 3 日那条关于创作流程的长帖被转引最多。</p>
+          <p>需要区分的是账号本身的发布行为，和围绕账号形成的讨论。前者看时间戳、字数、配图数量、是否带外链；后者看引用推文的二次解读、搬运到其他平台的截图、以及评论区里对具体某条内容的争论。两类信息的可信度不同：<b>发布时间和内容原文属于可核对的事实</b>，而"这条是不是暗指某人"之类属于网友推测，不能混为一谈。</p>
+        </div>
+        <figure class="overview-figure">
+          <img src="https://picsum.photos/seed/muchitina-overview/400/300" width="400" height="300" loading="lazy" alt="社交平台账号推文列表与互动数据的界面示意">
+          <figcaption>推文列表与互动数据是观察账号的两个基础面</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 2 精选内容推荐 -->
+    <section class="section" id="featured">
+      <div class="section-head">
+        <h2>精选推文条目</h2>
+        <span class="count">8 条</span>
+        <div class="sub">按内容类型与讨论浓度挑出的具体条目</div>
+      </div>
+      <div class="card-grid">
+
+        <article class="content-card">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/muchitina-t1031/400/300" width="400" height="300" loading="lazy" alt="10 月 31 日创作流程长帖的配图截图">
+            <span class="type-badge">长帖</span>
+          </div>
+          <div class="card-body">
+            <h3>10·31 创作流程长帖</h3>
+            <div class="card-desc">从草稿到成图拆成 5 个阶段，每阶段附一张过程图。被转引最多的是第 3 阶段"线稿推翻重来"那部分，评论区有画手补充了自己的类似经历。</div>
+            <div class="tag-row"><span>创作流程</span><span>过程图</span><span>长帖</span></div>
+            <div class="card-meta"><span>转发 1.2k</span><span class="heat">讨论热度高</span></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/muchitina-t1103/400/300" width="400" height="300" loading="lazy" alt="11 月 3 日关于工具选择的短评配图">
+            <span class="type-badge">短评</span>
+          </div>
+          <div class="card-body">
+            <h3>11·03 绘图工具取舍短评</h3>
+            <div class="card-desc">一句话点名两款软件的差异，没展开论证，但引来了 200 多条回复，正反两派各自举例。短评本身的字数不到 40 字，信息量集中在评论区。</div>
+            <div class="tag-row"><span>工具对比</span><span>短评</span><span>争议</span></div>
+            <div class="card-meta"><span>回复 214</span><span class="heat">争议集中</span></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/muchitina-t1029/400/300" width="400" height="300" loading="lazy" alt="10 月 29 日图片分享帖的缩略图">
+            <span class="type-badge">图文</span>
+          </div>
+          <div class="card-body">
+            <h3>10·29 四宫格图片分享</h3>
+            <div class="card-desc">同主题四张不同构图的成图，配文只有一句"试试看哪个角度"。这类帖子互动峰值出现在发布后 3 小时内，属于典型的即时反馈型内容。</div>
+            <div class="tag-row"><span>图片分享</span><span>构图</span><span>四宫格</span></div>
+            <div class="card-meta"><span>点赞 3.4k</span><span class="heat">点赞峰值 3h</span></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/muchitina-t1105/400/300" width="400" height="300" loading="lazy" alt="11 月 5 日转发他人作品并附点评的截图">
+            <span class="type-badge">转发点评</span>
+          </div>
+          <div class="card-body">
+            <h3>11·05 转发他人作品并附注</h3>
+            <div class="card-desc">转发对象是一位日本创作者的同题作品，附注指出对方在色彩分层上的处理方式与自己不同。这类转发带点评的帖子，通常比原创更容易被跨语种搬运。</div>
+            <div class="tag-row"><span>转发</span><span>跨语种</span><span>色彩分层</span></div>
+            <div class="card-meta"><span>转发 860</span><span class="heat">跨圈传播</span></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/muchitina-t1107/400/300" width="400" height="300" loading="lazy" alt="11 月 7 日问答式推文的配图">
+            <span class="type-badge">问答</span>
+          </div>
+          <div class="card-body">
+            <h3>11·07 "被问最多的问题"合集</h3>
+            <div class="card-desc">把评论区反复出现的 6 个问题并列回答，每条不超过 50 字。其中"怎么保持更新频率"一条被单独截图，在中文社区流传较广，但截图切掉了后半段。</div>
+            <div class="tag-row"><span>问答</span><span>更新频率</span><span>截图流传</span></div>
+            <div class="card-meta"><span>点赞 2.1k</span><span class="heat">截图二次传播</span></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/muchitina-t1101/400/300" width="400" height="300" loading="lazy" alt="11 月 1 日深夜发布的随笔类推文配图">
+            <span class="type-badge">随笔</span>
+          </div>
+          <div class="card-body">
+            <h3>11·01 深夜随笔（01:14 发布）</h3>
+            <div class="card-desc">发布时间在凌晨，内容偏情绪化，只有 3 句话。互动数据低于日均，但被收藏的比例异常高——收藏数与点赞数之比接近 1:4，说明被当作可回看的记录。</div>
+            <div class="tag-row"><span>随笔</span><span>深夜发布</span><span>高收藏比</span></div>
+            <div class="card-meta"><span>收藏 780</span><span class="heat">收藏/点赞 1:4</span></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/muchitina-t1104/400/300" width="400" height="300" loading="lazy" alt="11 月 4 日带外链的教程帖截图">
+            <span class="type-badge">外链</span>
+          </div>
+          <div class="card-body">
+            <h3>11·04 带外链的笔刷说明</h3>
+            <div class="card-desc">推文本身 60 余字，外链指向一份笔刷参数说明。外链帖的互动通常低于纯图文，但这条的点击率高于账号均值，说明受众对工具类信息有明确需求。</div>
+            <div class="tag-row"><span>笔刷参数</span><span>外链</span><span>工具信息</span></div>
+            <div class="card-meta"><span>链接点击 1.9k</span><span class="heat">点击率高于均值</span></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/muchitina-t1106/400/300" width="400" height="300" loading="lazy" alt="11 月 6 日回复区互动截图片段">
+            <span class="type-badge">互动</span>
+          </div>
+          <div class="card-body">
+            <h3>11·06 回复区连续答疑</h3>
+            <div class="card-desc">在同一条推文下连续回复了 11 位提问者，内容涉及图层命名和导出格式。这类分散在回复区的信息不进主页时间线，容易被忽略，但对实操者价值更高。</div>
+            <div class="tag-row"><span>回复区</span><span>图层命名</span><span>导出格式</span></div>
+            <div class="card-meta"><span>回复 11 条</span><span class="heat">实操信息密集</span></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 3 最新动态 -->
+    <section class="section" id="feed">
+      <div class="section-head">
+        <h2>近期发布动态</h2>
+        <span class="count">10 条</span>
+        <div class="sub">按时间倒序，含发布时间与内容摘要</div>
+      </div>
+      <ul class="feed-list">
+        <li><span class="fl-time">11-08 09:42</span><div class="fl-body"><div class="fl-title">转发同人作品并附一句构图点评</div><div class="fl-sum">转发对象为三天前发布的作品，附注指出其对角色的视线引导处理，未展开。</div></div><span class="fl-kind">转发</span></li>
+        <li><span class="fl-time">11-07 21:06</span><div class="fl-body"><div class="fl-title">"被问最多的问题"6 条合集</div><div class="fl-sum">涵盖练习频率、参考来源、软件选择、发布平台、版权处理、接单边界。</div></div><span class="fl-kind">问答</span></li>
+        <li><span class="fl-time">11-07 14:30</span><div class="fl-body"><div class="fl-title">回复区追加导出格式说明</div><div class="fl-sum">在 11-06 的主帖下补充了 PNG 与 JPG 在二次上传时的压缩差异。</div></div><span class="fl-kind">回复</span></li>
+        <li><span class="fl-time">11-06 19:58</span><div class="fl-body"><div class="fl-title">主帖开放提问，连续回复 11 人</div><div class="fl-sum">提问集中在图层命名习惯和文件体积控制，回复均为短句。</div></div><span class="fl-kind">互动</span></li>
+        <li><span class="fl-time">11-05 11:20</span><div class="fl-body"><div class="fl-title">转发日本创作者同题作品并附注</div><div class="fl-sum">附注对比了两人在色彩分层上的不同处理顺序。</div></div><span class="fl-kind">转发</span></li>
+        <li><span class="fl-time">11-04 16:45</span><div class="fl-body"><div class="fl-title">发布笔刷参数外链说明</div><div class="fl-sum">推文 60 余字，外链指向一份参数文档，说明适用场景。</div></div><span class="fl-kind">外链</span></li>
+        <li><span class="fl-time">11-03 10:12</span><div class="fl-body"><div class="fl-title">绘图工具取舍短评引发争论</div><div class="fl-sum">点名两款软件差异，回复区正反举例，本人未再追加回应。</div></div><span class="fl-kind">短评</span></li>
+        <li><span class="fl-time">11-01 01:14</span><div class="fl-body"><div class="fl-title">深夜发布 3 句随笔</div><div class="fl-sum">内容偏情绪化，收藏数明显高于同期其他条目。</div></div><span class="fl-kind">随笔</span></li>
+        <li><span class="fl-time">10-31 20:37</span><div class="fl-body"><div class="fl-title">创作流程 5 阶段长帖</div><div class="fl-sum">每阶段配过程图，第 3 阶段被转引最多。</div></div><span class="fl-kind">长帖</span></li>
+        <li><span class="fl-time">10-29 15:08</span><div class="fl-body"><div class="fl-title">四宫格图片分享，配文一句</div><div class="fl-sum">同主题四种构图，互动峰值出现在发布后 3 小时内。</div></div><span class="fl-kind">图文</span></li>
+      </ul>
+    </section>
+
+    <!-- 4 分类入口 -->
+    <section class="section" id="categories">
+      <div class="section-head">
+        <h2>内容分类频道</h2>
+        <span class="count">8 个</span>
+        <div class="sub">按内容形态与讨论方向划分</div>
+      </div>
+      <div class="cat-grid">
+        <a class="cat-item" href="#featured"><div class="cat-name">创作流程长帖</div><div class="cat-num">过程图 · 阶段拆解 · 6 条</div></a>
+        <a class="cat-item" href="#featured"><div class="cat-name">工具与参数说明</div><div class="cat-num">笔刷 · 导出格式 · 5 条</div></a>
+        <a class="cat-item" href="#featured"><div class="cat-name">图片与构图分享</div><div class="cat-num">四宫格 · 角度对比 · 7 条</div></a>
+        <a class="cat-item" href="#feed"><div class="cat-name">转发与跨语种点评</div><div class="cat-num">日文圈 · 色彩分层 · 4 条</div></a>
+        <a class="cat-item" href="#comments"><div class="cat-name">评论争议与回应</div><div class="cat-num">工具取舍 · 回复区 · 9 条</div></a>
+        <a class="cat-item" href="#guide"><div class="cat-name">更新节奏观察</div><div class="cat-num">发布时段 · 频率 · 3 组</div></a>
+        <a class="cat-item" href="#deep"><div class="cat-name">互动数据对照</div><div class="cat-num">转评赞 · 收藏比 · 9 组</div></a>
+        <a class="cat-item" href="#contribute"><div class="cat-name">投稿与线索征集</div><div class="cat-num">搬运纠正 · 补充条目</div></a>
+      </div>
+    </section>
+
+    <!-- 5 深度解析 -->
+    <section class="section" id="deep">
+      <div class="section-head">
+        <h2>互动数据与传播路径解析</h2>
+        <div class="sub">把"传播快"拆成可核对的环节</div>
+      </div>
+      <div class="deep-read">
+        <h3>一、单条推文的传播速度由哪几段构成</h3>
+        <p>常有人用"传得快"形容某条内容，但速度其实可以拆。以 11 月 5 日那条转发日本创作者作品的帖子为例，从发布到在中文社区出现第一张搬运截图，间隔约 6 小时 40 分。这个数字由三段组成：<b>发布后 2 小时内完成的站内转发</b>、<b>跨语种搬运者的发现与翻译</b>、<b>中文平台首次发布的审核与排队</b>。三段里任何一段变长，整体间隔都会拉大。</p>
+        <p>可核对的是时间戳与截图水印，不可核对的是"谁第一个搬运"。后者只能根据水印叠加顺序推测，属于网友推测层级。把两者混在一起谈，就容易得出"这条一夜爆红"的印象，而实际上第一波传播集中在日文圈，中文圈的讨论是第二天上午才起来的。</p>
+
+        <h3>二、9 组样本的转评赞比例对照</h3>
+        <p>下表取自 10 月 29 日至 11 月 8 日期间可观察到的 9 条推文，数值为发布后 24 小时节点。转发与点赞的比例差异，能反映内容类型的不同用途。</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>条目</th><th>类型</th><th>点赞</th><th>转发</th><th>收藏</th><th>转/赞比</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>10·29 四宫格</td><td>图文</td><td>3.4k</td><td>410</td><td>620</td><td>0.12</td></tr>
+            <tr><td>10·31 流程长帖</td><td>长帖</td><td>2.6k</td><td>1.2k</td><td>1.5k</td><td>0.46</td></tr>
+            <tr><td>11·01 深夜随笔</td><td>随笔</td><td>1.1k</td><td>120</td><td>780</td><td>0.11</td></tr>
+            <tr><td>11·03 工具短评</td><td>短评</td><td>1.8k</td><td>260</td><td>340</td><td>0.14</td></tr>
+            <tr><td>11·04 笔刷外链</td><td>外链</td><td>980</td><td>190</td><td>1.1k</td><td>0.19</td></tr>
+            <tr><td>11·05 转发点评</td><td>转发</td><td>2.2k</td><td>860</td><td>410</td><td>0.39</td></tr>
+            <tr><td>11·06 回复答疑</td><td>互动</td><td>640</td><td>70</td><td>520</td><td>0.11</td></tr>
+            <tr><td>11·07 问答合集</td><td>问答</td><td>2.1k</td><td>540</td><td>980</td><td>0.26</td></tr>
+            <tr><td>11·08 转发构图点评</td><td>转发</td><td>1.3k</td><td>330</td><td>240</td><td>0.25</td></tr>
+          </tbody>
+        </table>
+        <p>流程长帖的转/赞比 0.46 明显高于图文的 0.12，说明长帖被当作"值得存下来转给别人看"的内容；深夜随笔的收藏数接近点赞数的七成，但转发极低，属于"自己留着回看"的类型。两种高值指向不同用途，单看点赞数会把它们混为一谈。</p>
+
+        <h3>三、中文社区二次传播的三类失真</h3>
+        <p>截图搬运造成的失真，可以具体到操作层面：</p>
+        <ul>
+          <li><b>截断上下文。</b>11·07 问答合集中"怎么保持更新频率"那条，原帖前半句是"我不建议所有人都保持高频"，截图从后半句开始，语义反了过来。</li>
+          <li><b>抹掉时间。</b>搬运图常裁掉发布时间，导致 10 月底的内容在 11 月被当成新帖讨论，评论区出现"刚发的？"这类误认。</li>
+          <li><b>张冠李戴。</b>同题创作在圈内常见，四宫格类图片尤其容易被归到错误作者名下，纠正往往滞后数天。</li>
+        </ul>
+        <p>这三类失真里，只有第一类会改变原意，后两类主要影响时效判断和归属判断。核对时优先看原帖时间戳，其次看图内是否有可辨认的水印，最后才看二手描述。</p>
+
+        <h3>四、判断一条二手信息可信度的四个检查点</h3>
+        <p>与其笼统说"信息不可信"，不如逐项核对：<b>有无原帖链接或可定位的推文编号</b>；<b>截图是否包含完整时间戳</b>；<b>配文与图中文字是否一致</b>；<b>搬运账号此前是否有过误传记录</b>。四项里缺两项以上，基本可以判定为待核实。这套标准不保证判断正确，但能把"感觉不对"变成可逐条打勾的清单。</p>
+      </div>
+    </section>
+
+    <!-- 6 观察路径 -->
+    <section class="section" id="guide">
+      <div class="section-head">
+        <h2>内容消费与观察路径</h2>
+        <div class="sub">先看什么、怎么比较、哪些可以跳过</div>
+      </div>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <h3>先看时间线，不看单条</h3>
+          <p>单条推文容易造成误判，连续 7 到 10 天的发布记录才能看出节奏。重点记三个数：日均条数、原创与转发比例、长帖出现的间隔。10 月 29 日到 11 月 8 日这 11 天里，原创占比约六成，长帖 2 条，间隔 3 天。</p>
+        </div>
+        <div class="guide-step">
+          <h3>按类型决定投入时间</h3>
+          <p>流程长帖和工具说明值得逐字看，因为参数和步骤会直接影响操作；短评和随笔更适合当背景了解，不必深究。判断标准很简单：这条内容里有没有可复现的步骤或可对照的数值。没有的，读过即可。</p>
+        </div>
+        <div class="guide-step">
+          <h3>把回复区算进正文</h3>
+          <p>11·06 那条主帖本身只有一句话，真正有信息的是下面 11 条回复。看这类账号时，展开回复区的习惯比读主帖更重要，尤其是涉及导出格式、图层命名这类实操问题。</p>
+        </div>
+        <div class="guide-step">
+          <h3>比较同类型账号时对齐口径</h3>
+          <p>不同账号的粉丝基数差异大，直接比点赞数没有意义。可行的做法是比转/赞比和收藏/点赞比，这两个比值受粉丝量影响较小。流程长帖的转/赞比 0.46 在同类账号里属于偏高水平，而图文类的 0.12 属于常见区间。</p>
+        </div>
+        <div class="guide-step">
+          <h3>遇到二手截图先找原帖</h3>
+          <p>中文社区的搬运图有相当比例裁掉了时间戳。看到截图先搜原帖关键词，找不到再考虑是否采信。这条习惯能过滤掉大部分时效误判，代价只是多花一两分钟。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 FAQ -->
+    <section class="section" id="faq">
+      <div class="section-head">
+        <h2>常见问题</h2>
+        <span class="count">6 问</span>
+        <div class="sub">围绕账号内容与传播现象的具体疑问</div>
+      </div>
+      <div class="faq-wrap">
+        <details>
+          <summary>10·31 那条流程长帖里的五个阶段具体是什么？</summary>
+          <div class="faq-answer">依次是草稿构图、线稿、铺色、分层细化、导出前检查。第 3 阶段"线稿推翻重来"被转引最多，原因在于原帖明确写了重来的触发条件——<b>人物重心偏移超过一个头宽</b>。这个可量化的标准比"感觉不对就改"更容易被他人套用。</div>
+        </details>
+        <details>
+          <summary>11·03 工具短评为什么引来两百多条回复？</summary>
+          <div class="faq-answer">短评点名两款软件在笔压响应上的差异，措辞直接，没有铺垫。回复区里持反对意见者多举自己长期使用的例子，支持者则贴出参数对比图。争论的实质是<b>笔压曲线的手感能否用参数描述</b>，而不是软件本身谁更好，但多数回复没有区分这两层。</div>
+        </details>
+        <details>
+          <summary>中文社区流传的"怎么保持更新频率"截图，和原帖差在哪？</summary>
+          <div class="faq-answer">原帖前半句是"我不建议所有人都保持高频"，截图从后半句"但如果你要，我的做法是……"开始。少了前半句，整段变成鼓励高频更新，语义相反。原帖发布时间为 11 月 7 日 21:06，截图流传出现在次日凌晨。</div>
+        </details>
+        <details>
+          <summary>转发帖的互动为什么常高于原创？</summary>
+          <div class="faq-answer">11·05 的转发点评转/赞比为 0.39，高于同期原创图文的 0.12。原因之一是转发帖同时触达两个账号的受众；之二是跨语种内容自带"新鲜感"，中文圈读者此前未必接触过原作者的日文账号。这类高点位不必然代表内容质量更高。</div>
+        </details>
+        <details>
+          <summary>11·01 深夜随笔的收藏数为什么接近点赞数的七成？</summary>
+          <div class="faq-answer">收藏/点赞比 0.71 远高于同期其他条目。可观察的解释是内容偏情绪化、篇幅短，读者倾向于存下来回看而非公开点赞。<b>发布时间在凌晨 1 点 14 分</b>，这个时段的互动结构本身就与白天不同，样本量只有一条，不足以推广成规律。</div>
+        </details>
+        <details>
+          <summary>11·04 外链帖的点击率为什么高于账号均值？</summary>
+          <div class="faq-answer">推文正文只有 60 余字，但明确了外链内容的适用范围——<b>适用于厚涂和中景以上的场景绘制</b>。受众里做同类创作的比例高，对参数类信息有稳定需求。外链帖的点赞通常偏低，这条 980 个点赞在账号里属于中下，但链接点击达到 1.9k。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8 用户评论 -->
+    <section class="section" id="comments">
+      <div class="section-head">
+        <h2>用户评论</h2>
+        <span class="count">16 条</span>
+        <div class="sub">来自不同平台的观察者与读者</div>
+      </div>
+      <div class="comment-grid">
+
+        <div class="comment-card"><div class="comment-head"><span class="avatar" style="background:#3d5a80">阿</span><span class="nick">阿柴不熬夜</span><span class="c-time">11-08</span></div><div class="comment-body">10·31 那个重心偏移一个头宽的标准我抄下来了，用了两天，确实比我原来凭感觉改线稿省时间。</div></div>
+
+        <div class="comment-card"><div class="comment-head"><span class="avatar" style="background:#c1666b">橘</span><span class="nick">橘子汽水半糖</span><span class="c-time">11-08</span></div><div class="comment-body">工具短评那事吵得没必要。笔压手感本来就因人而异，参数只能说明一部分。</div></div>
+
+        <div class="comment-card"><div class="comment-head"><span class="avatar" style="background:#6b8f71">老</span><span class="nick">老槐树下的猫</span><span class="c-time">11-07</span></div><div class="comment-body">11·07 那条问答我在三个群里看到截图，全是后半段。第一次看到完整版是在原帖下面翻评论，挺意外的。</div></div>
+
+        <div class="comment-card"><div class="comment-head"><span class="avatar" style="background:#8a6d3b">半</span><span class="nick">半页稿纸</span><span class="c-time">11-07</span></div><div class="comment-body">凌晨一点发随笔，收藏比点赞还高一大截。我也这样，半夜看到的东西就想存着，白天再点开看。</div></div>
+
+        <div class="comment-card"><div class="comment-head"><span class="avatar" style="background:#4f6d7a">图</span><span class="nick">图层命名困难户</span><span class="c-time">11-07</span></div><div class="comment-body">11·06 回复区那 11 条比主帖有用多了。导出格式那段我照着改了一次，文件体积小了一半。</div></div>
+
+        <div class="comment-card"><div class="comment-head"><span class="avatar" style="background:#7f5539">南</span><span class="nick">南边来的风</span><span class="c-time">11-06</span></div><div class="comment-body">跨语种转发那类帖子，看着热闹，其实很多搬运没标原出处。找原帖花了十几分钟。</div></div>
+
+        <div class="comment-card"><div class="comment-head"><span class="avatar" style="background:#3a5a40">豆</span><span class="nick">豆汁儿不加糖</span><span class="c-time">11-06</span></div><div class="comment-body">对四宫格那类图片分享没什么感觉，四张差不多，看不出构图差异在哪。可能我不是这行的。</div></div>
+
+        <div class="comment-card"><div class="comment-head"><span class="avatar" style="background:#5c4d7d">小</span><span class="nick">小满未满</span><span class="c-time">11-05</span></div><div class="comment-body">转/赞比这个说法第一次见，比单看点赞有道理。流程长帖 0.46 确实高，我自己也转了一次。</div></div>
+
+        <div class="comment-card"><div class="comment-head"><span class="avatar" style="background:#9c6644">纸</span><span class="nick">纸飞机飞远了</span><span class="c-time">11-05</span></div><div class="comment-body">外链那篇的笔刷参数试了，厚涂阶段有效，但中景以上才明显，近景还是得自己调。</div></div>
+
+        <div class="comment-card"><div class="comment-head"><span class="avatar" style="background:#3d5a80">七</span><span class="nick">七号观察者</span><span class="c-time">11-04</span></div><div class="comment-body">搬运图裁时间戳这事太常见了。上个月一张图被当成新帖转了上百次，原帖是 9 月的。</div></div>
+
+        <div class="comment-card"><div class="comment-head"><span class="avatar" style="background:#b07d62">一</span><span class="nick">一只慢速蜗牛</span><span class="c-time">11-04</span></div><div class="comment-body">更新频率那块，我不太认同高频就是好。质量掉下来之后，回头看那几条都想删。</div></div>
+
+        <div class="comment-card"><div class="comment-head"><span class="avatar" style="background:#52796f">花</span><span class="nick">花卷要加葱</span><span class="c-time">11-03</span></div><div class="comment-body">11·01 那条随笔我存了，说不上来为什么，就是那段话说得挺准的。</div></div>
+
+        <div class="comment-card"><div class="comment-head"><span class="avatar" style="background:#846c5b">路</span><span class="nick">路过打酱油的</span><span class="c-time">11-03</span></div><div class="comment-body">工具对比吵成这样真没必要，软件各用各的，顺手就行。我两个都装。</div></div>
+
+        <div class="comment-card"><div class="comment-head"><span class="avatar" style="background:#4a5759">深</span><span class="nick">深夜画手老陈</span><span class="c-time">11-02</span></div><div class="comment-body">流程长帖第 3 阶段写得好，推翻重来的触发条件给了具体数值。多数教程只说要改，不说改到什么程度。</div></div>
+
+        <div class="comment-card"><div class="comment-head"><span class="avatar" style="background:#7d6b7d">阿</span><span class="nick">阿木木看云</span><span class="c-time">11-01</span></div><div class="comment-body">这类账号的讨论价值其实在回复区，主帖往往只有一句话。可惜搬运的人从来不搬回复。</div></div>
+
+        <div class="comment-card"><div class="comment-head"><span class="avatar" style="background:#5f7a8a">没</span><span class="nick">没睡醒的鱼</span><span class="c-time">10-31</span></div><div class="comment-body">四宫格那种拍法我也试过，发出去互动一般。可能还是得看内容本身。</div></div>
+
+      </div>
+    </section>
+
+    <!-- 9 相关资讯 -->
+    <section class="section" id="news">
+      <div class="section-head">
+        <h2>相关资讯</h2>
+        <span class="count">6 条</span>
+        <div class="sub">账号动态、平台规则与圈内事件</div>
+      </div>
+      <div class="news-list">
+
+        <article class="news-item">
+          <div>
+            <div class="news-date">2026-11-08</div>
+            <h3>11·07 问答合集原帖补入第 7 条回答</h3>
+            <p>原帖在发布 18 小时后追加一条，内容涉及接单边界，字数 62 字。此前截图流传的 6 条版本不再完整。</p>
+          </div>
+          <img src="https://picsum.photos/seed/muchitina-news1/600/400" width="600" height="400" loading="lazy" alt="问答合集推文的补充回答截图">
+        </article>
+
+        <article class="news-item">
+          <div>
+            <div class="news-date">2026-11-07</div>
+            <h3>X 平台调整图片压缩策略，四宫格类推文受影响</h3>
+            <p>据平台帮助页更新记录，11 月 6 日起上传的四宫格图片单张分辨率上限调整为 2048 像素，此前为 4096。</p>
+          </div>
+          <img src="https://picsum.photos/seed/muchitina-news2/600/400" width="600" height="400" loading="lazy" alt="社交平台图片上传分辨率设置界面">
+        </article>
+
+        <article class="news-item">
+          <div>
+            <div class="news-date">2026-11-06</div>
+            <h3>11·05 转发对象在日文圈发布同题新作</h3>
+            <p>该创作者于 11 月 6 日 12:30 发布新图，距上次同题作品 9 天，评论区出现中文用户留言。</p>
+          </div>
+          <img src="https://picsum.photos/seed/muchitina-news3/600/400" width="600" height="400" loading="lazy" alt="日文圈创作者新作发布页面截图">
+        </article>
+
+        <article class="news-item">
+          <div>
+            <div class="news-date">2026-11-04</div>
+            <h3>笔刷参数外链文档更新至 v1.3，新增中景适配说明</h3>
+            <p>文档维护者在 11 月 4 日 09:15 提交修订，新增 3 段关于中景场景的参数建议，页脚版本号同步变更。</p>
+          </div>
+          <img src="https://picsum.photos/seed/muchitina-news4/600/400" width="600" height="400" loading="lazy" alt="笔刷参数文档的版本更新记录页面">
+        </article>
+
+        <article class="news-item">
+          <div>
+            <div class="news-date">2026-11-02</div>
+            <h3>中文社区搬运账号就 10·31 长帖归属问题发布更正</h3>
+            <p>该账号于 11 月 2 日 20:40 发文更正，承认将长帖误归为另一作者，原帖链接已补入评论区置顶。</p>
+          </div>
+          <img src="https://picsum.photos/seed/muchitina-news5/600/400" width="600" height="400" loading="lazy" alt="搬运账号发布更正说明的截图">
+        </article>
+
+        <article class="news-item">
+          <div>
+            <div class="news-date">2026-10-30</div>
+            <h3>四宫格图片分享引发构图对比讨论，相关帖子超 40 条</h3>
+            <p>10 月 30 日起，中文社区出现 40 余条以该四宫格为参照的构图分析帖，其中 12 条附带自身作品对比。</p>
+          </div>
+          <img src="https://picsum.photos/seed/muchitina-news6/600/400" width="600" height="400" loading="lazy" alt="中文社区构图对比讨论帖列表">
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 10 发布时间线 -->
+    <section class="section" id="timeline">
+      <div class="section-head">
+        <h2>近十天发布节点</h2>
+        <div class="sub">按时间排列的关键发布与事件</div>
+      </div>
+      <div class="timeline">
+        <ol>
+          <li class="hl"><div class="tl-date">11-08 09:42</div><div class="tl-title">转发同人作品并附构图点评</div><div class="tl-desc">转发对象为三天前发布的作品，附注聚焦视线引导处理。</div></li>
+          <li><div class="tl-date">11-07 21:06</div><div class="tl-title">问答合集发布</div><div class="tl-desc">6 条问答，次日追加第 7 条。</div></li>
+          <li><div class="tl-date">11-06 19:58</div><div class="tl-title">回复区连续答疑</div><div class="tl-desc">11 条回复，涉及图层命名与导出格式。</div></li>
+          <li><div class="tl-date">11-05 11:20</div><div class="tl-title">跨语种转发点评</div><div class="tl-desc">对比两人在色彩分层上的处理顺序。</div></li>
+          <li><div class="tl-date">11-04 16:45</div><div class="tl-title">笔刷参数外链发布</div><div class="tl-desc">外链文档同期更新至 v1.3。</div></li>
+          <li><div class="tl-date">11-03 10:12</div><div class="tl-title">工具取舍短评</div><div class="tl-desc">回复区出现正反两派举例，本人未追加回应。</div></li>
+          <li><div class="tl-date">11-01 01:14</div><div class="tl-title">深夜随笔</div><div class="tl-desc">3 句短内容，收藏/点赞比 0.71。</div></li>
+          <li class="hl"><div class="tl-date">10-31 20:37</div><div class="tl-title">创作流程长帖</div><div class="tl-desc">5 阶段拆解，第 3 阶段给出可量化标准。</div></li>
+          <li><div class="tl-date">10-29 15:08</div><div class="tl-title">四宫格图片分享</div><div class="tl-desc">同主题四种构图，次日引发社区对比讨论。</div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 11 相关推荐 -->
+    <section class="section" id="related">
+      <div class="section-head">
+        <h2>相关推荐</h2>
+        <div class="sub">按具体内容方向与条目延伸</div>
+      </div>
+      <div class="rec-tags">
+        <a href="#deep">转/赞比计算方法<span class="rec-n">9 组</span></a>
+        <a href="#featured">流程长帖五阶段拆解<span class="rec-n">对照</span></a>
+        <a href="#comments">图层命名习惯讨论<span class="rec-n">11 条</span></a>
+        <a href="#guide">同类型账号口径对齐<span class="rec-n">方法</span></a>
+        <a href="#news">图片压缩策略变更<span class="rec-n">11-06</span></a>
+        <a href="#timeline">深夜发布时段观察<span class="rec-n">1 条</span></a>
+        <a href="#faq">截图截断上下文案例<span class="rec-n">3 类</span></a>
+        <a href="#featured">笔刷参数适用场景<span class="rec-n">v1.3</span></a>
+      </div>
+    </section>
+
+    <!-- 12 投稿互动 -->
+    <section class="section" id="contribute">
+      <div class="contribute">
+        <div>
+          <h2>投稿与线索征集</h2>
+          <p>如果你手上有更早的推文截图、跨语种搬运的原始出处，或者发现某条搬运图的时间戳与内容对不上，可以提交线索。补充条目会标注来源与核对状态，未经核实的说法单独归入推测层级。</p>
+        </div>
+        <div class="contribute-actions">
+          <a class="c-primary" href="#contribute">提交条目线索</a>
+          <a class="c-ghost" href="#comments">参与评论区讨论</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="aux-side" aria-label="辅助栏">
+    <div class="aux-card">
+      <h3>讨论热度榜</h3>
+      <ol class="hot-list">
+        <li><span class="rank">1</span><a href="#featured">10·31 创作流程长帖</a></li>
+        <li><span class="rank">2</span><a href="#featured">11·03 绘图工具取舍短评</a></li>
+        <li><span class="rank">3</span><a href="#featured">11·07 被问最多的问题合集</a></li>
+        <li><span class="rank">4</span><a href="#featured">11·05 转发日本创作者作品</a></li>
+        <li><span class="rank">5</span><a href="#featured">10·29 四宫格图片分享</a></li>
+        <li><span class="rank">6</span><a href="#featured">11·04 笔刷参数外链说明</a></li>
+        <li><span class="rank">7</span><a href="#featured">11·01 深夜随笔</a></li>
+      </ol>
+    </div>
+    <div class="aux-card">
+      <h3>更新流</h3>
+      <ul class="update-feed">
+        <li><time>11-08</time>补入 11·07 问答第 7 条</li>
+        <li><time>11-07</time>互动对照表新增 9 组样本</li>
+        <li><time>11-07</time>图片压缩策略条目上线</li>
+        <li><time>11-06</time>日文圈同题新作记录</li>
+        <li><time>11-05</time>笔刷文档 v1.3 变更说明</li>
+        <li><time>11-04</time>搬运归属更正条目入档</li>
+        <li><time>11-02</time>四宫格构图讨论汇总</li>
+      </ul>
+    </div>
+    <div class="aux-card">
+      <h3>标签索引</h3>
+      <div class="aux-tag-cloud">
+        <a href="#featured">流程长帖</a>
+        <a href="#featured">笔刷参数</a>
+        <a href="#featured">四宫格</a>
+        <a href="#featured">跨语种转发</a>
+        <a href="#deep">转/赞比</a>
+        <a href="#deep">截图失真</a>
+        <a href="#guide">发布节奏</a>
+        <a href="#comments">图层命名</a>
+        <a href="#news">图片压缩</a>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="f-logo">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#2a3d63"/>
+          <path d="M17 45V19h7.4l7.6 13 7.6-13H47v26h-6.6V31.4l-8.4 13.8-8.4-13.8V45z" fill="#f6c453"/>
+          <circle cx="49" cy="15" r="5" fill="#f6c453"/>
+        </svg>
+        <span>muchitina推特</span>
+      </div>
+      <p>观察范围覆盖 2026 年 10 月 29 日至 11 月 8 日的公开推文，条目类型包括原创图文、流程长帖、跨语种转发、回复区答疑与外链说明，按日更新，跨语种搬运的核对结果滞后半天到一天。</p>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h4>内容频道</h4>
+        <ul>
+          <li><a href="#overview">账号概览</a></li>
+          <li><a href="#featured">精选推文</a></li>
+          <li><a href="#feed">动态更新</a></li>
+          <li><a href="#categories">内容分类</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>深度观察</h4>
+        <ul>
+          <li><a href="#deep">互动数据解析</a></li>
+          <li><a href="#guide">观察路径</a></li>
+          <li><a href="#timeline">发布节点</a></li>
+          <li><a href="#related">相关推荐</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>参与互动</h4>
+        <ul>
+          <li><a href="#contribute">投稿线索</a></li>
+          <li><a href="#comments">用户评论</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#news">相关资讯</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>内容为示例条目，用于展示账号动态追踪与传播观察的整理方式。</span>
+    <span class="fb-update">最近核对：<b>2026-11-08</b> · 对应条目：11·07 问答第 7 条补充回答</span>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 移动端菜单 ---------- */
+  var hamburger = document.getElementById('hamburger');
+  var mainNav = document.getElementById('mainNav');
+  var overlay = document.getElementById('overlay');
+
+  function closeMenu(){
+    mainNav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded','false');
+    hamburger.setAttribute('aria-label','打开导航菜单');
+    overlay.classList.remove('show');
+    overlay.hidden = true;
+  }
+  function openMenu(){
+    mainNav.classList.add('open');
+    hamburger.setAttribute('aria-expanded','true');
+    hamburger.setAttribute('aria-label','关闭导航菜单');
+    overlay.hidden = false;
+    overlay.classList.add('show');
+  }
+  hamburger.addEventListener('click', function(){
+    if(mainNav.classList.contains('open')){ closeMenu(); } else { openMenu(); }
+  });
+  overlay.addEventListener('click', closeMenu);
+  mainNav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ closeMenu(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && mainNav.classList.contains('open')){ closeMenu(); hamburger.focus(); }
+  });
+  window.addEventListener('resize', function(){
+    if(window.innerWidth > 1024 && mainNav.classList.contains('open')){ closeMenu(); }
+  });
+
+  /* ---------- 侧栏高亮 ---------- */
+  var channelLinks = Array.prototype.slice.call(document.querySelectorAll('#channelList a'));
+  var sections = channelLinks.map(function(a){
+    var id = a.getAttribute('href').slice(1);
+    return document.getElementById(id);
+  }).filter(Boolean);
+
+  function setActive(id){
+    channelLinks.forEach(function(a){
+      a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+    });
+  }
+
+  if('IntersectionObserver' in window && sections.length){
+    var visible = new Map();
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ visible.set(en.target.id, en.intersectionRatio); }
+        else { visible.delete(en.target.id); }
+      });
+      if(visible.size){
+        var best = null, bestRatio = -1;
+        visible.forEach(function(ratio, id){
+          if(ratio > bestRatio){ bestRatio = ratio; best = id; }
+        });
+        if(best){ setActive(best); }
+      }
+    }, {rootMargin:'-120px 0px -55% 0px', threshold:[0,.15,.4,.75]});
+    sections.forEach(function(s){ io.observe(s); });
+  }
+
+  /* ---------- 回到顶部 ---------- */
+  var toTop = document.getElementById('toTop');
+  var ticking = false;
+  function onScroll(){
+    if(!ticking){
+      window.requestAnimationFrame(function(){
+        toTop.classList.toggle('show', window.scrollY > window.innerHeight * 0.9);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* ---------- 站内查找 ---------- */
+  var searchInput = document.getElementById('siteSearch');
+  var searchResult = document.getElementById('searchResult');
+
+  var index = [];
+  document.querySelectorAll('main .section').forEach(function(sec){
+    var secTitle = sec.querySelector('h2') ? sec.querySelector('h2').textContent.trim() : '';
+    var secId = sec.id;
+    var nodes = sec.querySelectorAll('h3, .fl-title, .cat-name, .tl-title, .rec-tags a, summary, .news-item h3');
+    nodes.forEach(function(n){
+      var text = n.textContent.trim().replace(/\s+/g,' ');
+      if(text.length > 2){
+        index.push({text:text, id:secId, section:secTitle, kind:n.tagName.toLowerCase()});
+      }
+    });
+  });
+
+  function esc(s){
+    return s.replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  function doSearch(q){
+    q = q.trim().toLowerCase();
+    if(!q){ searchResult.classList.remove('show'); return; }
+    var seen = new Set();
+    var hits = index.filter(function(item){
+      var key = item.text + '|' + item.id;
+      if(item.text.toLowerCase().indexOf(q) === -1 || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    }).slice(0,8);
+
+    if(!hits.length){
+      searchResult.innerHTML = '<div class="sr-empty">没有找到与「' + esc(q) + '」相关的条目，换个词试试，例如「流程」「笔刷」「问答」。</div>';
+    } else {
+      searchResult.innerHTML = hits.map(function(h){
+        return '<a href="#' + h.id + '">' + esc(h.text) + '<span class="sr-tag">' + esc(h.section) + '</span></a>';
+      }).join('');
+    }
+    searchResult.classList.add('show');
+  }
+
+  var searchTimer = null;
+  if(searchInput){
+    searchInput.addEventListener('input', function(){
+      clearTimeout(searchTimer);
+      var v = this.value;
+      searchTimer = setTimeout(function(){ doSearch(v); }, 160);
+    });
+    searchInput.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){ this.value=''; searchResult.classList.remove('show'); }
+      if(e.key === 'Enter'){
+        var first = searchResult.querySelector('a');
+        if(first){ first.click(); searchResult.classList.remove('show'); }
+      }
+    });
+    document.addEventListener('click', function(e){
+      if(!searchResult.contains(e.target) && e.target !== searchInput){
+        searchResult.classList.remove('show');
+      }
+    });
+    searchResult.addEventListener('click', function(e){
+      if(e.target.closest('a')){ searchResult.classList.remove('show'); }
+    });
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "muchitina推特",
+  "description": "关注该账号在 X 平台的推文脉络、互动数据与圈内回响，整理发布节奏、内容类型与跨语种传播路径的观察条目。",
+  "inLanguage": "zh-CN",
+  "about": {
+    "@type": "Thing",
+    "name": "社交平台账号动态追踪"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "10·31 那条流程长帖里的五个阶段具体是什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "依次是草稿构图、线稿、铺色、分层细化、导出前检查。第 3 阶段线稿推翻重来被转引最多，原帖明确写了触发条件——人物重心偏移超过一个头宽。这个可量化标准比凭感觉改更容易被他人套用。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "11·03 工具短评为什么引来两百多条回复？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "短评点名两款软件在笔压响应上的差异，措辞直接。回复区持反对意见者多举长期使用例子，支持者贴出参数对比图。争论实质是笔压曲线的手感能否用参数描述。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "中文社区流传的怎么保持更新频率截图，和原帖差在哪？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "原帖前半句是我不建议所有人都保持高频，截图从后半句开始，少了前半句语义就反了。原帖发布时间为 11 月 7 日 21:06，截图流传出现在次日凌晨。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "转发帖的互动为什么常高于原创？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "11·05 的转发点评转赞比为 0.39，高于同期原创图文的 0.12。转发帖同时触达两个账号的受众，跨语种内容自带新鲜感。这类高点位不必然代表内容质量更高。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "11·01 深夜随笔的收藏数为什么接近点赞数的七成？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "收藏点赞比 0.71 远高于同期其他条目。内容偏情绪化、篇幅短，读者倾向于存下来回看而非公开点赞。发布时间在凌晨 1 点 14 分，样本量只有一条，不足以推广成规律。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "11·04 外链帖的点击率为什么高于账号均值？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "推文正文只有 60 余字，但明确了外链内容适用于厚涂和中景以上的场景绘制。受众里做同类创作的比例高，对参数类信息有稳定需求。点赞 980 在账号里属中下，链接点击达 1.9k。"
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+  </html>
