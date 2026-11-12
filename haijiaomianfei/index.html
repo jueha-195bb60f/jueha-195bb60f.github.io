@@ -1,0 +1,2190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海角免费社区内心中的黑暗之神 - 暗黑文学与亚文化档案</title>
+    <meta name="description" content="海角免费社区内心中的黑暗之神：收录暗黑短篇、都市怪谈、心理惊悚与克苏鲁衍生创作，提供条目索引、类型区分、阅读顺序建议与读者讨论，适合偏好黑暗美学与悬疑志怪内容的读者。">
+    <meta name="keywords" content="海角免费社区内心中的黑暗之神">
+    <style>
+        /* ---------- 全局变量 ---------- */
+        :root {
+            --c-bg: #0b0b0e;
+            --c-surface: #131318;
+            --c-surface-2: #1a1a21;
+            --c-border: #2a2a33;
+            --c-text: #e4e4ea;
+            --c-text-2: #a0a0b0;
+            --c-text-3: #6b6b7a;
+            --c-primary: #7b4dff;
+            --c-primary-light: #9b73ff;
+            --c-primary-dark: #5a36cc;
+            --c-accent: #c44b4b;
+            --c-accent-2: #4b8ec4;
+            --radius-card: 14px;
+            --radius-btn: 8px;
+            --radius-tag: 20px;
+            --shadow-default: 0 2px 10px rgba(0, 0, 0, 0.45);
+            --shadow-hover: 0 6px 24px rgba(0, 0, 0, 0.65);
+            --font-sans: system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            --sticky-offset: 108px; /* 公告条 + 页头高度 */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; scroll-padding-top: var(--sticky-offset); }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ---------- 吸顶区域 ---------- */
+        .sticky-wrap {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: var(--c-bg);
+            border-bottom: 1px solid var(--c-border);
+        }
+
+        /* 公告条 */
+        .announcement-bar {
+            background: linear-gradient(90deg, #2a1a3a, #1a1a21);
+            padding: 6px 0;
+            font-size: 0.8rem;
+            color: var(--c-text-2);
+            border-bottom: 1px solid var(--c-border);
+        }
+        .announcement-bar .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 24px;
+            align-items: center;
+            justify-content: center;
+        }
+        .announcement-bar .brand-tag {
+            color: var(--c-primary-light);
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+        .announcement-bar .ann-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .announcement-bar .ann-item .date {
+            color: var(--c-text-3);
+            font-size: 0.75rem;
+        }
+        .announcement-bar .ann-item .label {
+            color: var(--c-text);
+            background: var(--c-surface-2);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.72rem;
+            border: 1px solid var(--c-border);
+        }
+
+        /* 页头 */
+        .site-header {
+            padding: 12px 0;
+        }
+        .site-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .brand-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--c-text);
+        }
+        .brand-logo {
+            width: 38px;
+            height: 38px;
+            flex-shrink: 0;
+        }
+        .brand-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+        }
+        .brand-name small {
+            display: block;
+            font-size: 0.65rem;
+            font-weight: 400;
+            color: var(--c-text-3);
+            letter-spacing: 0.08em;
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 4px 18px;
+            flex-wrap: wrap;
+        }
+        .header-nav a {
+            color: var(--c-text-2);
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: color 0.2s;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+        }
+        .header-nav a:hover {
+            color: var(--c-text);
+            border-bottom-color: var(--c-primary);
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: var(--c-surface-2);
+            border: 1px solid var(--c-border);
+            border-radius: var(--radius-btn);
+            padding: 4px 10px;
+            transition: border-color 0.2s;
+        }
+        .search-box:focus-within {
+            border-color: var(--c-primary);
+        }
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: var(--c-text);
+            font-size: 0.85rem;
+            outline: none;
+            width: 140px;
+            font-family: inherit;
+        }
+        .search-box input::placeholder {
+            color: var(--c-text-3);
+        }
+        .search-box button {
+            background: none;
+            border: none;
+            color: var(--c-text-3);
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0 2px;
+        }
+        .search-box button:hover { color: var(--c-primary-light); }
+
+        .btn-submit {
+            background: var(--c-primary);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-btn);
+            padding: 7px 16px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+            white-space: nowrap;
+        }
+        .btn-submit:hover { background: var(--c-primary-dark); transform: translateY(-1px); }
+
+        /* 汉堡按钮（移动端） */
+        .hamburger {
+            display: none;
+            background: none;
+            border: 1px solid var(--c-border);
+            border-radius: var(--radius-btn);
+            color: var(--c-text);
+            font-size: 1.4rem;
+            padding: 4px 10px;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .hamburger:focus-visible { outline: 2px solid var(--c-primary); }
+
+        /* ---------- 容器 ---------- */
+        .container {
+            width: 100%;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ---------- 首屏 ---------- */
+        .hero {
+            padding: 40px 0 48px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            right: -80px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(123, 77, 255, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            gap: 48px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .hero-text {
+            flex: 1 1 380px;
+        }
+        .hero-text h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #e4e4ea 30%, #9b73ff 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-desc {
+            font-size: 1rem;
+            color: var(--c-text-2);
+            max-width: 540px;
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+        .hero-desc strong {
+            color: var(--c-text);
+            font-weight: 600;
+        }
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 28px;
+            font-size: 0.82rem;
+            color: var(--c-text-3);
+            margin-bottom: 28px;
+        }
+        .hero-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .hero-meta .num {
+            color: var(--c-primary-light);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: var(--c-primary);
+            color: #fff;
+            padding: 10px 26px;
+            border-radius: var(--radius-btn);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            box-shadow: 0 2px 12px rgba(123, 77, 255, 0.25);
+        }
+        .btn-primary:hover {
+            background: var(--c-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(123, 77, 255, 0.35);
+        }
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--c-text);
+            padding: 10px 26px;
+            border-radius: var(--radius-btn);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border: 1px solid var(--c-border);
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .btn-secondary:hover {
+            background: var(--c-surface-2);
+            border-color: var(--c-text-3);
+        }
+
+        .hero-visual {
+            flex: 0 0 340px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-visual svg {
+            width: 100%;
+            max-width: 340px;
+            height: auto;
+            animation: float 8s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-visual svg { animation: none; }
+            html { scroll-behavior: auto; }
+        }
+
+        /* ---------- 三栏布局 ---------- */
+        .layout-three-col {
+            display: grid;
+            grid-template-columns: 175px minmax(0, 1fr) 235px;
+            gap: 32px;
+            align-items: start;
+            padding-bottom: 60px;
+        }
+
+        /* 左频道索引 */
+        .sidebar-left {
+            position: sticky;
+            top: var(--sticky-offset);
+            max-height: calc(100vh - var(--sticky-offset) - 20px);
+            overflow-y: auto;
+            padding-right: 4px;
+        }
+        .sidebar-left::-webkit-scrollbar { width: 3px; }
+        .sidebar-left::-webkit-scrollbar-thumb { background: var(--c-border); border-radius: 3px; }
+
+        .channel-index h3 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--c-text-3);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .channel-index ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .channel-index a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 10px;
+            border-radius: var(--radius-btn);
+            color: var(--c-text-2);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: background 0.18s, color 0.18s;
+            border-left: 2px solid transparent;
+        }
+        .channel-index a:hover,
+        .channel-index a.active {
+            background: var(--c-surface-2);
+            color: var(--c-text);
+            border-left-color: var(--c-primary);
+        }
+        .channel-index .ch-icon {
+            font-size: 0.95rem;
+            width: 18px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        /* 中主内容 */
+        .main-content {
+            min-width: 0;
+        }
+        .main-content > section {
+            margin-bottom: 52px;
+        }
+
+        /* 右辅助栏 */
+        .sidebar-right {
+            position: sticky;
+            top: var(--sticky-offset);
+            max-height: calc(100vh - var(--sticky-offset) - 20px);
+            overflow-y: auto;
+            padding-left: 4px;
+        }
+        .sidebar-right::-webkit-scrollbar { width: 3px; }
+        .sidebar-right::-webkit-scrollbar-thumb { background: var(--c-border); border-radius: 3px; }
+
+        .side-card {
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            border-radius: var(--radius-card);
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+        .side-card h3 {
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--c-text);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .side-card h3::before {
+            content: '';
+            width: 3px;
+            height: 14px;
+            background: var(--c-primary);
+            border-radius: 2px;
+        }
+
+        .hot-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .hot-list li {
+            display: flex;
+            gap: 8px;
+            align-items: baseline;
+            font-size: 0.82rem;
+            line-height: 1.5;
+        }
+        .hot-list .rank {
+            color: var(--c-text-3);
+            font-weight: 700;
+            font-size: 0.72rem;
+            min-width: 18px;
+            font-variant-numeric: tabular-nums;
+        }
+        .hot-list .rank.top { color: var(--c-accent); }
+        .hot-list a {
+            color: var(--c-text-2);
+            text-decoration: none;
+            transition: color 0.18s;
+        }
+        .hot-list a:hover { color: var(--c-primary-light); }
+        .hot-list .meta {
+            font-size: 0.7rem;
+            color: var(--c-text-3);
+            margin-left: auto;
+            white-space: nowrap;
+        }
+
+        .update-stream {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .update-stream li {
+            font-size: 0.8rem;
+            line-height: 1.5;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--c-border);
+            color: var(--c-text-2);
+        }
+        .update-stream li:last-child { border-bottom: none; padding-bottom: 0; }
+        .update-stream .u-title {
+            color: var(--c-text);
+            font-weight: 500;
+            display: block;
+            margin-bottom: 2px;
+        }
+        .update-stream .u-time {
+            font-size: 0.7rem;
+            color: var(--c-text-3);
+        }
+
+        /* ---------- 通用板块样式 ---------- */
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .section-header h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        .section-header h2 .accent {
+            color: var(--c-primary-light);
+        }
+        .section-header .more-link {
+            font-size: 0.8rem;
+            color: var(--c-text-3);
+            text-decoration: none;
+            transition: color 0.18s;
+        }
+        .section-header .more-link:hover { color: var(--c-primary-light); }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 18px;
+        }
+        .card-item {
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            border-color: #3a3a4a;
+        }
+        .card-thumb {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            background: var(--c-surface-2);
+            display: block;
+        }
+        .card-body {
+            padding: 14px 16px 16px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .card-body .type-tag {
+            display: inline-block;
+            font-size: 0.68rem;
+            color: var(--c-primary-light);
+            background: rgba(123, 77, 255, 0.12);
+            padding: 2px 8px;
+            border-radius: var(--radius-tag);
+            margin-bottom: 8px;
+            align-self: flex-start;
+            border: 1px solid rgba(123, 77, 255, 0.2);
+        }
+        .card-body h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            line-height: 1.4;
+            color: var(--c-text);
+        }
+        .card-body .card-desc {
+            font-size: 0.8rem;
+            color: var(--c-text-2);
+            line-height: 1.6;
+            margin-bottom: 10px;
+            flex: 1;
+        }
+        .card-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 12px;
+            font-size: 0.7rem;
+            color: var(--c-text-3);
+            margin-top: auto;
+        }
+        .card-meta .tag {
+            background: var(--c-surface-2);
+            padding: 1px 7px;
+            border-radius: 10px;
+            border: 1px solid var(--c-border);
+        }
+
+        /* 紧凑列表 */
+        .compact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .compact-list li {
+            display: flex;
+            gap: 12px;
+            align-items: baseline;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--c-border);
+            font-size: 0.88rem;
+        }
+        .compact-list li:last-child { border-bottom: none; }
+        .compact-list .list-title {
+            color: var(--c-text);
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.18s;
+            flex-shrink: 0;
+        }
+        .compact-list .list-title:hover { color: var(--c-primary-light); }
+        .compact-list .list-desc {
+            color: var(--c-text-2);
+            font-size: 0.82rem;
+            line-height: 1.5;
+        }
+        .compact-list .list-date {
+            margin-left: auto;
+            font-size: 0.72rem;
+            color: var(--c-text-3);
+            white-space: nowrap;
+        }
+
+        /* 分类入口 */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .category-chip {
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            border-radius: var(--radius-btn);
+            padding: 12px 10px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--c-text-2);
+            font-size: 0.82rem;
+            transition: background 0.18s, border-color 0.18s, color 0.18s;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        .category-chip:hover {
+            background: var(--c-surface-2);
+            border-color: var(--c-primary);
+            color: var(--c-text);
+        }
+        .category-chip .cat-icon {
+            font-size: 1.2rem;
+        }
+
+        /* 深度解析 */
+        .deep-analysis {
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            border-radius: var(--radius-card);
+            padding: 28px 30px;
+        }
+        .deep-analysis h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .deep-analysis h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 26px 0 10px;
+            color: var(--c-primary-light);
+        }
+        .deep-analysis h3:first-of-type { margin-top: 0; }
+        .deep-analysis p {
+            font-size: 0.9rem;
+            color: var(--c-text-2);
+            line-height: 1.85;
+            margin-bottom: 12px;
+        }
+        .deep-analysis ul {
+            margin: 8px 0 14px 20px;
+            font-size: 0.88rem;
+            color: var(--c-text-2);
+            line-height: 1.8;
+        }
+        .deep-analysis ul li {
+            margin-bottom: 4px;
+        }
+        .deep-analysis .highlight-box {
+            background: var(--c-surface-2);
+            border-left: 3px solid var(--c-primary);
+            padding: 12px 16px;
+            border-radius: 0 var(--radius-btn) var(--radius-btn) 0;
+            margin: 14px 0;
+            font-size: 0.85rem;
+            color: var(--c-text-2);
+        }
+
+        /* 指南 */
+        .guide-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .guide-step {
+            display: flex;
+            gap: 16px;
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            border-radius: var(--radius-card);
+            padding: 18px 20px;
+            transition: border-color 0.2s;
+        }
+        .guide-step:hover {
+            border-color: #3a3a4a;
+        }
+        .guide-step .step-num {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--c-primary);
+            line-height: 1;
+            flex-shrink: 0;
+            width: 36px;
+            text-align: center;
+            opacity: 0.7;
+        }
+        .guide-step .step-body h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .guide-step .step-body p {
+            font-size: 0.85rem;
+            color: var(--c-text-2);
+            line-height: 1.7;
+        }
+
+        /* FAQ */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .faq-list details {
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            border-radius: var(--radius-btn);
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+        .faq-list details[open] {
+            border-color: var(--c-primary);
+        }
+        .faq-list summary {
+            padding: 14px 18px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--c-text);
+            transition: background 0.18s;
+        }
+        .faq-list summary::-webkit-details-marker { display: none; }
+        .faq-list summary::after {
+            content: '+';
+            font-size: 1.1rem;
+            color: var(--c-text-3);
+            transition: transform 0.2s;
+        }
+        .faq-list details[open] summary::after {
+            content: '−';
+            transform: rotate(0deg);
+        }
+        .faq-list summary:hover { background: var(--c-surface-2); }
+        .faq-list .faq-answer {
+            padding: 0 18px 16px;
+            font-size: 0.85rem;
+            color: var(--c-text-2);
+            line-height: 1.8;
+        }
+
+        /* 评论 */
+        .comment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 12px;
+        }
+        .comment-card {
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            border-radius: var(--radius-card);
+            padding: 14px 16px;
+            font-size: 0.83rem;
+            line-height: 1.65;
+            transition: border-color 0.18s;
+        }
+        .comment-card:hover {
+            border-color: #3a3a4a;
+        }
+        .comment-card .c-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+        .comment-card .c-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--c-surface-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            color: var(--c-primary-light);
+            font-weight: 700;
+            flex-shrink: 0;
+            border: 1px solid var(--c-border);
+        }
+        .comment-card .c-name {
+            font-weight: 600;
+            color: var(--c-text);
+            font-size: 0.8rem;
+        }
+        .comment-card .c-text {
+            color: var(--c-text-2);
+        }
+        .comment-card .c-text .c-highlight {
+            color: var(--c-text);
+        }
+
+        /* 资讯列表 */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .news-item {
+            display: flex;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--c-border);
+            align-items: flex-start;
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-item .n-date {
+            font-size: 0.72rem;
+            color: var(--c-text-3);
+            white-space: nowrap;
+            min-width: 76px;
+            padding-top: 2px;
+            font-variant-numeric: tabular-nums;
+        }
+        .news-item .n-body h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        .news-item .n-body h3 a {
+            color: var(--c-text);
+            text-decoration: none;
+            transition: color 0.18s;
+        }
+        .news-item .n-body h3 a:hover { color: var(--c-primary-light); }
+        .news-item .n-body p {
+            font-size: 0.82rem;
+            color: var(--c-text-2);
+            line-height: 1.6;
+        }
+
+        /* 相关推荐标签 */
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tag-cloud a {
+            display: inline-block;
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            border-radius: var(--radius-tag);
+            padding: 6px 16px;
+            font-size: 0.8rem;
+            color: var(--c-text-2);
+            text-decoration: none;
+            transition: background 0.18s, border-color 0.18s, color 0.18s;
+        }
+        .tag-cloud a:hover {
+            background: var(--c-surface-2);
+            border-color: var(--c-primary);
+            color: var(--c-text);
+        }
+
+        /* 时间线 */
+        .timeline {
+            list-style: none;
+            position: relative;
+            padding-left: 22px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 6px;
+            bottom: 6px;
+            width: 2px;
+            background: var(--c-border);
+        }
+        .timeline li {
+            position: relative;
+            padding-bottom: 18px;
+            font-size: 0.85rem;
+        }
+        .timeline li:last-child { padding-bottom: 0; }
+        .timeline li::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 6px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--c-primary);
+            border: 2px solid var(--c-bg);
+        }
+        .timeline .t-date {
+            font-size: 0.7rem;
+            color: var(--c-text-3);
+            display: block;
+            margin-bottom: 2px;
+        }
+        .timeline .t-title {
+            color: var(--c-text);
+            font-weight: 500;
+            display: block;
+            margin-bottom: 2px;
+        }
+        .timeline .t-desc {
+            color: var(--c-text-2);
+            font-size: 0.8rem;
+            line-height: 1.6;
+        }
+
+        /* 互动板块 */
+        .interact-panel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .interact-card {
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            border-radius: var(--radius-card);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .interact-card h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .interact-card p {
+            font-size: 0.82rem;
+            color: var(--c-text-2);
+            line-height: 1.7;
+            flex: 1;
+        }
+        .interact-card .btn-sm {
+            align-self: flex-start;
+            background: var(--c-surface-2);
+            border: 1px solid var(--c-border);
+            color: var(--c-text);
+            padding: 6px 16px;
+            border-radius: var(--radius-btn);
+            font-size: 0.78rem;
+            text-decoration: none;
+            transition: background 0.18s, border-color 0.18s;
+        }
+        .interact-card .btn-sm:hover {
+            background: var(--c-primary-dark);
+            border-color: var(--c-primary);
+        }
+
+        /* 页脚 */
+        .site-footer {
+            border-top: 1px solid var(--c-border);
+            padding: 40px 0 28px;
+            background: var(--c-surface);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr repeat(3, 1fr);
+            gap: 32px;
+            margin-bottom: 28px;
+        }
+        .footer-brand .brand-name {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+        .footer-brand p {
+            font-size: 0.8rem;
+            color: var(--c-text-3);
+            line-height: 1.7;
+            max-width: 300px;
+        }
+        .footer-col h4 {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--c-text);
+            margin-bottom: 10px;
+            letter-spacing: 0.04em;
+        }
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .footer-col a {
+            color: var(--c-text-3);
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: color 0.18s;
+        }
+        .footer-col a:hover { color: var(--c-text); }
+        .footer-bottom {
+            border-top: 1px solid var(--c-border);
+            padding-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 12px;
+            font-size: 0.72rem;
+            color: var(--c-text-3);
+        }
+
+        /* 回到顶部 */
+        #backToTop {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--c-primary);
+            color: #fff;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-default);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s, visibility 0.25s, transform 0.2s;
+            z-index: 90;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #backToTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        #backToTop:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+        #backToTop:focus-visible {
+            outline: 2px solid var(--c-primary-light);
+            outline-offset: 2px;
+        }
+
+        /* 搜索无结果 */
+        .no-result {
+            display: none;
+            padding: 24px;
+            text-align: center;
+            color: var(--c-text-3);
+            font-size: 0.88rem;
+            background: var(--c-surface);
+            border-radius: var(--radius-card);
+            border: 1px solid var(--c-border);
+        }
+        .no-result.show { display: block; }
+
+        /* ---------- 响应式 ---------- */
+        @media (max-width: 1024px) {
+            .layout-three-col {
+                grid-template-columns: 1fr 240px;
+                gap: 24px;
+            }
+            .sidebar-left {
+                display: none;
+            }
+            .header-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--c-surface);
+                border-bottom: 1px solid var(--c-border);
+                padding: 12px 24px;
+                flex-direction: column;
+                gap: 4px;
+                z-index: 99;
+                box-shadow: var(--shadow-default);
+            }
+            .header-nav.open { display: flex; }
+            .hamburger { display: block; }
+            .hero-text h1 { font-size: 2rem; }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .category-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 740px) {
+            .container { padding: 0 16px; }
+            .layout-three-col {
+                grid-template-columns: 1fr;
+            }
+            .sidebar-right {
+                position: static;
+                max-height: none;
+                overflow: visible;
+            }
+            .hero .container { flex-direction: column; gap: 24px; }
+            .hero-text h1 { font-size: 1.6rem; }
+            .hero-visual { flex: 0 0 auto; max-width: 240px; }
+            .hero-visual svg { max-width: 240px; }
+            .card-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .interact-panel {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .comment-grid {
+                grid-template-columns: 1fr;
+            }
+            .search-box input { width: 100px; }
+            .deep-analysis { padding: 18px 16px; }
+            .news-item { flex-direction: column; gap: 4px; }
+            .news-item .n-date { min-width: auto; }
+        }
+
+        @media (max-width: 400px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .category-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero-text h1 { font-size: 1.35rem; }
+        }
+
+        /* 可见焦点 */
+        a:focus-visible, button:focus-visible, summary:focus-visible {
+            outline: 2px solid var(--c-primary-light);
+            outline-offset: 2px;
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+    <!-- ========== 吸顶区域：公告条 + 页头 ========== -->
+    <div class="sticky-wrap">
+        <div class="announcement-bar">
+            <div class="container">
+                <span class="brand-tag">海角免费社区内心中的黑暗之神</span>
+                <span class="ann-item">
+                    <span class="date">11月7日</span>
+                    <span class="label">新增《灰烬回廊》第七夜</span>
+                </span>
+                <span class="ann-item">
+                    <span class="date">11月6日</span>
+                    <span class="label">「阈限档案」专题上线12篇</span>
+                </span>
+                <span class="ann-item">
+                    <span class="date">11月5日</span>
+                    <span class="label">月度暗黑短篇投票开启</span>
+                </span>
+            </div>
+        </div>
+
+        <header class="site-header">
+            <div class="container">
+                <a href="/" class="brand-area" aria-label="海角免费社区内心中的黑暗之神 首页">
+                    <svg class="brand-logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="20" cy="20" r="18" stroke="#7b4dff" stroke-width="1.5" fill="#1a1a21"/>
+                        <path d="M20 6 L24 16 L34 20 L24 24 L20 34 L16 24 L6 20 L16 16 Z" fill="#7b4dff" opacity="0.8"/>
+                        <circle cx="20" cy="20" r="4" fill="#0b0b0e"/>
+                        <circle cx="20" cy="20" r="2" fill="#9b73ff"/>
+                    </svg>
+                    <span class="brand-name">
+                        海角免费社区内心中的黑暗之神
+                        <small>DARKNESS ARCHIVE</small>
+                    </span>
+                </a>
+
+                <button class="hamburger" id="hamburgerBtn" aria-label="打开导航菜单" aria-expanded="false">☰</button>
+
+                <nav class="header-nav" id="headerNav" aria-label="主题导航">
+                    <a href="/#section-overview">领域概览</a>
+                    <a href="/#section-featured">精选条目</a>
+                    <a href="/#section-latest">最新动态</a>
+                    <a href="/#section-categories">分类索引</a>
+                    <a href="/#section-deep">深度解析</a>
+                    <a href="/#section-guide">阅读指南</a>
+                    <a href="/#section-faq">常见问答</a>
+                    <a href="/#section-comments">读者评论</a>
+                    <a href="/#section-news">相关资讯</a>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="search-box" role="search">
+                        <input type="search" id="searchInput" placeholder="搜索条目或类型…" aria-label="搜索站内条目">
+                        <button type="button" id="searchBtn" aria-label="执行搜索">⌕</button>
+                    </div>
+                    <a href="/#section-interact" class="btn-submit">投稿 / 互动</a>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <!-- ========== 首屏 ========== -->
+    <section class="hero" id="section-hero">
+        <div class="container">
+            <div class="hero-text">
+                <h1>海角免费社区内心中的黑暗之神</h1>
+                <p class="hero-desc">
+                    汇聚暗黑短篇、都市怪谈、心理惊悚与克苏鲁衍生创作，按<strong>阈限空间</strong>、<strong>民俗恐怖</strong>、<strong>身体异变</strong>等方向归类，提供条目速览、类型区分与阅读顺序参考。目前已收录 <strong>87 部</strong>连载与短篇、<strong>23 篇</strong>设定解析，适合偏好黑暗美学与悬疑志怪内容的读者按图索骥。
+                </p>
+                <div class="hero-meta">
+                    <span><span class="num">87</span> 部作品条目</span>
+                    <span><span class="num">23</span> 篇设定解析</span>
+                    <span><span class="num">11-07</span> 最近更新</span>
+                </div>
+                <div class="hero-actions">
+                    <a href="/#section-featured" class="btn-primary">浏览精选条目</a>
+                    <a href="/#section-deep" class="btn-secondary">阅读深度解析</a>
+                </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+                <svg viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#7b4dff" stop-opacity="0.35"/>
+                            <stop offset="100%" stop-color="#7b4dff" stop-opacity="0"/>
+                        </radialGradient>
+                        <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#7b4dff" stop-opacity="0.8"/>
+                            <stop offset="100%" stop-color="#c44b4b" stop-opacity="0.5"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="170" cy="170" r="160" fill="url(#glow)"/>
+                    <circle cx="170" cy="170" r="120" stroke="url(#ring)" stroke-width="1" stroke-dasharray="4 6" opacity="0.7"/>
+                    <circle cx="170" cy="170" r="90" stroke="#2a2a33" stroke-width="1"/>
+                    <circle cx="170" cy="170" r="60" stroke="#2a2a33" stroke-width="1" stroke-dasharray="2 4"/>
+                    <path d="M170 60 L182 140 L250 170 L182 200 L170 280 L158 200 L90 170 L158 140 Z" fill="#7b4dff" opacity="0.15"/>
+                    <path d="M170 80 L178 150 L230 170 L178 190 L170 260 L162 190 L110 170 L162 150 Z" fill="#7b4dff" opacity="0.25"/>
+                    <circle cx="170" cy="170" r="18" fill="#0b0b0e" stroke="#7b4dff" stroke-width="1.5"/>
+                    <circle cx="170" cy="170" r="7" fill="#9b73ff"/>
+                    <circle cx="170" cy="170" r="3" fill="#0b0b0e"/>
+                    <path d="M170 40 L173 50 L183 53 L173 56 L170 66 L167 56 L157 53 L167 50 Z" fill="#9b73ff" opacity="0.6"/>
+                    <path d="M260 220 L262 228 L270 230 L262 232 L260 240 L258 232 L250 230 L258 228 Z" fill="#c44b4b" opacity="0.5"/>
+                    <path d="M80 120 L82 126 L88 128 L82 130 L80 136 L78 130 L72 128 L78 126 Z" fill="#4b8ec4" opacity="0.4"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 主内容区：三栏 ========== -->
+    <div class="container">
+        <div class="layout-three-col">
+
+            <!-- 左侧频道索引 -->
+            <aside class="sidebar-left" aria-label="频道索引">
+                <nav class="channel-index">
+                    <h3>频道索引</h3>
+                    <ul>
+                        <li><a href="/#section-overview" class="active"><span class="ch-icon">◈</span> 领域概览</a></li>
+                        <li><a href="/#section-featured"><span class="ch-icon">▣</span> 精选条目</a></li>
+                        <li><a href="/#section-latest"><span class="ch-icon">↻</span> 最新动态</a></li>
+                        <li><a href="/#section-categories"><span class="ch-icon">⊞</span> 分类索引</a></li>
+                        <li><a href="/#section-deep"><span class="ch-icon">◎</span> 深度解析</a></li>
+                        <li><a href="/#section-guide"><span class="ch-icon">▸</span> 阅读指南</a></li>
+                        <li><a href="/#section-faq"><span class="ch-icon">?</span> 常见问答</a></li>
+                        <li><a href="/#section-comments"><span class="ch-icon">✦</span> 读者评论</a></li>
+                        <li><a href="/#section-news"><span class="ch-icon">◷</span> 相关资讯</a></li>
+                        <li><a href="/#section-timeline"><span class="ch-icon">⟡</span> 更新轨迹</a></li>
+                        <li><a href="/#section-interact"><span class="ch-icon">✎</span> 投稿互动</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- 中主内容 -->
+            <main class="main-content">
+
+                <!-- 1. 领域概览 -->
+                <section id="section-overview">
+                    <div class="section-header">
+                        <h2>暗黑叙事与<span class="accent">志怪内容</span>版图</h2>
+                    </div>
+                    <div style="background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius-card); padding: 24px 26px; font-size: 0.9rem; color: var(--c-text-2); line-height: 1.85;">
+                        <p style="margin-bottom: 12px;">
+                            “内心中的黑暗之神”指向的是一类以<strong style="color: var(--c-text);">心理压迫、未知恐惧与道德灰域</strong>为核心的内容集群，覆盖阈限空间叙事、民俗恐怖、身体异变、克苏鲁衍生、都市怪谈五个主要方向。当前活跃的连载条目集中在民俗恐怖与阈限空间两类——前者以《纸扎铺夜话》《阴兵借道考》为代表，依托地方志与口述史素材展开；后者以《灰烬回廊》《后室编号 731》为例，用空间规则替代鬼怪实体制造紧张感。
+                        </p>
+                        <p style="margin-bottom: 12px;">
+                            短篇方向在近两个月出现明显偏向：<strong style="color: var(--c-text);">身体异变</strong>题材的投稿量从 10 月的 14 篇增至 11 月首周的 9 天 11 篇，其中《皮肤之下》《第二套消化系统》两篇在读者投票中进入前五。克苏鲁衍生则相对稳定，旧日支配者的本土化改写仍是主流，但批评集中在“触手意象重复率高”这一点上。
+                        </p>
+                        <p>
+                            从阅读门槛看，民俗恐怖对背景知识要求最高，涉及丧葬仪轨、地方神祇谱系的内容往往需要配合设定解析才能完全理解；阈限空间和都市怪谈相对独立，适合作为入门方向。值得留意的是，10 月末至 11 月初出现了一批以“规则怪谈”格式写成的短篇，将恐怖感从叙事转移到条目式的规则清单上，形成了一种介于小说与设定集之间的新写法。
+                        </p>
+                    </div>
+                </section>
+
+                <!-- 2. 精选内容推荐 -->
+                <section id="section-featured">
+                    <div class="section-header">
+                        <h2>精选条目<span class="accent">速览</span></h2>
+                        <a href="/#section-categories" class="more-link">按分类查看 →</a>
+                    </div>
+                    <div class="card-grid">
+                        <div class="card-item">
+                            <img src="https://picsum.photos/seed/hjdark01/400/300" alt="灰烬回廊 阈限空间走廊场景" class="card-thumb" width="400" height="300" loading="lazy">
+                            <div class="card-body">
+                                <span class="type-tag">阈限空间 · 连载</span>
+                                <h3>灰烬回廊</h3>
+                                <p class="card-desc">第七夜更新：回廊的折叠规则被打破，主角发现每层楼的门牌号开始倒序排列。作者用建筑图纸式的精确描写维持压迫感。</p>
+                                <div class="card-meta">
+                                    <span class="tag">空间规则</span>
+                                    <span class="tag">倒序门牌</span>
+                                    <span>热度 9.2</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-item">
+                            <img src="https://picsum.photos/seed/hjdark02/400/300" alt="纸扎铺夜话 民俗恐怖场景" class="card-thumb" width="400" height="300" loading="lazy">
+                            <div class="card-body">
+                                <span class="type-tag">民俗恐怖 · 连载</span>
+                                <h3>纸扎铺夜话</h3>
+                                <p class="card-desc">第十一章写到“扎纸人开眼”的细节，作者参考了闽南地区纸扎工艺中“点睛不画瞳”的讲究，将恐怖感锚定在工艺禁忌上。</p>
+                                <div class="card-meta">
+                                    <span class="tag">纸扎工艺</span>
+                                    <span class="tag">闽南禁忌</span>
+                                    <span>评分 8.7</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-item">
+                            <img src="https://picsum.photos/seed/hjdark03/400/300" alt="皮肤之下 身体异变封面" class="card-thumb" width="400" height="300" loading="lazy">
+                            <div class="card-body">
+                                <span class="type-tag">身体异变 · 短篇</span>
+                                <h3>皮肤之下</h3>
+                                <p class="card-desc">主角发现自己第二层皮肤上长出了无法辨认的纹路，求医过程中纹路逐渐形成地图轮廓。11月读者投票第3名。</p>
+                                <div class="card-meta">
+                                    <span class="tag">异变</span>
+                                    <span class="tag">身体地图</span>
+                                    <span>热度 8.9</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-item">
+                            <img src="https://picsum.photos/seed/hjdark04/400/300" alt="后室编号731 空间迷宫" class="card-thumb" width="400" height="300" loading="lazy">
+                            <div class="card-body">
+                                <span class="type-tag">阈限空间 · 连载</span>
+                                <h3>后室编号 731</h3>
+                                <p class="card-desc">以“楼层档案”格式写作，731 层被设定为无限循环的旧式办公楼。最新更新附有手绘平面图，标注了三个已知出口。</p>
+                                <div class="card-meta">
+                                    <span class="tag">楼层档案</span>
+                                    <span class="tag">平面图</span>
+                                    <span>热度 8.5</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-item">
+                            <img src="https://picsum.photos/seed/hjdark05/400/300" alt="阴兵借道考 地方志研究" class="card-thumb" width="400" height="300" loading="lazy">
+                            <div class="card-body">
+                                <span class="type-tag">民俗恐怖 · 设定解析</span>
+                                <h3>阴兵借道考</h3>
+                                <p class="card-desc">整理西南三省地方志中 17 则“阴兵过境”记载，对比了方志叙事与民间口述的差异，指出其中 5 则存在明显的时间错位。</p>
+                                <div class="card-meta">
+                                    <span class="tag">地方志</span>
+                                    <span class="tag">口述史</span>
+                                    <span>解析 8.8</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-item">
+                            <img src="https://picsum.photos/seed/hjdark06/400/300" alt="第二套消化系统 变异题材" class="card-thumb" width="400" height="300" loading="lazy">
+                            <div class="card-body">
+                                <span class="type-tag">身体异变 · 短篇</span>
+                                <h3>第二套消化系统</h3>
+                                <p class="card-desc">主角在体检中发现体内多了一套消化器官，且与原有系统功能重叠。医生给出的解释前后矛盾，悬念由此展开。</p>
+                                <div class="card-meta">
+                                    <span class="tag">器官异变</span>
+                                    <span class="tag">医疗恐怖</span>
+                                    <span>热度 8.3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. 最新更新 -->
+                <section id="section-latest">
+                    <div class="section-header">
+                        <h2>本周<span class="accent">更新与动态</span></h2>
+                    </div>
+                    <ul class="compact-list">
+                        <li>
+                            <a href="/#section-featured" class="list-title">《灰烬回廊》第七夜</a>
+                            <span class="list-desc">门牌倒序规则出现后，主角在第七层发现一面写满日期的墙，日期均指向同一天。</span>
+                            <span class="list-date">11-07</span>
+                        </li>
+                        <li>
+                            <a href="/#section-featured" class="list-title">《纸扎铺夜话》第十一章</a>
+                            <span class="list-desc">纸扎人开眼禁忌被违反，铺子里多了一个“没有扎完”的纸人，面部留白。</span>
+                            <span class="list-date">11-06</span>
+                        </li>
+                        <li>
+                            <a href="/#section-categories" class="list-title">「阈限档案」专题</a>
+                            <span class="list-desc">新增 12 篇短篇，统一采用“楼层档案”格式，每篇附有平面示意图。</span>
+                            <span class="list-date">11-06</span>
+                        </li>
+                        <li>
+                            <a href="/#section-featured" class="list-title">《皮肤之下》修订版</a>
+                            <span class="list-desc">作者重写了结尾三节，纹路形成的地图被确认为某座已撤销的县城轮廓。</span>
+                            <span class="list-date">11-05</span>
+                        </li>
+                        <li>
+                            <a href="/#section-featured" class="list-title">《后室编号 731》平面图</a>
+                            <span class="list-desc">手绘平面图更新，标注了三个出口的位置，其中两个被读者指出存在矛盾。</span>
+                            <span class="list-date">11-05</span>
+                        </li>
+                        <li>
+                            <a href="/#section-deep" class="list-title">《阴兵借道考》勘误</a>
+                            <span class="list-desc">作者修正了第三则方志的年份，由乾隆四十二年改为四十三年，并补充了出处页码。</span>
+                            <span class="list-date">11-04</span>
+                        </li>
+                        <li>
+                            <a href="/#section-comments" class="list-title">月度暗黑短篇投票</a>
+                            <span class="list-desc">11 月投票开启，目前《皮肤之下》以 47 票领先，《第二套消化系统》32 票居次。</span>
+                            <span class="list-date">11-03</span>
+                        </li>
+                        <li>
+                            <a href="/#section-news" class="list-title">地方志数字化项目</a>
+                            <span class="list-desc">某高校民俗学团队公开了 380 则地方志怪谈的扫描件，标注了原始卷册与页码。</span>
+                            <span class="list-date">11-02</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- 4. 分类入口 -->
+                <section id="section-categories">
+                    <div class="section-header">
+                        <h2>按方向<span class="accent">查找条目</span></h2>
+                    </div>
+                    <div class="category-grid">
+                        <a href="/#section-featured" class="category-chip">
+                            <span class="cat-icon">◫</span>
+                            阈限空间
+                        </a>
+                        <a href="/#section-featured" class="category-chip">
+                            <span class="cat-icon">◈</span>
+                            民俗恐怖
+                        </a>
+                        <a href="/#section-featured" class="category-chip">
+                            <span class="cat-icon">◎</span>
+                            身体异变
+                        </a>
+                        <a href="/#section-featured" class="category-chip">
+                            <span class="cat-icon">⟡</span>
+                            克苏鲁衍生
+                        </a>
+                        <a href="/#section-featured" class="category-chip">
+                            <span class="cat-icon">◷</span>
+                            都市怪谈
+                        </a>
+                        <a href="/#section-deep" class="category-chip">
+                            <span class="cat-icon">▤</span>
+                            规则怪谈
+                        </a>
+                        <a href="/#section-featured" class="category-chip">
+                            <span class="cat-icon">▸</span>
+                            短篇合集
+                        </a>
+                        <a href="/#section-deep" class="category-chip">
+                            <span class="cat-icon">⊞</span>
+                            设定解析
+                        </a>
+                    </div>
+                </section>
+
+                <!-- 5. 深度解析 -->
+                <section id="section-deep">
+                    <div class="section-header">
+                        <h2>暗黑叙事的<span class="accent">类型差异与判断依据</span></h2>
+                    </div>
+                    <div class="deep-analysis">
+                        <h3>阈限空间叙事与都市怪谈的分野</h3>
+                        <p>
+                            阈限空间叙事和都市怪谈常被放在一起讨论，但两者的紧张感来源不同。都市怪谈依赖一个具体的“怪”作为核心——一个地点、一个物件、一段仪式，恐怖感来自对怪物的遭遇与对抗。阈限空间则倾向于取消怪物实体，用空间规则的异常制造不安。以《灰烬回廊》为例，第七夜更新的关键信息是“门牌号开始倒序排列”，这个变化并没有引入任何新角色或生物，但读者会自然产生“空间逻辑正在崩坏”的判断。这种写法把恐怖感从“会遇到什么”转移到“规则本身是否可靠”上。
+                        </p>
+                        <p>
+                            判断一篇阈限空间叙事是否成立，可以看它是否在开篇三节内给出至少两条可验证的空间规则。比如《后室编号 731》在第一节就明确了“每层楼只能往一个方向走”和“电梯按钮只有奇数层能用”。这两条规则后续被逐一打破，而打破的顺序和方式构成了叙事推进力。没有规则设定的阈限空间，往往退化成普通迷宫探险，紧张感主要靠怪物追逐维持。
+                        </p>
+
+                        <h3>民俗恐怖的可信度分层</h3>
+                        <p>
+                            民俗恐怖内容的可信度不取决于故事是否“真”，而取决于作者对素材的处理是否透明。以《阴兵借道考》为例，作者在每则方志引用后都标注了出处卷册、页码和年份，并将口述材料与方志记载分开罗列。当两者出现矛盾时，作者不强行统一，而是指出差异并给出可能的原因——比如 11 月 4 日的勘误中，作者承认第三则方志的年份误记为乾隆四十二年，实际应为四十三年，并补充了出处页码。
+                        </p>
+                        <p>
+                            这种处理方式把可信度拆成了可核对的结构：第一层是原始文献的出处是否可查，第二层是口述材料的采集时间和讲述者身份是否交代，第三层是作者的推断与原始材料是否明确分开。三个层次中缺失任何一层，读者都应当降低对内容“考据严谨性”的预期。一些以“亲身经历”为卖点的帖子通常缺少第一层和第二层，阅读时更宜将其视为叙事作品而非民俗记录。
+                        </p>
+
+                        <div class="highlight-box">
+                            <strong>可核对的速度判断：</strong>一个条目从发布到形成讨论热度，通常经过三个环节——作者首发、读者在评论区提出疑点或补充、作者回应或修订。以《皮肤之下》为例，11 月 3 日发布，11 月 4 日评论区出现关于“纹路地图”与某县轮廓的比对，11 月 5 日作者发布修订版并确认了对应关系。三个环节在 48 小时内完成，说明这个条目的讨论集中在具体细节上，而非泛泛的“好看”“吓人”。
+                        </div>
+
+                        <h3>身体异变题材的常见短板</h3>
+                        <p>
+                            身体异变类短篇在近两个月投稿量上升，但质量分化明显。一个常见问题是异变本身缺乏“规则感”——主角身上长出了新器官，然后呢？如果异变只是视觉奇观，没有配套的生理逻辑或社会反应，故事就会停留在猎奇层面。《第二套消化系统》在这点上做得相对完整：异变器官与原有系统功能重叠，导致主角进食后出现双重消化反应，医生给出的解释前后矛盾，这个矛盾本身成了悬念的支点。
+                        </p>
+                        <p>
+                            读者在判断一篇身体异变短篇是否值得投入时间，可以看它在前三分之一篇幅内是否回答了三个问题：异变的触发条件是什么、异变是否可逆、周围人对异变的认知是否一致。三个问题中至少有两个给出具体回答的，通常比只描述异变外观的作品更耐读。只回答“异变很可怕”的，往往在一两节之后就失去推进力。
+                        </p>
+
+                        <h3>规则怪谈的写法与误用</h3>
+                        <p>
+                            “规则怪谈”格式在 10 月末至 11 月初集中出现，典型写法是列出若干条看似日常但暗含矛盾的规则，通过规则之间的冲突制造恐怖感。这种格式的优势在于信息密度高、阅读节奏快，但误用也常见：一部分作品把规则写成纯粹的谜语，规则之间缺乏内在关联，读者只能靠猜。好的规则怪谈，每条规则单独看都合理，放在一起才显出问题。
+                        </p>
+                        <p>
+                            以当前站内一篇未完结的规则怪谈为例，前五条规则中第三条“不要在 23:00 后使用三楼饮水机”和第五条“如果听到饮水机烧水声，请确认当前时间”形成了呼应——单独看是两条独立提醒，合起来则暗示“时间显示可能不可靠”。这种规则之间的咬合关系，比单纯堆砌禁忌条目更能维持阅读兴趣。
+                        </p>
+                    </div>
+                </section>
+
+                <!-- 6. 阅读指南 -->
+                <section id="section-guide">
+                    <div class="section-header">
+                        <h2>阅读顺序与<span class="accent">投入判断</span></h2>
+                    </div>
+                    <div class="guide-steps">
+                        <div class="guide-step">
+                            <span class="step-num">01</span>
+                            <div class="step-body">
+                                <h3>从短篇入手，建立类型感</h3>
+                                <p>刚接触这个方向，建议先读三到五篇站内热度较高的短篇，比如《皮肤之下》《第二套消化系统》。短篇篇幅在 3000—6000 字之间，一两个晚上能读完，适合快速判断自己对哪类恐怖感更敏感——是身体异变带来的生理不适，还是空间规则崩坏带来的认知焦虑。</p>
+                            </div>
+                        </div>
+                        <div class="guide-step">
+                            <span class="step-num">02</span>
+                            <div class="step-body">
+                                <h3>连载条目先看更新频率与讨论区</h3>
+                                <p>连载条目的投入时间长，判断是否值得追，可以看两个指标：最近一个月的更新间隔是否稳定，以及讨论区是否有读者在追问具体细节。以《灰烬回廊》为例，讨论区在第七夜更新后出现了关于“倒序门牌”的图纸分析帖，说明读者在认真对待设定，这类连载通常有更完整的架构。</p>
+                            </div>
+                        </div>
+                        <div class="guide-step">
+                            <span class="step-num">03</span>
+                            <div class="step-body">
+                                <h3>民俗恐怖配设定解析一起读</h3>
+                                <p>民俗恐怖条目涉及大量地方性知识，单独读正文容易卡在仪轨名称和神祇谱系上。建议配合站内的设定解析一起看，比如《阴兵借道考》的方志出处和口述材料对照，能帮助区分哪些是文献记载、哪些是作者的文学化处理。这个区分直接影响阅读体验——把文学化处理当成考据，容易过度较真；反过来，把考据当成纯虚构，又会错过作者埋的线索。</p>
+                            </div>
+                        </div>
+                        <div class="guide-step">
+                            <span class="step-num">04</span>
+                            <div class="step-body">
+                                <h3>比较同类条目时看“规则是否可验证”</h3>
+                                <p>两篇阈限空间叙事放在一起比较，优先选那篇在开篇就给出可验证规则的。规则越具体，后续的打破和推进就越有依据。反过来，如果一篇作品前三节都在渲染氛围而没有给出任何可操作的规则，后续大概率会依赖突然出现的怪物来维持紧张感，这类作品通常在中段开始乏力。</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 7. FAQ -->
+                <section id="section-faq">
+                    <div class="section-header">
+                        <h2>读者<span class="accent">常见问题</span></h2>
+                    </div>
+                    <div class="faq-list">
+                        <details>
+                            <summary>《灰烬回廊》第七夜的门牌倒序是什么意思？</summary>
+                            <div class="faq-answer">
+                                第七夜更新中，主角发现每层楼的门牌号不再按楼层递增，而是从顶层开始倒序排列。此前六夜的设定里，门牌号与楼层严格对应，倒序意味着空间排序的基准被替换。作者没有直接解释原因，但通过主角在第七层发现一面写满日期的墙，暗示了“时间”可能被用作新的排序依据。
+                            </div>
+                        </details>
+                        <details>
+                            <summary>民俗恐怖里的“阴兵借道”有真实记载吗？</summary>
+                            <div class="faq-answer">
+                                《阴兵借道考》整理了西南三省地方志中 17 则相关记载，其中 5 则存在明显的时间错位。这些方志条目均标注了卷册和页码，可以按图索骥去查原书。需要区分的是，方志记载属于文献材料，民间口述属于另一层材料，两者的可信度和采集背景不同，阅读时不宜混为一谈。
+                            </div>
+                        </details>
+                        <details>
+                            <summary>身体异变类短篇为什么容易烂尾？</summary>
+                            <div class="faq-answer">
+                                常见原因是异变设定缺乏后续推进力。如果异变只停留在外观描述，没有配套的生理逻辑、社会反应或规则限制，故事在展示完“长出了什么”之后就难以为继。《第二套消化系统》的处理方式是让异变器官与原有系统功能重叠，制造持续的矛盾，而不是一次性的视觉冲击。
+                            </div>
+                        </details>
+                        <details>
+                            <summary>规则怪谈的规则需要几条才够？</summary>
+                            <div class="faq-answer">
+                                数量不是关键，规则之间的咬合关系更重要。站内一篇未完结的规则怪谈只用了五条规则，但第三条和第五条形成了时间显示上的互相矛盾，读者由此产生“当前时间可能不可靠”的判断。规则之间没有内在关联的，写二十条也只是禁忌清单，不构成叙事。
+                            </div>
+                        </details>
+                        <details>
+                            <summary>《后室编号 731》的平面图里三个出口哪个是真的？</summary>
+                            <div class="faq-answer">
+                                截至 11 月 5 日的更新，平面图标注了三个出口：东侧消防通道、地下二层货梯、天台通风井。讨论区有读者指出消防通道和货梯的位置与正文中“每层楼只能往一个方向走”的规则冲突，作者尚未回应。目前无法确认哪个出口在叙事中被视为有效路径。
+                            </div>
+                        </details>
+                        <details>
+                            <summary>短篇合集和设定解析有什么区别？</summary>
+                            <div class="faq-answer">
+                                短篇合集是独立的叙事作品，每篇有自己的角色和情节，读完即可。设定解析则是对某一类设定或某一则材料的考据与拆解，比如《阴兵借道考》属于设定解析，它不讲述完整故事，而是整理方志条目、对比口述材料、标注出处。两者在阅读目的上不同——前者为体验，后者为查证。
+                            </div>
+                        </details>
+                    </div>
+                </section>
+
+                <!-- 8. 用户评论 -->
+                <section id="section-comments">
+                    <div class="section-header">
+                        <h2>读者<span class="accent">怎么说</span></h2>
+                    </div>
+                    <div class="comment-grid">
+                        <div class="comment-card">
+                            <div class="c-header">
+                                <span class="c-avatar">灰</span>
+                                <span class="c-name">灰烬收集者</span>
+                            </div>
+                            <p class="c-text">第七夜那个门牌倒序，我回头翻了前六夜的门牌描述，发现第三夜提过一次“402 的门牌是反着钉的”，当时以为是笔误，现在看可能是伏笔。</p>
+                        </div>
+                        <div class="comment-card">
+                            <div class="c-header">
+                                <span class="c-avatar">纸</span>
+                                <span class="c-name">纸扎学徒</span>
+                            </div>
+                            <p class="c-text">《纸扎铺夜话》里“点睛不画瞳”的讲究是真的，我老家那边扎纸人确实有这个说法，眼睛留白，说是画了瞳就“活了”。作者查过资料。</p>
+                        </div>
+                        <div class="comment-card">
+                            <div class="c-header">
+                                <span class="c-avatar">皮</span>
+                                <span class="c-name">皮下组织</span>
+                            </div>
+                            <p class="c-text">《皮肤之下》修订版比原版好很多，原版结尾收得太急，纹路形成地图之后就没有下文了。现在确认是县城轮廓，至少给了一个可追的方向。</p>
+                        </div>
+                        <div class="comment-card">
+                            <div class="c-header">
+                                <span class="c-avatar">后</span>
+                                <span class="c-name">后室漫游者</span>
+                            </div>
+                            <p class="c-text">731 的平面图我看半天没看懂，消防通道和货梯的位置跟正文规则冲突，不知道是作者画错了还是故意埋的。等回应。</p>
+                        </div>
+                        <div class="comment-card">
+                            <div class="c-header">
+                                <span class="c-avatar">阴</span>
+                                <span class="c-name">阴天不出门</span>
+                            </div>
+                            <p class="c-text">阴兵借道那个勘误挺有意思，乾隆四十二年和四十三年，差一年，但按照方志的编修体例，差一年可能意味着查的是不同卷。作者补页码这个动作可以。</p>
+                        </div>
+                        <div class="comment-card">
+                            <div class="c-header">
+                                <span class="c-avatar">消</span>
+                                <span class="c-name">消化内科常客</span>
+                            </div>
+                            <p class="c-text">第二套消化系统那个设定，我第一反应是“双重消化会不会更容易饿”，结果作者没往这个方向写，有点可惜。不过医生解释前后矛盾那段确实写得好，把医疗场景的不确定性抓住了。</p>
+                        </div>
+                        <div class="comment-card">
+                            <div class="c-header">
+                                <span class="c-avatar">规</span>
+                                <span class="c-name">规则怪谈爱好者</span>
+                            </div>
+                            <p class="c-text">最近规则怪谈投稿太多了，质量参差。有些就是把“不要回头”“不要接电话”列二十条，互相之间没有任何关系。好的规则怪谈每条单独看都正常，连起来才不对劲。</p>
+                        </div>
+                        <div class="comment-card">
+                            <div class="c-header">
+                                <span class="c-avatar">夜</span>
+                                <span class="c-name">夜班保安老王</span>
+                            </div>
+                            <p class="c-text">值夜班的时候看灰烬回廊，看到“电梯按钮只有奇数层能用”那段，正好巡逻到电梯口，按了一下，偶数层也亮。松了口气，又有点失望。</p>
+                        </div>
+                        <div class="comment-card">
+                            <div class="c-header">
+                                <span class="c-avatar">克</span>
+                                <span class="c-name">克苏鲁打工人</span>
+                            </div>
+                            <p class="c-text">克苏鲁衍生那块，触手确实看腻了。最近有一篇写“旧日支配者的本土化改写”的解析，提到用地方神祇谱系去对应旧神体系，角度有意思，但论证还比较单薄。</p>
+                        </div>
+                        <div class="comment-card">
+                            <div class="c-header">
+                                <span class="c-avatar">地</span>
+                                <span class="c-name">地图收集癖</span>
+                            </div>
+                            <p class="c-text">那个 380 则地方志怪谈的扫描件有人下载了吗？我打开看了几页，清晰度一般，但页码标注很全。就是检索不太方便，得手动翻。</p>
+                        </div>
+                        <div class="comment-card">
+                            <div class="c-header">
+                                <span class="c-avatar">投</span>
+                                <span class="c-name">投稿被拒三次</span>
+                            </div>
+                            <p class="c-text">投了两篇短篇都没过，看了精选条目大概知道原因了。我写的异变就是纯粹长东西，没有规则也没有后续。重新改。</p>
+                        </div>
+                        <div class="comment-card">
+                            <div class="c-header">
+                                <span class="c-avatar">路</span>
+                                <span class="c-name">路过看看</span>
+                            </div>
+                            <p class="c-text">不太看恐怖类，但被朋友拉来看了纸扎铺那篇。纸扎工艺的部分意外地有意思，当民俗科普看了。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 9. 相关资讯 -->
+                <section id="section-news">
+                    <div class="section-header">
+                        <h2>领域<span class="accent">动态</span></h2>
+                    </div>
+                    <div class="news-list">
+                        <div class="news-item">
+                            <span class="n-date">2026-11-06</span>
+                            <div class="n-body">
+                                <h3><a href="/#section-news">地方志怪谈数字化项目公开 380 则扫描件</a></h3>
+                                <p>某高校民俗学团队 11 月 6 日公开首批扫描件，涵盖西南三省 17 种地方志，每则标注原书卷册与页码，第二批预计 12 月上线。</p>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <span class="n-date">2026-11-05</span>
+                            <div class="n-body">
+                                <h3><a href="/#section-news">「阈限档案」专题新增 12 篇规则怪谈</a></h3>
+                                <p>11 月 5 日上线的专题集中采用“楼层档案”格式，其中 7 篇附有平面示意图，3 篇的出口标注被读者指出与正文规则矛盾。</p>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <span class="n-date">2026-11-03</span>
+                            <div class="n-body">
+                                <h3><a href="/#section-news">月度暗黑短篇投票首日收到 214 张有效票</a></h3>
+                                <p>《皮肤之下》以 47 票暂列第一，《第二套消化系统》32 票第二，投票将持续至 11 月 10 日，结果用于年度合集选篇。</p>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <span class="n-date">2026-11-02</span>
+                            <div class="n-body">
+                                <h3><a href="/#section-news">《阴兵借道考》作者发布勘误说明</a></h3>
+                                <p>第三则方志年份由乾隆四十二年改为四十三年，作者补充了出处页码，并说明差异来自不同卷册的编修时间。</p>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <span class="n-date">2026-10-30</span>
+                            <div class="n-body">
+                                <h3><a href="/#section-news">克苏鲁衍生品类读者调查：触手意象疲劳度上升</a></h3>
+                                <p>10 月 30 日发布的调查显示，在 412 份有效样本中，61% 的读者认为“触手描写重复率过高”，期待更多基于本土神祇谱系的改写。</p>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <span class="n-date">2026-10-28</span>
+                            <div class="n-body">
+                                <h3><a href="/#section-news">《灰烬回廊》作者确认将出版实体书</a></h3>
+                                <p>10 月 28 日作者在讨论区回应，实体书将收录前六夜正文及未公开的“楼层平面图集”，新增内容约 1.8 万字，预计 2027 年春季推出。</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 10. 相关推荐 -->
+                <section id="section-related">
+                    <div class="section-header">
+                        <h2>继续<span class="accent">探索</span></h2>
+                    </div>
+                    <div class="tag-cloud">
+                        <a href="/#section-featured">规则怪谈写作模板</a>
+                        <a href="/#section-deep">阈限空间设计法则</a>
+                        <a href="/#section-featured">纸扎工艺禁忌考</a>
+                        <a href="/#section-deep">身体异变叙事结构</a>
+                        <a href="/#section-featured">后室楼层编号逻辑</a>
+                        <a href="/#section-news">地方志数字化第二批</a>
+                        <a href="/#section-comments">11月短篇投票进展</a>
+                        <a href="/#section-featured">克苏鲁本土化改写</a>
+                    </div>
+                </section>
+
+                <!-- 11. 补充板块：更新轨迹 + 互动 -->
+                <section id="section-timeline">
+                    <div class="section-header">
+                        <h2>近期<span class="accent">更新轨迹</span></h2>
+                    </div>
+                    <ul class="timeline">
+                        <li>
+                            <span class="t-date">2026-11-07</span>
+                            <span class="t-title">《灰烬回廊》第七夜发布</span>
+                            <span class="t-desc">门牌倒序规则出现，讨论区 3 小时内出现 14 条分析帖。</span>
+                        </li>
+                        <li>
+                            <span class="t-date">2026-11-06</span>
+                            <span class="t-title">「阈限档案」专题上线</span>
+                            <span class="t-desc">12 篇规则怪谈集中发布，7 篇附平面示意图。</span>
+                        </li>
+                        <li>
+                            <span class="t-date">2026-11-05</span>
+                            <span class="t-title">《皮肤之下》修订版</span>
+                            <span class="t-desc">纹路地图确认为已撤销县城轮廓，结尾三节重写。</span>
+                        </li>
+                        <li>
+                            <span class="t-date">2026-11-04</span>
+                            <span class="t-title">《阴兵借道考》勘误</span>
+                            <span class="t-desc">修正第三则方志年份，补充出处页码。</span>
+                        </li>
+                        <li>
+                            <span class="t-date">2026-11-02</span>
+                            <span class="t-title">地方志扫描件公开</span>
+                            <span class="t-desc">380 则怪谈扫描件首批上线，标注卷册页码。</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="section-interact">
+                    <div class="section-header">
+                        <h2>投稿与<span class="accent">互动</span></h2>
+                    </div>
+                    <div class="interact-panel">
+                        <div class="interact-card">
+                            <h3>✎ 短篇投稿</h3>
+                            <p>阈限空间、民俗恐怖、身体异变、克苏鲁衍生、都市怪谈五个方向长期接收短篇投稿，篇幅 3000—8000 字。初审反馈通常在 7 个工作日内通过站内消息发送。</p>
+                            <a href="/#section-interact" class="btn-sm">查看投稿要求</a>
+                        </div>
+                        <div class="interact-card">
+                            <h3>◈ 设定补全计划</h3>
+                            <p>针对连载条目中未交代清楚的规则、地点、人物关系，开设读者补全通道。被作者采纳的条目标注会出现在正文脚注中，目前已有 19 条读者补全被收录。</p>
+                            <a href="/#section-interact" class="btn-sm">参与补全</a>
+                        </div>
+                        <div class="interact-card">
+                            <h3>投票 · 11月短篇评选</h3>
+                            <p>11 月短篇投票进行中，候选条目 8 篇，每人每天可投 1 票。当前《皮肤之下》47 票、《第二套消化系统》32 票、《纹路》21 票。</p>
+                            <a href="/#section-interact" class="btn-sm">去投票</a>
+                        </div>
+                        <div class="interact-card">
+                            <h3>⇄ 讨论区</h3>
+                            <p>按条目、类型、设定解析分版块。近期热帖集中在《灰烬回廊》门牌倒序分析和《后室编号 731》出口矛盾比对，可前往对应版块参与。</p>
+                            <a href="/#section-interact" class="btn-sm">进入讨论</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 搜索无结果提示 -->
+                <div id="noResult" class="no-result">没有找到匹配的条目，试试「阈限」「民俗」「异变」等类型词。</div>
+
+            </main>
+
+            <!-- 右侧辅助栏 -->
+            <aside class="sidebar-right" aria-label="辅助信息">
+                <div class="side-card">
+                    <h3>本周热度榜</h3>
+                    <ol class="hot-list">
+                        <li><span class="rank top">1</span><a href="/#section-featured">灰烬回廊</a><span class="meta">9.2</span></li>
+                        <li><span class="rank top">2</span><a href="/#section-featured">皮肤之下</a><span class="meta">8.9</span></li>
+                        <li><span class="rank top">3</span><a href="/#section-featured">纸扎铺夜话</a><span class="meta">8.7</span></li>
+                        <li><span class="rank">4</span><a href="/#section-featured">后室编号 731</a><span class="meta">8.5</span></li>
+                        <li><span class="rank">5</span><a href="/#section-featured">第二套消化系统</a><span class="meta">8.3</span></li>
+                        <li><span class="rank">6</span><a href="/#section-deep">阴兵借道考</a><span class="meta">8.8</span></li>
+                        <li><span class="rank">7</span><a href="/#section-featured">纹路</a><span class="meta">8.1</span></li>
+                    </ol>
+                </div>
+                <div class="side-card">
+                    <h3>最近更新</h3>
+                    <ul class="update-stream">
+                        <li><span class="u-title">灰烬回廊 · 第七夜</span><span class="u-time">11-07 22:14</span></li>
+                        <li><span class="u-title">纸扎铺夜话 · 第十一章</span><span class="u-time">11-06 19:30</span></li>
+                        <li><span class="u-title">阈限档案专题 · 12篇</span><span class="u-time">11-06 14:00</span></li>
+                        <li><span class="u-title">皮肤之下 · 修订版</span><span class="u-time">11-05 21:45</span></li>
+                        <li><span class="u-title">后室编号731 · 平面图</span><span class="u-time">11-05 16:20</span></li>
+                    </ul>
+                </div>
+                <div class="side-card">
+                    <h3>本月条目构成</h3>
+                    <ul class="update-stream" style="list-style:none;">
+                        <li>连载 · 34 部</li>
+                        <li>短篇 · 41 篇</li>
+                        <li>设定解析 · 12 篇</li>
+                        <li>规则怪谈 · 9 篇</li>
+                    </ul>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- ========== 页脚 ========== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="brand-name">海角免费社区内心中的黑暗之神</div>
+                    <p>聚焦暗黑短篇、都市怪谈、心理惊悚与克苏鲁衍生创作，条目覆盖 2026 年 10 月至 11 月上旬，包含连载、短篇、设定解析与规则怪谈四种类型，每日更新条目与讨论区动态。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>内容方向</h4>
+                    <ul>
+                        <li><a href="/#section-featured">阈限空间</a></li>
+                        <li><a href="/#section-featured">民俗恐怖</a></li>
+                        <li><a href="/#section-featured">身体异变</a></li>
+                        <li><a href="/#section-featured">克苏鲁衍生</a></li>
+                        <li><a href="/#section-featured">都市怪谈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>栏目</h4>
+                    <ul>
+                        <li><a href="/#section-deep">深度解析</a></li>
+                        <li><a href="/#section-guide">阅读指南</a></li>
+                        <li><a href="/#section-faq">常见问答</a></li>
+                        <li><a href="/#section-news">相关资讯</a></li>
+                        <li><a href="/#section-timeline">更新轨迹</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>互动</h4>
+                    <ul>
+                        <li><a href="/#section-interact">短篇投稿</a></li>
+                        <li><a href="/#section-interact">设定补全</a></li>
+                        <li><a href="/#section-interact">短篇投票</a></li>
+                        <li><a href="/#section-comments">读者评论</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>内容为示例条目，供类型参考与阅读索引使用。</span>
+                <span>最近更新：2026-11-08</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部 -->
+    <button id="backToTop" aria-label="回到顶部">↑</button>
+
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "海角免费社区内心中的黑暗之神",
+        "description": "汇聚暗黑短篇、都市怪谈、心理惊悚与克苏鲁衍生创作，提供条目索引、类型区分与阅读顺序参考。",
+        "inLanguage": "zh-CN"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "《灰烬回廊》第七夜的门牌倒序是什么意思？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "第七夜更新中，主角发现每层楼的门牌号不再按楼层递增，而是从顶层开始倒序排列。此前六夜的设定里，门牌号与楼层严格对应，倒序意味着空间排序的基准被替换。作者没有直接解释原因，但通过主角在第七层发现一面写满日期的墙，暗示了时间可能被用作新的排序依据。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "民俗恐怖里的阴兵借道有真实记载吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "《阴兵借道考》整理了西南三省地方志中 17 则相关记载，其中 5 则存在明显的时间错位。这些方志条目均标注了卷册和页码，可以按图索骥去查原书。需要区分的是，方志记载属于文献材料，民间口述属于另一层材料，两者的可信度和采集背景不同，阅读时不宜混为一谈。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "身体异变类短篇为什么容易烂尾？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "常见原因是异变设定缺乏后续推进力。如果异变只停留在外观描述，没有配套的生理逻辑、社会反应或规则限制，故事在展示完长出了什么之后就难以为继。《第二套消化系统》的处理方式是让异变器官与原有系统功能重叠，制造持续的矛盾，而不是一次性的视觉冲击。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "规则怪谈的规则需要几条才够？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "数量不是关键，规则之间的咬合关系更重要。站内一篇未完结的规则怪谈只用了五条规则，但第三条和第五条形成了时间显示上的互相矛盾，读者由此产生当前时间可能不可靠的判断。规则之间没有内在关联的，写二十条也只是禁忌清单，不构成叙事。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "《后室编号 731》的平面图里三个出口哪个是真的？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "截至 11 月 5 日的更新，平面图标注了三个出口：东侧消防通道、地下二层货梯、天台通风井。讨论区有读者指出消防通道和货梯的位置与正文中每层楼只能往一个方向走的规则冲突，作者尚未回应。目前无法确认哪个出口在叙事中被视为有效路径。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "短篇合集和设定解析有什么区别？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "短篇合集是独立的叙事作品，每篇有自己的角色和情节，读完即可。设定解析则是对某一类设定或某一则材料的考据与拆解，比如《阴兵借道考》属于设定解析，它不讲述完整故事，而是整理方志条目、对比口述材料、标注出处。两者在阅读目的上不同——前者为体验，后者为查证。"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- 内联脚本 -->
+    <script>
+        (function() {
+            // 汉堡菜单
+            const hamburger = document.getElementById('hamburgerBtn');
+            const nav = document.getElementById('headerNav');
+            if (hamburger && nav) {
+                hamburger.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const isOpen = nav.classList.toggle('open');
+                    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+                // 点击导航项后收起
+                nav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        nav.classList.remove('open');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                    });
+                });
+                // 点击外部关闭
+                document.addEventListener('click', function(e) {
+                    if (!nav.contains(e.target) && e.target !== hamburger) {
+                        nav.classList.remove('open');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                    }
+                });
+                // Esc 关闭
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && nav.classList.contains('open')) {
+                        nav.classList.remove('open');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                        hamburger.focus();
+                    }
+                });
+            }
+
+            // 回到顶部
+            const backBtn = document.getElementById('backToTop');
+            if (backBtn) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > window.innerHeight * 0.8) {
+                        backBtn.classList.add('show');
+                    } else {
+                        backBtn.classList.remove('show');
+                    }
+                });
+                backBtn.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            // 搜索本地可见内容筛选
+            const searchInput = document.getElementById('searchInput');
+            const searchBtn = document.getElementById('searchBtn');
+            const noResult = document.getElementById('noResult');
+            const mainContent = document.querySelector('.main-content');
+
+            function performSearch() {
+                const q = searchInput ? searchInput.value.trim().toLowerCase() : '';
+                if (!mainContent) return;
+                // 清除之前的高亮/隐藏
+                const sections = mainContent.querySelectorAll('section');
+                let totalVisible = 0;
+
+                if (!q) {
+                    sections.forEach(sec => sec.style.display = '');
+                    if (noResult) noResult.classList.remove('show');
+                    return;
+                }
+
+                // 搜索卡片、列表、FAQ等
+                const searchableItems = mainContent.querySelectorAll(
+                    '.card-item, .compact-list li, .news-item, .faq-list details, .category-chip, .tag-cloud a, .timeline li, .comment-card'
+                );
+                // 简单方式：按文字匹配隐藏不匹配的区块内容
+                // 为了简单，我们搜索整个section，如果section内没有匹配文本则隐藏整个section
+                let anyMatch = false;
+
+                sections.forEach(sec => {
+                    const text = sec.textContent.toLowerCase();
+                    if (text.includes(q)) {
+                        sec.style.display = '';
+                        anyMatch = true;
+                        totalVisible++;
+                    } else {
+                        sec.style.display = 'none';
+                    }
+                });
+
+                // 如果没有任何匹配，显示提示
+                if (!anyMatch) {
+                    if (noResult) noResult.classList.add('show');
+                    sections.forEach(sec => sec.style.display = 'none');
+                } else {
+                    if (noResult) noResult.classList.remove('show');
+                }
+            }
+
+            if (searchBtn) {
+                searchBtn.addEventListener('click', performSearch);
+            }
+            if (searchInput) {
+                searchInput.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        performSearch();
+                    }
+                });
+                // 输入清空时恢复
+                searchInput.addEventListener('input', function() {
+                    if (!searchInput.value.trim()) {
+                        const sections = mainContent.querySelectorAll('section');
+                        sections.forEach(sec => sec.style.display = '');
+                        if (noResult) noResult.classList.remove('show');
+                    }
+                });
+            }
+
+            // 左侧导航高亮（简单滚动监听）
+            const channelLinks = document.querySelectorAll('.channel-index a');
+            const sectionIds = ['section-overview','section-featured','section-latest','section-categories','section-deep','section-guide','section-faq','section-comments','section-news','section-timeline','section-interact'];
+            const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+            function highlightNav() {
+                const scrollPos = window.scrollY + 130;
+                let currentId = '';
+                sections.forEach(sec => {
+                    if (sec.offsetTop <= scrollPos) {
+                        currentId = sec.id;
+                    }
+                });
+                channelLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '/#' + currentId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            window.addEventListener('scroll', highlightNav);
+            window.addEventListener('load', highlightNav);
+        })();
+    </script>
+
+</body>
+  </html>
