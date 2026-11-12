@@ -1,0 +1,1476 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>St站御姐女神Hahaha - 御姐风格作品与角色聚合</title>
+  <meta name="description" content="St站御姐女神Hahaha 汇聚御姐女神向作品与角色条目，涵盖成熟气场、冷艳反差、职场御姐等分类，提供新作动态、榜单和消费指南，适合偏好成熟女性魅力的访问者浏览。">
+  <meta name="keywords" content="St站御姐女神Hahaha">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%234b2b3a'/%3E%3Cpath d='M18 40c4-10 10-16 14-16s10 6 14 16' stroke='%23e8b4c4' stroke-width='3' fill='none'/%3E%3Ccircle cx='24' cy='28' r='2.5' fill='%23e8b4c4'/%3E%3Ccircle cx='40' cy='28' r='2.5' fill='%23e8b4c4'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --brand: #4b2b3a;
+      --brand-light: #7a4a5e;
+      --brand-dark: #2e1a24;
+      --accent: #c86b8a;
+      --accent-soft: #f3dfe6;
+      --bg: #faf7f8;
+      --panel: #ffffff;
+      --text: #2b2228;
+      --text-2: #6e5f67;
+      --text-3: #9a8b93;
+      --line: #eadfe4;
+      --radius-card: 12px;
+      --radius-btn: 8px;
+      --radius-tag: 20px;
+      --radius-banner: 16px;
+      --shadow: 0 2px 12px rgba(75,43,58,.06);
+      --shadow-hover: 0 6px 20px rgba(75,43,58,.12);
+      --sticky-h: 92px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top: var(--sticky-h); }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display:block; max-width:100%; }
+    button { font-family: inherit; cursor:pointer; }
+    ul { list-style:none; }
+
+    /* 吸顶公告+页头 */
+    .sticky-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(250,247,248,.92);
+    }
+    .announce {
+      background: var(--brand);
+      color: #f3dfe6;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 8px 24px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .announce .brand-tag {
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+      letter-spacing: .5px;
+    }
+    .announce .ann-item { display:inline-flex; gap:6px; align-items:center; }
+    .announce .ann-item b { color: #fff; font-weight:600; }
+    .announce .dot { color: var(--accent); }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 12px 24px;
+      border-bottom: 1px solid var(--line);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .logo svg { width: 36px; height: 36px; }
+    .logo .brand-text {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--brand-dark);
+      letter-spacing: .5px;
+    }
+    .main-nav {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .main-nav a {
+      font-size: 14px;
+      padding: 6px 12px;
+      border-radius: var(--radius-btn);
+      color: var(--text-2);
+      transition: .2s;
+      white-space: nowrap;
+    }
+    .main-nav a:hover, .main-nav a:focus-visible {
+      background: var(--accent-soft);
+      color: var(--brand);
+      outline: none;
+    }
+    .header-actions {
+      margin-left: auto;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .btn {
+      border: none;
+      border-radius: var(--radius-btn);
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: .2s;
+    }
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+    }
+    .btn-primary:hover { background: var(--brand-light); }
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--text-2);
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--brand); }
+    .hamburger {
+      display: none;
+      background: none;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-btn);
+      padding: 6px 10px;
+      font-size: 20px;
+      line-height: 1;
+      color: var(--brand);
+    }
+
+    /* 首屏 */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 52px 24px 44px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(200,107,138,.18), transparent 40%),
+        radial-gradient(circle at 10% 80%, rgba(75,43,58,.12), transparent 45%),
+        linear-gradient(135deg, #fdf7f9 0%, #f6eef1 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+    .hero-text { flex: 1 1 560px; min-width: 0; }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--brand);
+      background: rgba(255,255,255,.7);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-tag);
+      padding: 4px 14px;
+      margin-bottom: 18px;
+    }
+    .hero-eyebrow .pulse {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2.2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.35;} }
+    .hero h1 {
+      font-size: clamp(30px, 4.4vw, 48px);
+      line-height: 1.2;
+      color: var(--brand-dark);
+      font-weight: 800;
+      letter-spacing: -.5px;
+      margin-bottom: 16px;
+    }
+    .hero-desc {
+      font-size: 16px;
+      color: var(--text-2);
+      max-width: 600px;
+      margin-bottom: 24px;
+    }
+    .hero-desc b { color: var(--brand); }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-actions .btn { padding: 10px 22px; font-size: 14px; }
+    .hero-visual {
+      flex: 0 0 340px;
+      position: relative;
+      height: 260px;
+    }
+    .hero-visual .card-pop {
+      position: absolute;
+      width: 190px;
+      border-radius: var(--radius-card);
+      background: #fff;
+      box-shadow: var(--shadow-hover);
+      padding: 10px;
+      border: 1px solid var(--line);
+      transition: transform .25s;
+    }
+    .hero-visual .card-pop:nth-child(1) { top: 10px; left: 0; transform: rotate(-6deg); z-index: 2; }
+    .hero-visual .card-pop:nth-child(2) { top: 50px; right: 0; transform: rotate(5deg); z-index: 3; }
+    .hero-visual .card-pop:nth-child(3) { bottom: 0; left: 40px; transform: rotate(-2deg); z-index: 4; }
+    .hero-visual .card-pop img { width: 100%; height: 110px; object-fit: cover; border-radius: 8px; }
+    .hero-visual .card-pop .cp-name { font-size: 12px; font-weight: 700; color: var(--brand-dark); margin-top: 8px; }
+    .hero-visual .card-pop .cp-tag { font-size: 11px; color: var(--text-3); }
+
+    /* 三栏门户 */
+    .layout {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 36px 24px 60px;
+      display: grid;
+      grid-template-columns: 176px minmax(0,1fr) 248px;
+      gap: 32px;
+      align-items: start;
+    }
+    .channel-nav {
+      position: sticky;
+      top: calc(var(--sticky-h) + 16px);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      padding: 16px 0;
+      box-shadow: var(--shadow);
+    }
+    .channel-nav h2 {
+      font-size: 13px;
+      color: var(--text-3);
+      padding: 0 16px 10px;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+    .channel-nav a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 16px;
+      font-size: 14px;
+      color: var(--text-2);
+      transition: .2s;
+      border-left: 3px solid transparent;
+    }
+    .channel-nav a:hover, .channel-nav a:focus-visible {
+      background: var(--accent-soft);
+      color: var(--brand);
+      border-left-color: var(--accent);
+      outline: none;
+    }
+    .channel-nav a .cnt {
+      font-size: 11px;
+      color: var(--text-3);
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 1px 7px;
+    }
+    .main-col { min-width: 0; }
+    .side-col { display: flex; flex-direction: column; gap: 24px; }
+
+    /* 通用板块 */
+    .section { margin-bottom: 44px; }
+    .section:last-child { margin-bottom: 0; }
+    .sec-head {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .sec-head h2 {
+      font-size: 21px;
+      color: var(--brand-dark);
+      font-weight: 800;
+      letter-spacing: -.3px;
+    }
+    .sec-head .sub {
+      font-size: 13px;
+      color: var(--text-3);
+    }
+    .sec-head .more {
+      margin-left: auto;
+      font-size: 13px;
+      color: var(--brand-light);
+      font-weight: 600;
+    }
+    .sec-head .more:hover { color: var(--accent); }
+
+    /* 概览 */
+    .overview {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      padding: 24px 26px;
+      box-shadow: var(--shadow);
+      font-size: 15px;
+      color: var(--text-2);
+    }
+    .overview p { margin-bottom: 12px; }
+    .overview p:last-child { margin-bottom: 0; }
+    .overview strong { color: var(--brand); }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform .2s, box-shadow .2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .card .thumb { position: relative; }
+    .card .thumb img { width: 100%; height: 150px; object-fit: cover; }
+    .card .thumb .badge {
+      position: absolute;
+      top: 8px; left: 8px;
+      background: rgba(75,43,58,.85);
+      color: #fff;
+      font-size: 11px;
+      padding: 2px 9px;
+      border-radius: var(--radius-tag);
+    }
+    .card .thumb .heat {
+      position: absolute;
+      bottom: 8px; right: 8px;
+      background: rgba(0,0,0,.6);
+      color: #fff;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: var(--radius-tag);
+    }
+    .card .body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+    .card .body h3 { font-size: 15px; color: var(--brand-dark); font-weight: 700; line-height: 1.4; }
+    .card .body .look {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.55;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card .body .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+    .tag {
+      font-size: 11px;
+      background: var(--accent-soft);
+      color: var(--brand-light);
+      border-radius: var(--radius-tag);
+      padding: 1px 9px;
+    }
+    .card .meta { font-size: 12px; color: var(--text-3); display: flex; gap: 10px; }
+
+    /* 紧凑列表 */
+    .list-block {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .list-item {
+      display: flex;
+      gap: 14px;
+      padding: 13px 18px;
+      border-bottom: 1px solid var(--line);
+      transition: background .2s;
+      align-items: baseline;
+    }
+    .list-item:last-child { border-bottom: none; }
+    .list-item:hover { background: #fdf9fa; }
+    .list-item .idx {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      width: 22px;
+      flex-shrink: 0;
+    }
+    .list-item .li-main { flex: 1; min-width: 0; }
+    .list-item .li-main .li-title { font-size: 14px; font-weight: 700; color: var(--brand-dark); }
+    .list-item .li-main .li-desc { font-size: 13px; color: var(--text-2); margin-top: 2px; }
+    .list-item .li-date { font-size: 12px; color: var(--text-3); flex-shrink: 0; }
+
+    /* 分类入口 */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+    }
+    .cat-entry {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-btn);
+      padding: 12px 14px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--brand-dark);
+      transition: .2s;
+    }
+    .cat-entry:hover, .cat-entry:focus-visible {
+      border-color: var(--accent);
+      background: #fff;
+      box-shadow: var(--shadow);
+      outline: none;
+    }
+    .cat-entry .ico {
+      width: 30px; height: 30px;
+      border-radius: 8px;
+      background: var(--accent-soft);
+      color: var(--brand);
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .cat-entry small { display:block; font-size:11px; color: var(--text-3); font-weight:400; }
+
+    /* 深度解析 */
+    .deep {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      padding: 28px 30px;
+      box-shadow: var(--shadow);
+    }
+    .deep h2 { font-size: 22px; color: var(--brand-dark); margin-bottom: 16px; font-weight: 800; }
+    .deep h3 { font-size: 17px; color: var(--brand); margin: 22px 0 10px; font-weight: 700; }
+    .deep p { margin-bottom: 12px; color: var(--text-2); }
+    .deep ul { margin: 0 0 14px 18px; color: var(--text-2); }
+    .deep li { margin-bottom: 6px; }
+    .deep .callout {
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      padding: 12px 16px;
+      border-radius: 0 var(--radius-btn) var(--radius-btn) 0;
+      font-size: 14px;
+      color: var(--brand-dark);
+      margin: 16px 0;
+    }
+    .compare {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 13px;
+    }
+    .compare th, .compare td {
+      border: 1px solid var(--line);
+      padding: 8px 12px;
+      text-align: left;
+    }
+    .compare th { background: #fbf5f7; color: var(--brand); font-weight: 700; }
+    .compare td { color: var(--text-2); }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    details.faq {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-btn);
+      padding: 0 18px;
+      box-shadow: var(--shadow);
+    }
+    details.faq summary {
+      cursor: pointer;
+      padding: 14px 0;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--brand-dark);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    details.faq summary::-webkit-details-marker { display: none; }
+    details.faq summary::after {
+      content: "+";
+      color: var(--accent);
+      font-size: 18px;
+      font-weight: 400;
+      flex-shrink: 0;
+    }
+    details.faq[open] summary::after { content: "−"; }
+    details.faq .faq-a {
+      padding: 0 0 16px;
+      font-size: 14px;
+      color: var(--text-2);
+      border-top: 1px dashed var(--line);
+      padding-top: 12px;
+    }
+
+    /* 评论 */
+    .comments {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 14px;
+    }
+    .comment {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      padding: 14px 16px;
+      box-shadow: var(--shadow);
+      font-size: 13.5px;
+      color: var(--text-2);
+    }
+    .comment .c-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+    .comment .avatar {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--accent-soft); color: var(--brand);
+      display: grid; place-items: center; font-size: 12px; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .comment .nick { font-weight: 700; font-size: 13px; color: var(--brand-dark); }
+    .comment .c-time { font-size: 11px; color: var(--text-3); margin-left: auto; }
+
+    /* 资讯 */
+    .news-list { display: flex; flex-direction: column; gap: 0; }
+    .news-item {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: flex-start;
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-item .n-date {
+      flex-shrink: 0;
+      font-size: 12px;
+      color: var(--text-3);
+      width: 82px;
+      padding-top: 3px;
+    }
+    .news-item .n-main { flex: 1; }
+    .news-item .n-title { font-size: 15px; font-weight: 700; color: var(--brand-dark); }
+    .news-item .n-desc { font-size: 13px; color: var(--text-2); margin-top: 3px; }
+
+    /* 标签索引 */
+    .tag-index { display: flex; flex-wrap: wrap; gap: 9px; }
+    .tag-index a {
+      font-size: 13px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-tag);
+      padding: 5px 15px;
+      color: var(--text-2);
+      transition: .2s;
+    }
+    .tag-index a:hover, .tag-index a:focus-visible {
+      background: var(--brand);
+      color: #fff;
+      border-color: var(--brand);
+      outline: none;
+    }
+
+    /* 榜单 */
+    .rank-block {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      padding: 6px 0;
+    }
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 9px 18px;
+    }
+    .rank-item .rk {
+      width: 22px; height: 22px;
+      border-radius: 6px;
+      background: var(--bg);
+      color: var(--text-3);
+      font-size: 12px;
+      font-weight: 700;
+      display: grid; place-items: center;
+      flex-shrink: 0;
+    }
+    .rank-item:nth-child(1) .rk { background: var(--brand); color: #fff; }
+    .rank-item:nth-child(2) .rk { background: var(--brand-light); color: #fff; }
+    .rank-item:nth-child(3) .rk { background: var(--accent); color: #fff; }
+    .rank-item .rn { font-size: 13.5px; font-weight: 600; color: var(--brand-dark); flex: 1; }
+    .rank-item .rv { font-size: 12px; color: var(--text-3); }
+
+    /* 侧栏通用面板 */
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      padding: 16px 18px;
+      box-shadow: var(--shadow);
+    }
+    .panel h2 {
+      font-size: 15px;
+      color: var(--brand-dark);
+      font-weight: 800;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    .side-list { display: flex; flex-direction: column; gap: 10px; }
+    .side-list .sl-item { font-size: 13px; color: var(--text-2); display: flex; gap: 8px; }
+    .side-list .sl-item .sl-dot { color: var(--accent); flex-shrink: 0; }
+    .side-list .sl-item b { color: var(--brand-dark); font-weight: 600; }
+
+    /* 投稿互动 */
+    .submit-box {
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-light) 100%);
+      border-radius: var(--radius-card);
+      padding: 24px 26px;
+      color: #f6e6ec;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .submit-box .sb-text { flex: 1 1 300px; }
+    .submit-box h2 { font-size: 19px; color: #fff; margin-bottom: 6px; }
+    .submit-box p { font-size: 13.5px; color: #f0dae2; }
+    .submit-box .btn {
+      background: #fff;
+      color: var(--brand);
+      font-weight: 700;
+      padding: 10px 22px;
+    }
+    .submit-box .btn:hover { background: var(--accent-soft); }
+
+    /* 页尾 */
+    footer {
+      background: var(--brand-dark);
+      color: #d9c6d0;
+      padding: 44px 24px 28px;
+      margin-top: 20px;
+    }
+    .footer-inner { max-width: 1280px; margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.6fr repeat(3, 1fr);
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .footer-brand .f-logo {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 12px;
+    }
+    .footer-brand .f-logo svg { width: 32px; height: 32px; }
+    .footer-brand .f-logo span { font-size: 18px; font-weight: 800; color: #fff; }
+    .footer-brand p { font-size: 13px; line-height: 1.7; color: #c2a9b6; max-width: 340px; }
+    .footer-col h3 { font-size: 14px; color: #fff; margin-bottom: 12px; font-weight: 700; }
+    .footer-col a { display: block; font-size: 13px; color: #c2a9b6; padding: 3px 0; transition: .2s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 18px;
+      font-size: 12px;
+      color: #a38a98;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* 回到顶部 */
+    .back-top {
+      position: fixed;
+      right: 22px;
+      bottom: 26px;
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      border: none;
+      background: var(--brand);
+      color: #fff;
+      font-size: 18px;
+      box-shadow: var(--shadow-hover);
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s;
+      z-index: 90;
+    }
+    .back-top.show { opacity: 1; pointer-events: auto; }
+    .back-top:hover { background: var(--brand-light); }
+
+    /* 移动端遮罩 */
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(30,20,26,.45);
+      z-index: 95;
+    }
+    .overlay.show { display: block; }
+
+    @media (max-width: 1024px) {
+      .layout {
+        grid-template-columns: 200px minmax(0,1fr);
+      }
+      .side-col { display: none; }
+      .hero-visual { display: none; }
+      .hero-inner { max-width: 760px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 740px) {
+      :root { --sticky-h: 118px; }
+      .announce { font-size: 12px; gap: 12px; padding: 7px 16px; }
+      .announce .ann-item:nth-child(3) { display: none; }
+      .header { padding: 10px 16px; gap: 12px; }
+      .hamburger { display: block; }
+      .main-nav {
+        position: fixed;
+        top: var(--sticky-h);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--bg);
+        flex-direction: column;
+        padding: 16px;
+        gap: 2px;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform .25s;
+        z-index: 96;
+        display: flex;
+      }
+      .main-nav.open { transform: translateX(0); }
+      .main-nav a { padding: 12px 16px; font-size: 15px; border-radius: var(--radius-btn); }
+      .header-actions .btn-ghost { display: none; }
+      .layout { grid-template-columns: 1fr; padding: 20px 16px 48px; gap: 24px; }
+      .channel-nav {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 12px;
+        margin-bottom: 0;
+      }
+      .channel-nav h2 { width: 100%; padding: 0 0 6px; }
+      .channel-nav a {
+        border: 1px solid var(--line);
+        border-left: 1px solid var(--line);
+        border-radius: var(--radius-tag);
+        padding: 5px 12px;
+        font-size: 13px;
+      }
+      .channel-nav a:hover { border-left-color: var(--line); }
+      .channel-nav a .cnt { display: none; }
+      .hero { padding: 32px 16px 28px; }
+      .hero h1 { font-size: 28px; }
+      .deep { padding: 20px 18px; }
+      .card-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+      .card .thumb img { height: 120px; }
+      .comments { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 24px; }
+      .submit-box { flex-direction: column; align-items: flex-start; }
+      .back-top { right: 14px; bottom: 16px; }
+      .news-item { flex-direction: column; gap: 4px; }
+      .news-item .n-date { width: auto; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-wrap">
+  <!-- 吸顶公告条 -->
+  <div class="announce" role="region" aria-label="更新公告">
+    <span class="brand-tag">St站御姐女神Hahaha</span>
+    <span class="ann-item"><b>11月7日</b> 新增「冷艳高管」角色合集</span>
+    <span class="dot">·</span>
+    <span class="ann-item"><b>本周</b> 御姐气场榜更新 32 条</span>
+    <span class="dot">·</span>
+    <span class="ann-item"><b>11月6日</b> 投稿通道开放「职场御姐」专题</span>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="header">
+    <a class="logo" href="#top" aria-label="St站御姐女神Hahaha 首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="32" r="30" fill="#4b2b3a"/>
+        <path d="M18 40c4-10 10-16 14-16s10 6 14 16" stroke="#e8b4c4" stroke-width="3" fill="none"/>
+        <circle cx="24" cy="28" r="2.5" fill="#e8b4c4"/>
+        <circle cx="40" cy="28" r="2.5" fill="#e8b4c4"/>
+        <path d="M44 14l3 6 6 .8-4.5 4.2 1 6-5.5-3-5.5 3 1-6L35 20.8l6-.8z" fill="#c86b8a" opacity=".85"/>
+      </svg>
+      <span class="brand-text">St站御姐女神Hahaha</span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="主导航">
+      <a href="#overview">领域概览</a>
+      <a href="#featured">精选推荐</a>
+      <a href="#updates">最新动态</a>
+      <a href="#categories">分类入口</a>
+      <a href="#deep">深度解析</a>
+      <a href="#guide">体验指南</a>
+      <a href="#faq">常见问答</a>
+      <a href="#comments">用户评论</a>
+      <a href="#news">相关资讯</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn btn-ghost" type="button">登录</button>
+      <button class="btn btn-primary" type="button">投稿作品</button>
+      <button class="hamburger" id="hamburger" aria-label="打开菜单" aria-expanded="false" aria-controls="mainNav">☰</button>
+    </div>
+  </header>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="hero-eyebrow"><span class="pulse"></span>2026 御姐专题 · 持续收录</span>
+      <h1>St站御姐女神Hahaha</h1>
+      <p class="hero-desc">汇聚<b>成熟气场御姐</b>、<b>冷艳反差型</b>、<b>职场高管系</b>与<b>御姐声线</b>等方向的作品条目，覆盖角色档案、名场面片段、配音选段和创作者访谈，适合偏好成熟女性魅力的观众按类型检索。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#featured">浏览精选条目</a>
+        <a class="btn btn-ghost" href="#categories">按分类查找</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="card-pop">
+        <img src="https://picsum.photos/seed/yujie01/400/300" alt="冷艳高管角色封面" width="400" height="300" loading="lazy">
+        <div class="cp-name">冷艳高管·沈岚</div>
+        <div class="cp-tag">职场御姐 · 气场 9.2</div>
+      </div>
+      <div class="card-pop">
+        <img src="https://picsum.photos/seed/yujie02/400/300" alt="御姐声线配音选段封面" width="400" height="300" loading="lazy">
+        <div class="cp-name">御姐声线·夜澜</div>
+        <div class="cp-tag">低音声线 · 播放 12.6w</div>
+      </div>
+      <div class="card-pop">
+        <img src="https://picsum.photos/seed/yujie03/400/300" alt="成熟气场角色群像封面" width="400" height="300" loading="lazy">
+        <div class="cp-name">成熟气场群像</div>
+        <div class="cp-tag">御姐合集 · 32 条目</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 三栏门户 -->
+<div class="layout">
+
+  <!-- 左频道索引 -->
+  <aside class="channel-nav" aria-label="频道索引">
+    <h2>频道索引</h2>
+    <a href="#featured">冷艳御姐 <span class="cnt">18</span></a>
+    <a href="#featured">职场高管 <span class="cnt">24</span></a>
+    <a href="#featured">御姐声线 <span class="cnt">15</span></a>
+    <a href="#featured">成熟气场 <span class="cnt">21</span></a>
+    <a href="#featured">反差萌御姐 <span class="cnt">12</span></a>
+    <a href="#featured">御姐名场面 <span class="cnt">36</span></a>
+    <a href="#featured">角色档案 <span class="cnt">29</span></a>
+    <a href="#featured">创作者访谈 <span class="cnt">8</span></a>
+    <a href="#deep">深度解析 <span class="cnt">3</span></a>
+    <a href="#guide">体验指南 <span class="cnt">1</span></a>
+  </aside>
+
+  <!-- 中主内容 -->
+  <main class="main-col" id="mainContent">
+
+    <!-- 1 领域概览 -->
+    <section class="section" id="overview">
+      <div class="sec-head">
+        <h2>御姐女神领域概览</h2>
+        <span class="sub">类型方向与当前看点</span>
+      </div>
+      <div class="overview">
+        <p>御姐类内容在 2026 年的细分已经相当清楚。按角色气质分，有<strong>冷艳高管型</strong>、<strong>成熟气场型</strong>、<strong>反差萌御姐型</strong>和<strong>温柔御姐型</strong>四类；按内容形态分，则包括角色档案、互动片段、配音选段、动态漫画和创作者访谈。St站上的御姐标签下，职场高管系条目在 10 月新增了 24 条，冷艳型 18 条，御姐声线相关音频作品播放量普遍高于其他类别。</p>
+        <p>值得关注的具体方向：一是<strong>「沈岚」系列</strong>的职场高管角色，11 月 5 日刚更新第三集，单集播放 4.7 万；二是<strong>夜澜的低音声线选段</strong>，在声控圈被反复引用，播放量累计 12.6 万；三是<strong>「御姐气场榜」</strong>每周更新，最新一期前五名与上周相比换了两席。反差萌御姐在 10 月中旬后热度上升，主要来自「表面冷酷、私下黏人」这一设定在短片段中的高频使用。</p>
+        <p>从消费时长看，御姐向内容的单条平均观看时长集中在 3—8 分钟，长于一般角色向内容，原因在于角色台词密度高、语气节奏慢。创作者在 11 月初的访谈里提到，御姐角色的关键不在外形，而在「开口第一句的压迫感」。</p>
+      </div>
+    </section>
+
+    <!-- 2 精选内容推荐 -->
+    <section class="section" id="featured">
+      <div class="sec-head">
+        <h2>精选御姐角色与作品</h2>
+        <span class="sub">按气场与类型筛选</span>
+        <a class="more" href="#categories">全部分类 →</a>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/shenlan/400/300" alt="冷艳高管沈岚角色封面" width="400" height="300" loading="lazy">
+            <span class="badge">冷艳高管</span>
+            <span class="heat">播放 4.7w</span>
+          </div>
+          <div class="body">
+            <h3>沈岚 · 第三集「会议室对峙」</h3>
+            <p class="look">第三集把冲突放在季度汇报现场，沈岚用三段递进式反问压住全场。台词密度比前两集高约 40%，适合看气场戏而不是看剧情推进。</p>
+            <div class="tags"><span class="tag">职场御姐</span><span class="tag">气场戏</span><span class="tag">11月5日更新</span></div>
+            <div class="meta"><span>气场 9.2</span><span>时长 7:42</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/yelan/400/300" alt="夜澜低音声线选段封面" width="400" height="300" loading="lazy">
+            <span class="badge">御姐声线</span>
+            <span class="heat">播放 12.6w</span>
+          </div>
+          <div class="body">
+            <h3>夜澜 · 低音台词选段「别急」</h3>
+            <p class="look">全长 2 分 18 秒，只保留一句完整台词，其余是呼吸与停顿。声控区把它当作低音参考样本，评论区有 37 条在逐句拆音高。</p>
+            <div class="tags"><span class="tag">低音声线</span><span class="tag">声控</span><span class="tag">台词选段</span></div>
+            <div class="meta"><span>声线 9.5</span><span>时长 2:18</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/fanchameng/400/300" alt="反差萌御姐苏晚角色封面" width="400" height="300" loading="lazy">
+            <span class="badge">反差萌</span>
+            <span class="heat">播放 3.1w</span>
+          </div>
+          <div class="body">
+            <h3>苏晚 · 表面冷酷与私下黏人</h3>
+            <p class="look">前 40 秒是标准冷脸训话，镜头切到下班后立刻变软。反差段落只有 55 秒，却贡献了该系列 68% 的二创素材。</p>
+            <div class="tags"><span class="tag">反差萌</span><span class="tag">二创热门</span><span class="tag">短片段</span></div>
+            <div class="meta"><span>反差 8.8</span><span>时长 1:35</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/qichang/400/300" alt="成熟气场角色群像封面" width="400" height="300" loading="lazy">
+            <span class="badge">成熟气场</span>
+            <span class="heat">合集 32 条</span>
+          </div>
+          <div class="body">
+            <h3>成熟气场御姐合集 · 10月增补版</h3>
+            <p class="look">32 条按气场强度排序，前 8 条标注了具体时间节点。合集页附一条 11 月 3 日的分档说明，解释了为什么「冷艳」与「气场」被拆开计算。</p>
+            <div class="tags"><span class="tag">合集</span><span class="tag">气场榜</span><span class="tag">分档说明</span></div>
+            <div class="meta"><span>收录 32</span><span>更新 11月3日</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/mingchang/400/300" alt="御姐名场面电梯对峙封面" width="400" height="300" loading="lazy">
+            <span class="badge">名场面</span>
+            <span class="heat">播放 6.3w</span>
+          </div>
+          <div class="body">
+            <h3>电梯对峙 · 御姐名场面第 12 位</h3>
+            <p class="look">18 秒内只有两句台词，靠眼神和关门动作完成压制。名场面榜把它排在第 12 位，理由是「没有配乐反而更冷」。</p>
+            <div class="tags"><span class="tag">名场面</span><span class="tag">电梯戏</span><span class="tag">无配乐</span></div>
+            <div class="meta"><span>名场 8.9</span><span>时长 0:18</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/jiangli/400/300" alt="御姐角色 Jiang Li 档案封面" width="400" height="300" loading="lazy">
+            <span class="badge">角色档案</span>
+            <span class="heat">收藏 2.4k</span>
+          </div>
+          <div class="body">
+            <h3>江璃 · 角色档案与台词习惯</h3>
+            <p class="look">档案整理了她 14 句高频台词，标注出「句尾降调」这一习惯。第 9 句在 10 月 28 日被单独截出传播，播放量是其他句子的 3 倍。</p>
+            <div class="tags"><span class="tag">角色档案</span><span class="tag">台词习惯</span><span class="tag">降调</span></div>
+            <div class="meta"><span>档案 9.0</span><span>14 句台词</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3 最新更新 -->
+    <section class="section" id="updates">
+      <div class="sec-head">
+        <h2>最新更新与热播动态</h2>
+        <span class="sub">11月1日—11月8日</span>
+      </div>
+      <div class="list-block">
+        <div class="list-item">
+          <span class="idx">01</span>
+          <div class="li-main"><div class="li-title">沈岚 · 第三集「会议室对峙」</div><div class="li-desc">11月5日上线，单集 7 分 42 秒，开场 90 秒无配乐，评论区集中讨论第二段反问的语气。</div></div>
+          <span class="li-date">11-05</span>
+        </div>
+        <div class="list-item">
+          <span class="idx">02</span>
+          <div class="li-main"><div class="li-title">夜澜低音选段被收录进声控合集</div><div class="li-desc">11月4日，声控区「低音样本 Vol.6」收录夜澜「别急」选段，是 6 条中唯一非专业配音出身的一条。</div></div>
+          <span class="li-date">11-04</span>
+        </div>
+        <div class="list-item">
+          <span class="idx">03</span>
+          <div class="li-main"><div class="li-title">苏晚反差片段二创量突破 4000</div><div class="li-desc">截至11月6日，该片段衍生二创 4012 条，其中 63% 使用原声，37% 重新配音。</div></div>
+          <span class="li-date">11-06</span>
+        </div>
+        <div class="list-item">
+          <span class="idx">04</span>
+          <div class="li-main"><div class="li-title">御姐气场榜第 45 期发布</div><div class="li-desc">11月7日更新，前五名换两席：沈岚升至第 2，江璃从第 6 进入第 4，原第 3 跌至第 7。</div></div>
+          <span class="li-date">11-07</span>
+        </div>
+        <div class="list-item">
+          <span class="idx">05</span>
+          <div class="li-main"><div class="li-title">「职场御姐」专题投稿通道开放</div><div class="li-desc">11月6日开放，首批收到 17 份投稿，其中 5 份涉及高管角色，2 份为声线作品。</div></div>
+          <span class="li-date">11-06</span>
+        </div>
+        <div class="list-item">
+          <span class="idx">06</span>
+          <div class="li-main"><div class="li-title">江璃第 9 句台词二次传播</div><div class="li-desc">10月28日被截出后，11月2日达到峰值，单条转发 1.2 万，原片段播放量随之上涨 34%。</div></div>
+          <span class="li-date">10-28</span>
+        </div>
+        <div class="list-item">
+          <span class="idx">07</span>
+          <div class="li-main"><div class="li-title">成熟气场合集增补 6 条</div><div class="li-desc">11月3日合集从 26 条增至 32 条，新增条目全部标注了具体时间节点，最短一条 0:22。</div></div>
+          <span class="li-date">11-03</span>
+        </div>
+        <div class="list-item">
+          <span class="idx">08</span>
+          <div class="li-main"><div class="li-title">创作者「阿雾」发布御姐声线拆解</div><div class="li-desc">11月1日发布 11 分钟拆解视频，用波形图对比三位御姐声线的句尾处理差异。</div></div>
+          <span class="li-date">11-01</span>
+        </div>
+        <div class="list-item">
+          <span class="idx">09</span>
+          <div class="li-main"><div class="li-title">名场面榜新增电梯对峙条目</div><div class="li-desc">10月30日更新，电梯对峙空降第 12 位，评审理由标注为「18 秒内完成两次权力反转」。</div></div>
+          <span class="li-date">10-30</span>
+        </div>
+        <div class="list-item">
+          <span class="idx">10</span>
+          <div class="li-main"><div class="li-title">冷艳型角色条目单周增加 18 条</div><div class="li-desc">10月27日至11月3日，冷艳高管标签下新增 18 条，其中 11 条为角色档案，7 条为互动片段。</div></div>
+          <span class="li-date">11-03</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 分类入口 -->
+    <section class="section" id="categories">
+      <div class="sec-head">
+        <h2>御姐类别入口</h2>
+        <span class="sub">按角色气质与内容形态划分</span>
+      </div>
+      <div class="cat-grid">
+        <a class="cat-entry" href="#featured"><span class="ico">❄</span><span>冷艳高管<small>18 条 · 气场压制向</small></span></a>
+        <a class="cat-entry" href="#featured"><span class="ico">▣</span><span>职场御姐<small>24 条 · 办公室场景</small></span></a>
+        <a class="cat-entry" href="#featured"><span class="ico">♫</span><span>御姐声线<small>15 条 · 低音与台词</small></span></a>
+        <a class="cat-entry" href="#featured"><span class="ico">◆</span><span>成熟气场<small>21 条 · 综合型</small></span></a>
+        <a class="cat-entry" href="#featured"><span class="ico">↺</span><span>反差萌御姐<small>12 条 · 冷热切换</small></span></a>
+        <a class="cat-entry" href="#featured"><span class="ico">☆</span><span>御姐名场面<small>36 条 · 短片段</small></span></a>
+        <a class="cat-entry" href="#featured"><span class="ico">▤</span><span>角色档案<small>29 条 · 台词与设定</small></span></a>
+        <a class="cat-entry" href="#featured"><span class="ico">✎</span><span>创作者访谈<small>8 条 · 幕后拆解</small></span></a>
+      </div>
+    </section>
+
+    <!-- 5 深度解析 -->
+    <section class="section deep" id="deep">
+      <h2>深度解析：御姐角色的气场从哪里来</h2>
+      <p>御姐类内容看多了会发现一个规律：同一个演员、同一套造型，换一句台词的写法，气场可能差出一整个档位。2026 年 10 月到 11 月初，St站上气场榜前二十的条目里，有 14 条的关键差异落在台词结构上，而不是画面制作。这个判断可以拆开核对。</p>
+
+      <h3>台词密度与停顿位置</h3>
+      <p>以沈岚第三集为例。7 分 42 秒里，完整台词只有 23 句，平均每 20 秒一句，比同标签下其他条目低 35%。但停顿被刻意拉长：第二段反问之前有 2.3 秒空白，第三段之前有 3.1 秒。气场感来自「说完不急着接」，而不是「说得快、说得多」。</p>
+      <p>对照苏晚的反差片段，前 40 秒台词密度是沈岚的 1.8 倍，压迫感反而弱一截。评论区有人逐句计时，发现苏晚每句话之间的间隔不足 0.8 秒。台词密，节奏就碎，御姐的「稳」就出不来。</p>
+      <div class="callout">可核对的结构：气场强度 ≈ 句间停顿时长 × 句尾降调比例 ÷ 台词密度。这三个量都能从视频里数出来，不是主观感受。</div>
+
+      <h3>句尾降调与声线选择</h3>
+      <p>夜澜「别急」选段全长 2 分 18 秒，只保留一句完整台词。播放量 12.6 万，是同期御姐声线条目的 2.7 倍。拆开看，这句台词句尾降了 4 个半音，而普通对话里降调通常只有 1—2 个半音。声控区 11 月 4 日的合集把这条列为「低音样本」，但合集说明里写得很清楚：它被收录的原因是降调幅度，不是音域低。</p>
+      <p>江璃的档案提供了反向证据。14 句高频台词里，有 11 句句尾降调，另外 3 句平收。11 月 2 日传播最广的第 9 句恰好是平收的那三句之一，评论区有 12 条说「这句听起来不够御姐」。传播量和气场评价在这里并不一致。</p>
+
+      <h3>角色设定与二创素材的错位</h3>
+      <p>苏晚系列的二创数据值得单独看。原片段 1 分 35 秒，衍生二创 4012 条，其中 63% 使用原声。但二创集中在前 40 秒的冷脸训话，后 55 秒的反差段落只占素材使用的 21%。</p>
+      <table class="compare">
+        <thead><tr><th>段落</th><th>原片时长</th><th>二创使用占比</th><th>常见用法</th></tr></thead>
+        <tbody>
+          <tr><td>冷脸训话</td><td>0:00—0:40</td><td>63%</td><td>配文字卡点、气场混剪</td></tr>
+          <tr><td>反差段落</td><td>0:40—1:35</td><td>21%</td><td>对比向短片段</td></tr>
+          <tr><td>其他</td><td>—</td><td>16%</td><td>音轨单独使用</td></tr>
+        </tbody>
+      </table>
+      <p>二创偏好冷脸段落，说明观众对御姐的期待仍以「压迫感」为主轴。反差萌的传播力被高估了——至少在这个系列里，反差段落是被看的多、被用的少。</p>
+
+      <h3>气场榜的评审口径变化</h3>
+      <p>御姐气场榜第 45 期（11 月 7 日）换了评审口径。前 44 期把「冷艳」和「气场」合并打分，第 45 期起拆成两项，各占 50%。直接结果是沈岚从第 4 升到第 2，原第 3 的「温柔御姐」类条目跌到第 7。榜单说明里给出的理由是「冷艳不等于气场，二者拆分后才能区分冷脸和压场」。</p>
+      <p>这个口径变化影响可量化：拆分后前五名里冷艳型占 3 席，合并时只占 1 席。榜单第 45 期发布于 11 月 7 日，比原定更新日提前一天，评论区有 9 条在问是不是为了赶上周末流量。榜单方没有回应这个说法，只更新了口径说明。</p>
+    </section>
+
+    <!-- 6 体验指南 -->
+    <section class="section" id="guide">
+      <div class="sec-head">
+        <h2>御姐内容消费路径</h2>
+        <span class="sub">先看什么、怎么判断值不值得投入</span>
+      </div>
+      <div class="overview">
+        <p><strong>第一步，先定类型再看条目。</strong>想看压场感，直接进「冷艳高管」和「职场御姐」；想找轻松一点的反差，去「反差萌御姐」。两类混着刷容易失望——反差萌的高光段落通常只有几十秒，按气场戏的期待去看会觉得不够。</p>
+        <p><strong>第二步，看时长与台词量。</strong>御姐向条目里，3 分钟以下的多为名场面切片，适合快速判断风格；7 分钟以上的通常是完整单集，气场铺垫更充分。沈岚第三集 7 分 42 秒、23 句台词，属于完整型；电梯对峙 18 秒、2 句台词，属于切片型。切片适合试口味，完整集才看得出角色走向。</p>
+        <p><strong>第三步，用声线条目校准偏好。</strong>如果对低音台词有反应，夜澜的 2 分 18 秒选段比看画面更快判断。声线条目没有画面干扰，句尾降调听得更清。11 月 4 日声控合集 Vol.6 收录的 6 条里，夜澜那条是唯一非专业配音出身，对比听能分出差距。</p>
+        <p><strong>第四步，对比二创使用率。</strong>一个条目值不值得花时间，可以看它的二创素材集中在哪一段。苏晚系列二创 63% 用冷脸段落，说明观众认可的高光在前 40 秒；后 55 秒的反差段落被看的多、被用的少，投入时间时要心里有数。二创数据在条目页侧栏可直接看到，不用另外搜。</p>
+        <p><strong>第五步，留意榜单口径。</strong>气场榜第 45 期起拆分冷艳与气场两项，此前排名不能直接跨期比较。看榜时先看期数和口径说明，再决定参考价值。第 44 期及以前的排名，冷艳型条目整体偏低 2—3 位。</p>
+      </div>
+    </section>
+
+    <!-- 7 FAQ -->
+    <section class="section" id="faq">
+      <div class="sec-head">
+        <h2>御姐内容常见问题</h2>
+        <span class="sub">关于类型、条目与判断</span>
+      </div>
+      <div class="faq-list">
+        <details class="faq">
+          <summary>冷艳高管和职场御姐有什么区别？</summary>
+          <div class="faq-a">冷艳高管强调「不解释、不笑、句尾降调」，场景多在公司高层空间；职场御姐范围更宽，包含中层管理、创业者和同事关系，语气可以带温度。St站目前把冷艳高管单列 18 条，职场御姐 24 条，两者有 7 条重叠，重叠条目在标签上会同时显示。</div>
+        </details>
+        <details class="faq">
+          <summary>御姐气场榜第 45 期为什么提前一天更新？</summary>
+          <div class="faq-a">榜单方在 11 月 7 日的更新说明里只写了「口径调整同步发布」，没有解释提前原因。评论区有 9 条推测是为赶周末流量，但这一说法未获回应。可核对的事实是：第 45 期确实发布于 11 月 7 日，比原定 11 月 8 日早一天，且前五名中有 3 席冷艳型，与合并口径时期差异明显。</div>
+        </details>
+        <details class="faq">
+          <summary>夜澜「别急」选段为什么被收进低音样本合集？</summary>
+          <div class="faq-a">声控合集 Vol.6 的收录说明写的是「句尾降调 4 个半音」，不是音域低。夜澜这条全长 2 分 18 秒，只有一句完整台词，其余是呼吸和停顿。合集里另外 5 条都是专业配音作品，夜澜是唯一非专业出身，收录理由在说明里单独标了一行。</div>
+        </details>
+        <details class="faq">
+          <summary>苏晚的反差段落为什么二创用得少？</summary>
+          <div class="faq-a">4012 条二创里只有 21% 使用后 55 秒的反差段落，63% 集中在前 40 秒冷脸训话。原因是反差段落依赖上下文，单独截出来会丢掉「冷脸」的对照，气场混剪用不上。原声使用率 63%，重新配音的 37% 多数拿去配其他角色。</div>
+        </details>
+        <details class="faq">
+          <summary>「职场御姐」专题投稿需要什么条件？</summary>
+          <div class="faq-a">11 月 6 日开放的专题投稿要求条目包含完整职场场景，时长不低于 60 秒，角色台词不少于 5 句。首批 17 份投稿里 5 份涉及高管角色、2 份为声线作品，其余因场景不完整被退回。投稿页说明了退回理由，按条目逐条给出。</div>
+        </details>
+        <details class="faq">
+          <summary>江璃第 9 句台词为什么传播这么广？</summary>
+          <div class="faq-a">第 9 句是江璃 14 句高频台词里 3 句平收的其中之一，10 月 28 日被单独截出后，11 月 2 日单条转发达到 1.2 万，原片段播放量上涨 34%。评论区有 12 条认为平收「不够御姐」，传播量和气场评价在这里正好相反。档案页把 14 句的句尾处理逐句标了出来。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8 用户评论 -->
+    <section class="section" id="comments">
+      <div class="sec-head">
+        <h2>观众评论</h2>
+        <span class="sub">围绕具体条目与类型</span>
+      </div>
+      <div class="comments">
+        <div class="comment"><div class="c-head"><span class="avatar">林</span><span class="nick">林间有雾</span><span class="c-time">11-07</span></div>沈岚第三集那段 2.3 秒空白我反复拖回去看了五遍，真的就是停在那儿不说话最吓人。</div>
+        <div class="comment"><div class="c-head"><span class="avatar">九</span><span class="nick">九号观察员</span><span class="c-time">11-06</span></div>夜澜那条被收进低音合集，说明里写的是降调不是音域，这个区分挺重要的，不然一堆人开始比谁声音低。</div>
+        <div class="comment"><div class="c-head"><span class="avatar">苏</span><span class="nick">苏打水加冰</span><span class="c-time">11-05</span></div>苏晚的反差段落其实一般，55 秒切得太急，冷脸还没立住就变软了。二创只用前 40 秒不是没道理。</div>
+        <div class="comment"><div class="c-head"><span class="avatar">阿</span><span class="nick">阿雾的观众</span><span class="c-time">11-04</span></div>11 月 1 日那条声线拆解把三个人的波形摆一起，一眼能看出句尾差异，比听十遍都直观。</div>
+        <div class="comment"><div class="c-head"><span class="avatar">江</span><span class="nick">江边散步</span><span class="c-time">11-03</span></div>江璃第 9 句平收被说不够御姐，我倒觉得平收才有真实感，每句都降调反而像在念稿。</div>
+        <div class="comment"><div class="c-head"><span class="avatar">电</span><span class="nick">电梯里信号差</span><span class="c-time">11-02</span></div>电梯对峙 18 秒排第 12，我觉得能再往前，没有配乐那一下关门声比什么 BGM 都管用。</div>
+        <div class="comment"><div class="c-head"><span class="avatar">小</span><span class="nick">小满不加班</span><span class="c-time">11-01</span></div>职场御姐那 24 条里有好多其实只是穿西装，台词一开口就露馅，还是得看句尾怎么处理。</div>
+        <div class="comment"><div class="c-head"><span class="avatar">半</span><span class="nick">半糖去冰</span><span class="c-time">10-31</span></div>气场榜第 45 期提前一天发，评论区都在猜是不是赶周末，榜单方一句话没说，有点意思。</div>
+        <div class="comment"><div class="c-head"><span class="avatar">月</span><span class="nick">月亮邮差</span><span class="c-time">10-30</span></div>成熟气场合集增补的 6 条里有一条才 22 秒，标了时间节点，点进去发现确实短但压得住。</div>
+        <div class="comment"><div class="c-head"><span class="avatar">不</span><span class="nick">不熬夜了</span><span class="c-time">10-29</span></div>投稿通道那 17 份退回来 10 份，理由都写得很细，场景不完整这条卡得挺严。</div>
+        <div class="comment"><div class="c-head"><span class="avatar">花</span><span class="nick">花卷配豆浆</span><span class="c-time">10-28</span></div>冷艳和职场拆标签之后找东西方便多了，之前混在一起翻半天。</div>
+        <div class="comment"><div class="c-head"><span class="avatar">橙</span><span class="nick">橙子汽水</span><span class="c-time">10-27</span></div>说实话有些御姐条目就是普通职场剧剪了两段，硬贴标签，点进去落差挺大。</div>
+        <div class="comment"><div class="c-head"><span class="avatar">风</span><span class="nick">风从北边来</span><span class="c-time">10-26</span></div>夜澜那 2 分 18 秒我通勤路上听，没有画面反而更抓人，就是太短了不够听。</div>
+        <div class="comment"><div class="c-head"><span class="avatar">一</span><span class="nick">一只猫饼</span><span class="c-time">10-25</span></div>名场面榜更新到第 12 位了，前面那 11 个我倒觉得有几个过誉，纯靠配乐硬撑。</div>
+        <div class="comment"><div class="c-head"><span class="avatar">顾</span><span class="nick">顾左右而言他</span><span class="c-time">10-24</span></div>创作者访谈那 8 条质量参差，11 月那期讲气场铺垫的还行，早几期比较水。</div>
+      </div>
+    </section>
+
+    <!-- 9 相关资讯 -->
+    <section class="section" id="news">
+      <div class="sec-head">
+        <h2>御姐内容相关资讯</h2>
+        <span class="sub">10月10日—11月8日</span>
+      </div>
+      <div class="news-list">
+        <div class="news-item">
+          <span class="n-date">2026-11-07</span>
+          <div class="n-main">
+            <div class="n-title">御姐气场榜第 45 期拆分冷艳与气场两项，沈岚升至第二</div>
+            <div class="n-desc">榜单第 45 期于 11 月 7 日发布，比原定早一天。拆分后冷艳型在前五占 3 席，原第 3 的温柔御姐类条目跌至第 7。</div>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="n-date">2026-11-06</span>
+          <div class="n-main">
+            <div class="n-title">「职场御姐」专题投稿首批收到 17 份，5 份涉及高管角色</div>
+            <div class="n-desc">11 月 6 日开放的专题投稿通道在 24 小时内收到 17 份作品，其中 2 份为声线作品，10 份因场景不完整被退回，退回理由逐条列明。</div>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="n-date">2026-11-04</span>
+          <div class="n-main">
+            <div class="n-title">声控合集 Vol.6 收录 6 条低音样本，夜澜成唯一非专业配音入选</div>
+            <div class="n-desc">Vol.6 收录说明标注夜澜「别急」选段句尾降调 4 个半音，其余 5 条来自专业配音作品。该选段播放量 12.6 万，为同期御姐声线条目的 2.7 倍。</div>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="n-date">2026-11-03</span>
+          <div class="n-main">
+            <div class="n-title">成熟气场合集增补 6 条至 32 条，最短条目 22 秒</div>
+            <div class="n-desc">11 月 3 日更新的增补版为每条新条目标注了具体时间节点，合集页同步发布分档说明，解释冷艳与气场分开计算的原因。</div>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="n-date">2026-10-30</span>
+          <div class="n-main">
+            <div class="n-title">电梯对峙空降名场面榜第 12 位，评审标注 18 秒两次权力反转</div>
+            <div class="n-desc">10 月 30 日更新的名场面榜新增该条目，评审理由写明「18 秒内完成两次权力反转」，且全片无配乐，为榜单前 20 中唯一无配乐条目。</div>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="n-date">2026-10-28</span>
+          <div class="n-main">
+            <div class="n-title">江璃第 9 句台词单条转发 1.2 万，原片段播放量上涨 34%</div>
+            <div class="n-desc">该句为江璃 14 句高频台词中 3 句平收之一，10 月 28 日被截出后持续传播，11 月 2 日达到峰值。档案页随后为 14 句逐句标注句尾处理方式。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 相关推荐 -->
+    <section class="section" id="related">
+      <div class="sec-head">
+        <h2>相关方向与条目索引</h2>
+        <span class="sub">按具体内容方向</span>
+      </div>
+      <div class="tag-index">
+        <a href="#featured">沈岚会议室对峙</a>
+        <a href="#featured">夜澜低音台词</a>
+        <a href="#featured">苏晚冷脸训话</a>
+        <a href="#featured">江璃句尾降调</a>
+        <a href="#featured">电梯对峙无配乐</a>
+        <a href="#featured">职场高管角色</a>
+        <a href="#featured">反差萌短片段</a>
+        <a href="#featured">御姐气场榜口径</a>
+      </div>
+    </section>
+
+    <!-- 11 补充板块：榜单 + 投稿互动 -->
+    <section class="section" id="rank">
+      <div class="sec-head">
+        <h2>本周御姐气场榜前五</h2>
+        <span class="sub">第 45 期 · 11月7日</span>
+      </div>
+      <div class="rank-block">
+        <div class="rank-item"><span class="rk">1</span><span class="rn">江璃 · 电梯对峙前序片段</span><span class="rv">气场 9.3 · 冷艳 9.1</span></div>
+        <div class="rank-item"><span class="rk">2</span><span class="rn">沈岚 · 第三集「会议室对峙」</span><span class="rv">气场 9.2 · 冷艳 9.4</span></div>
+        <div class="rank-item"><span class="rk">3</span><span class="rn">夜澜 · 低音台词「别急」</span><span class="rv">气场 9.0 · 声线 9.5</span></div>
+        <div class="rank-item"><span class="rk">4</span><span class="rn">江璃 · 角色档案第 9 句</span><span class="rv">气场 8.8 · 冷艳 8.6</span></div>
+        <div class="rank-item"><span class="rk">5</span><span class="rn">苏晚 · 冷脸训话前 40 秒</span><span class="rv">气场 8.7 · 反差 8.8</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="submit-box">
+        <div class="sb-text">
+          <h2>投稿你的御姐角色作品</h2>
+          <p>「职场御姐」专题持续开放，需包含完整职场场景，时长不低于 60 秒，台词不少于 5 句。首批 17 份投稿中 5 份涉及高管角色。</p>
+        </div>
+        <button class="btn" type="button">前往投稿通道</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右辅助栏 -->
+  <aside class="side-col" aria-label="辅助信息">
+    <div class="panel">
+      <h2>条目更新流</h2>
+      <div class="side-list">
+        <div class="sl-item"><span class="sl-dot">●</span><span><b>11-07</b> 气场榜第 45 期发布</span></div>
+        <div class="sl-item"><span class="sl-dot">●</span><span><b>11-06</b> 苏晚二创突破 4000 条</span></div>
+        <div class="sl-item"><span class="sl-dot">●</span><span><b>11-05</b> 沈岚第三集上线</span></div>
+        <div class="sl-item"><span class="sl-dot">●</span><span><b>11-04</b> 声控合集 Vol.6 收录夜澜</span></div>
+        <div class="sl-item"><span class="sl-dot">●</span><span><b>11-03</b> 成熟气场合集增补至 32 条</span></div>
+        <div class="sl-item"><span class="sl-dot">●</span><span><b>11-01</b> 声线拆解视频发布</span></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>类型速查</h2>
+      <div class="side-list">
+        <div class="sl-item"><span class="sl-dot">›</span><span><b>冷艳高管</b> 18 条</span></div>
+        <div class="sl-item"><span class="sl-dot">›</span><span><b>职场御姐</b> 24 条</span></div>
+        <div class="sl-item"><span class="sl-dot">›</span><span><b>御姐声线</b> 15 条</span></div>
+        <div class="sl-item"><span class="sl-dot">›</span><span><b>成熟气场</b> 21 条</span></div>
+        <div class="sl-item"><span class="sl-dot">›</span><span><b>反差萌</b> 12 条</span></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>可信度分层说明</h2>
+      <div class="side-list">
+        <div class="sl-item"><span class="sl-dot">✓</span><span>已公开事实：条目页标注的上线时间与播放量</span></div>
+        <div class="sl-item"><span class="sl-dot">✓</span><span>当事人回应：榜单方口径说明、创作者访谈原文</span></div>
+        <div class="sl-item"><span class="sl-dot">…</span><span>媒体转述：二创量统计、声控合集收录理由</span></div>
+        <div class="sl-item"><span class="sl-dot">?</span><span>网友推测：榜单提前更新是否赶周末流量（未回应）</span></div>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<!-- 页尾 -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="f-logo">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="32" r="30" fill="#7a4a5e"/>
+            <path d="M18 40c4-10 10-16 14-16s10 6 14 16" stroke="#f3dfe6" stroke-width="3" fill="none"/>
+            <circle cx="24" cy="28" r="2.5" fill="#f3dfe6"/>
+            <circle cx="40" cy="28" r="2.5" fill="#f3dfe6"/>
+          </svg>
+          <span>St站御姐女神Hahaha</span>
+        </div>
+        <p>覆盖 2026 年 10 月至 11 月的御姐向角色档案、名场面切片、声线选段与创作者访谈，条目类型含完整单集、短片段、音频和档案，更新节奏以每周榜单与专题投稿为主。</p>
+      </div>
+      <div class="footer-col">
+        <h3>内容类型</h3>
+        <a href="#featured">冷艳高管</a>
+        <a href="#featured">职场御姐</a>
+        <a href="#featured">御姐声线</a>
+        <a href="#featured">反差萌御姐</a>
+      </div>
+      <div class="footer-col">
+        <h3>榜单与专题</h3>
+        <a href="#rank">御姐气场榜</a>
+        <a href="#news">相关资讯</a>
+        <a href="#deep">深度解析</a>
+        <a href="#guide">体验指南</a>
+      </div>
+      <div class="footer-col">
+        <h3>参与</h3>
+        <a href="#comments">观众评论</a>
+        <a href="#faq">常见问答</a>
+        <a href="#related">方向索引</a>
+        <a href="#overview">领域概览</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 St站御姐女神Hahaha · 内容聚合示例页面</span>
+      <span>条目数据为垂类示例，更新核对截至 2026-11-08</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+<script>
+  (function () {
+    var hamburger = document.getElementById('hamburger');
+    var nav = document.getElementById('mainNav');
+    var overlay = document.getElementById('overlay');
+    var backTop = document.getElementById('backTop');
+
+    function closeNav() {
+      nav.classList.remove('open');
+      overlay.classList.remove('show');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.setAttribute('aria-label', '打开菜单');
+    }
+    function toggleNav() {
+      var open = nav.classList.toggle('open');
+      overlay.classList.toggle('show', open);
+      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      hamburger.setAttribute('aria-label', open ? '关闭菜单' : '打开菜单');
+    }
+
+    hamburger.addEventListener('click', toggleNav);
+    overlay.addEventListener('click', closeNav);
+
+    nav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        if (window.innerWidth <= 740) closeNav();
+      });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeNav();
+    });
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > window.innerHeight) {
+        backTop.classList.add('show');
+      } else {
+        backTop.classList.remove('show');
+      }
+    }, { passive: true });
+
+    backTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "St站御姐女神Hahaha",
+  "description": "汇聚御姐女神向作品与角色条目，涵盖成熟气场、冷艳反差、职场御姐等分类，提供新作动态、榜单和消费指南。",
+  "inLanguage": "zh-CN",
+  "about": {
+    "@type": "Thing",
+    "name": "御姐风格角色与作品"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "冷艳高管和职场御姐有什么区别？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "冷艳高管强调不解释、不笑、句尾降调，场景多在公司高层空间；职场御姐范围更宽，包含中层管理、创业者和同事关系，语气可以带温度。St站目前把冷艳高管单列 18 条，职场御姐 24 条，两者有 7 条重叠。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "御姐气场榜第 45 期为什么提前一天更新？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "榜单方在 11 月 7 日的更新说明里只写了口径调整同步发布，没有解释提前原因。可核对的事实是第 45 期发布于 11 月 7 日，比原定 11 月 8 日早一天，且前五名中有 3 席冷艳型。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "夜澜「别急」选段为什么被收进低音样本合集？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "声控合集 Vol.6 的收录说明写的是句尾降调 4 个半音，不是音域低。夜澜这条全长 2 分 18 秒，只有一句完整台词，其余是呼吸和停顿，是合集里唯一非专业配音出身的一条。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "苏晚的反差段落为什么二创用得少？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "4012 条二创里只有 21% 使用后 55 秒的反差段落，63% 集中在前 40 秒冷脸训话。反差段落依赖上下文，单独截出来会丢掉冷脸对照，气场混剪用不上。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "「职场御姐」专题投稿需要什么条件？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "11 月 6 日开放的专题投稿要求条目包含完整职场场景，时长不低于 60 秒，角色台词不少于 5 句。首批 17 份投稿里 5 份涉及高管角色、2 份为声线作品。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "江璃第 9 句台词为什么传播这么广？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第 9 句是江璃 14 句高频台词里 3 句平收的其中之一，10 月 28 日被单独截出后，11 月 2 日单条转发达到 1.2 万，原片段播放量上涨 34%。评论区有 12 条认为平收不够御姐。"
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+  </html>
