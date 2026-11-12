@@ -1,0 +1,2336 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>汉责文化 vk视频 - 传统礼制影像与当代实践</title>
+  <meta name="description" content="汉责文化 vk视频 聚合汉责仪式、戒尺训诫、家法演示等影像条目，涵盖古礼复原、当代实践与圈内讨论，适合关注传统训诫文化的观众浏览。">
+  <meta name="keywords" content="汉责文化 vk视频">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237c4a2a'/%3E%3Cpath d='M8 22V10h3v12H8zm5 0V10h6l4 12h-3l-3-9v9h-4z' fill='%23f5e6d3'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --brand: #7c4a2a;
+      --brand-light: #a6714a;
+      --brand-dark: #5a3220;
+      --brand-wash: #f3ebe4;
+      --bg: #faf7f4;
+      --panel: #ffffff;
+      --ink: #2c241e;
+      --ink-secondary: #5c524b;
+      --ink-tertiary: #8a7f77;
+      --line: #e5ddd6;
+      --radius-card: 12px;
+      --radius-tag: 6px;
+      --radius-btn: 8px;
+      --shadow-sm: 0 1px 3px rgba(90, 50, 32, 0.06);
+      --shadow-md: 0 4px 12px rgba(90, 50, 32, 0.1);
+      --shadow-hover: 0 6px 18px rgba(90, 50, 32, 0.14);
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      --font-serif: "Songti SC", "Noto Serif CJK SC", "SimSun", serif;
+      --sticky-offset: 108px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--sticky-offset);
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; }
+    ul { list-style: none; }
+
+    :focus-visible {
+      outline: 2px solid var(--brand);
+      outline-offset: 2px;
+    }
+
+    /* ===== Sticky wrapper (announcement + header) ===== */
+    .sticky-top {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    /* ===== Announcement bar ===== */
+    .announce-bar {
+      background: var(--brand-dark);
+      color: #f5e6d3;
+      font-size: 13px;
+      padding: 6px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+    }
+    .announce-bar::-webkit-scrollbar { display: none; }
+    .announce-bar .brand-mark {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .announce-bar .announce-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .announce-bar .announce-date {
+      color: #d9b99b;
+      font-variant-numeric: tabular-nums;
+    }
+    .announce-bar .announce-sep {
+      color: #a6714a;
+      margin: 0 4px;
+    }
+
+    /* ===== Header ===== */
+    .site-header {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+    .header-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      height: 60px;
+      gap: 24px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .logo svg { width: 34px; height: 34px; }
+    .logo-text {
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--brand);
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex: 1;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .header-nav::-webkit-scrollbar { display: none; }
+    .header-nav a {
+      padding: 6px 12px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      color: var(--ink-secondary);
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+    .header-nav a:hover, .header-nav a:focus-visible {
+      background: var(--brand-wash);
+      color: var(--brand);
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-btn);
+      padding: 0 10px;
+      height: 34px;
+      transition: border-color 0.2s;
+    }
+    .search-box:focus-within { border-color: var(--brand-light); }
+    .search-box input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 13px;
+      width: 140px;
+      color: var(--ink);
+      font-family: inherit;
+    }
+    .search-box input::placeholder { color: var(--ink-tertiary); }
+    .search-box button {
+      background: none;
+      border: none;
+      color: var(--ink-tertiary);
+      font-size: 15px;
+      padding: 0 2px;
+      line-height: 1;
+    }
+    .search-box button:hover { color: var(--brand); }
+    .hamburger {
+      display: none;
+      background: none;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-btn);
+      width: 36px;
+      height: 36px;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--ink-secondary);
+    }
+
+    /* Mobile nav drawer */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(44, 36, 30, 0.45);
+    }
+    .mobile-nav-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 280px;
+      height: 100%;
+      background: var(--panel);
+      padding: 20px;
+      overflow-y: auto;
+      box-shadow: var(--shadow-md);
+      animation: slideIn 0.2s ease;
+    }
+    @keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+    .mobile-nav-close {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 16px;
+    }
+    .mobile-nav-close button {
+      background: none;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-btn);
+      width: 32px;
+      height: 32px;
+      font-size: 16px;
+      color: var(--ink-secondary);
+    }
+    .mobile-nav-panel a {
+      display: block;
+      padding: 10px 8px;
+      border-radius: var(--radius-btn);
+      font-size: 15px;
+      color: var(--ink-secondary);
+    }
+    .mobile-nav-panel a:hover { background: var(--brand-wash); color: var(--brand); }
+
+    /* ===== Hero ===== */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #f3ebe4 0%, #e8ddd3 40%, #dccbbd 100%);
+      overflow: hidden;
+      padding: 56px 24px 48px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -80px;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      border: 2px solid rgba(124, 74, 42, 0.1);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: 10%;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124, 74, 42, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-text h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 4.2vw, 48px);
+      font-weight: 700;
+      color: var(--brand-dark);
+      line-height: 1.25;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+    .hero-desc {
+      font-size: 16px;
+      color: var(--ink-secondary);
+      line-height: 1.8;
+      max-width: 520px;
+      margin-bottom: 28px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--brand);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: var(--radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-primary:hover {
+      background: var(--brand-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      color: var(--brand);
+      padding: 10px 24px;
+      border-radius: var(--radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      border: 1.5px solid var(--brand);
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-outline:hover {
+      background: rgba(124, 74, 42, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-visual svg {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      filter: drop-shadow(0 8px 24px rgba(90, 50, 32, 0.12));
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* ===== Main layout ===== */
+    .main-container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .layout-3col {
+      display: grid;
+      grid-template-columns: 180px 1fr 260px;
+      gap: 28px;
+      padding: 32px 0 48px;
+      align-items: start;
+    }
+
+    /* ===== Left channel sidebar ===== */
+    .channel-sidebar {
+      position: sticky;
+      top: var(--sticky-offset);
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--line);
+      padding: 16px 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .channel-sidebar h2 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0 16px 10px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 6px;
+    }
+    .channel-sidebar ul li a {
+      display: block;
+      padding: 8px 16px;
+      font-size: 14px;
+      color: var(--ink-secondary);
+      transition: background 0.15s, color 0.15s, padding-left 0.15s;
+      border-left: 3px solid transparent;
+    }
+    .channel-sidebar ul li a:hover,
+    .channel-sidebar ul li a.active {
+      background: var(--brand-wash);
+      color: var(--brand);
+      border-left-color: var(--brand);
+      padding-left: 19px;
+    }
+
+    /* ===== Center content ===== */
+    .content-main section {
+      margin-bottom: 40px;
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .section-header h2 {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--brand-dark);
+      letter-spacing: 0.5px;
+    }
+    .section-header .section-sub {
+      font-size: 13px;
+      color: var(--ink-tertiary);
+    }
+
+    /* Overview */
+    .overview-text {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--line);
+      padding: 24px 28px;
+      box-shadow: var(--shadow-sm);
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--ink-secondary);
+    }
+    .overview-text p + p { margin-top: 12px; }
+    .overview-text strong { color: var(--ink); font-weight: 600; }
+
+    /* Featured cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+    .card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      background: var(--brand-wash);
+    }
+    .card-body {
+      padding: 14px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 8px;
+    }
+    .tag {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: var(--radius-tag);
+      background: var(--brand-wash);
+      color: var(--brand);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .tag-solid {
+      background: var(--brand);
+      color: #fff;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+      line-height: 1.45;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--ink-secondary);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-meta {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--ink-tertiary);
+    }
+    .card-meta span { display: flex; align-items: center; gap: 3px; }
+
+    /* Update list */
+    .update-list {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .update-item {
+      display: flex;
+      gap: 16px;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--line);
+      transition: background 0.15s;
+    }
+    .update-item:last-child { border-bottom: none; }
+    .update-item:hover { background: var(--brand-wash); }
+    .update-date {
+      flex-shrink: 0;
+      font-size: 12px;
+      color: var(--ink-tertiary);
+      font-variant-numeric: tabular-nums;
+      width: 72px;
+      padding-top: 2px;
+    }
+    .update-content h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+    .update-content p {
+      font-size: 13px;
+      color: var(--ink-secondary);
+      line-height: 1.55;
+    }
+
+    /* Category grid */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .category-item {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--line);
+      padding: 16px;
+      text-align: center;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .category-item:hover {
+      border-color: var(--brand-light);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .category-icon {
+      font-size: 24px;
+      line-height: 1;
+    }
+    .category-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .category-count {
+      font-size: 12px;
+      color: var(--ink-tertiary);
+    }
+
+    /* Deep analysis */
+    .deep-analysis {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--line);
+      padding: 28px 32px;
+      box-shadow: var(--shadow-sm);
+    }
+    .deep-analysis h3 {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--brand-dark);
+      margin: 24px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+    }
+    .deep-analysis h3:first-child { margin-top: 0; }
+    .deep-analysis p {
+      font-size: 14.5px;
+      line-height: 1.85;
+      color: var(--ink-secondary);
+      margin-bottom: 10px;
+    }
+    .deep-analysis ul {
+      margin: 8px 0 12px 18px;
+      list-style: disc;
+      font-size: 14px;
+      color: var(--ink-secondary);
+      line-height: 1.8;
+    }
+    .deep-analysis li { margin-bottom: 4px; }
+    .deep-analysis blockquote {
+      background: var(--brand-wash);
+      border-left: 3px solid var(--brand);
+      padding: 12px 16px;
+      border-radius: 0 var(--radius-tag) var(--radius-tag) 0;
+      margin: 12px 0;
+      font-size: 14px;
+      color: var(--ink-secondary);
+    }
+    .deep-analysis strong { color: var(--ink); font-weight: 600; }
+
+    /* Guide steps */
+    .guide-steps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .guide-step {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--line);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      gap: 14px;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .step-body h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .step-body p {
+      font-size: 13px;
+      color: var(--ink-secondary);
+      line-height: 1.65;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .faq-item {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+    .faq-item summary {
+      padding: 14px 20px;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.15s;
+    }
+    .faq-item summary:hover { background: var(--brand-wash); }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      font-size: 18px;
+      color: var(--brand);
+      font-weight: 400;
+      transition: transform 0.2s;
+    }
+    .faq-item[open] summary::after {
+      content: '−';
+      transform: rotate(0deg);
+    }
+    .faq-answer {
+      padding: 0 20px 16px;
+      font-size: 13.5px;
+      color: var(--ink-secondary);
+      line-height: 1.8;
+    }
+
+    /* Comments */
+    .comments-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .comment-card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--line);
+      padding: 14px 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .comment-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--brand-wash);
+      color: var(--brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .comment-nick {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .comment-time {
+      font-size: 11px;
+      color: var(--ink-tertiary);
+      margin-left: auto;
+    }
+    .comment-text {
+      font-size: 13px;
+      color: var(--ink-secondary);
+      line-height: 1.65;
+    }
+
+    /* News */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .news-item {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--line);
+      transition: background 0.15s;
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-item:hover { background: var(--brand-wash); }
+    .news-item h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .news-item .news-date {
+      font-size: 12px;
+      color: var(--brand);
+      font-weight: 500;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .news-item p {
+      font-size: 13px;
+      color: var(--ink-secondary);
+      line-height: 1.6;
+    }
+
+    /* Related tags */
+    .related-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .related-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: var(--ink-secondary);
+      transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+    .related-tag:hover {
+      border-color: var(--brand);
+      color: var(--brand);
+      background: var(--brand-wash);
+      transform: translateY(-1px);
+    }
+    .related-tag .tag-count {
+      font-size: 11px;
+      color: var(--ink-tertiary);
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 24px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 4px;
+      bottom: 4px;
+      width: 2px;
+      background: var(--line);
+      border-radius: 1px;
+    }
+    .timeline-item {
+      position: relative;
+      padding-bottom: 18px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--brand);
+      border: 2px solid var(--panel);
+      box-shadow: 0 0 0 2px var(--brand-wash);
+    }
+    .timeline-date {
+      font-size: 12px;
+      color: var(--brand);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .timeline-text {
+      font-size: 13.5px;
+      color: var(--ink-secondary);
+      line-height: 1.6;
+    }
+
+    /* ===== Right sidebar ===== */
+    .right-sidebar {
+      position: sticky;
+      top: var(--sticky-offset);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .sidebar-card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--line);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .sidebar-card h2 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--brand-dark);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    .hot-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: 13px;
+    }
+    .hot-list li:last-child { border-bottom: none; }
+    .hot-rank {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      background: var(--brand-wash);
+      color: var(--brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .hot-rank.top3 {
+      background: var(--brand);
+      color: #fff;
+    }
+    .hot-list a {
+      color: var(--ink-secondary);
+      line-height: 1.5;
+      transition: color 0.15s;
+    }
+    .hot-list a:hover { color: var(--brand); }
+
+    .contribute-card {
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+      color: #fff;
+      border-radius: var(--radius-card);
+      padding: 20px;
+      box-shadow: var(--shadow-md);
+    }
+    .contribute-card h2 {
+      color: #fff;
+      border-bottom-color: rgba(255,255,255,0.2);
+      font-size: 14px;
+    }
+    .contribute-card p {
+      font-size: 13px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 12px;
+    }
+    .contribute-card .btn-white {
+      display: inline-block;
+      background: #fff;
+      color: var(--brand-dark);
+      padding: 7px 18px;
+      border-radius: var(--radius-btn);
+      font-size: 13px;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .contribute-card .btn-white:hover { opacity: 0.85; }
+
+    /* ===== Footer ===== */
+    .site-footer {
+      background: var(--brand-dark);
+      color: #d9c9b8;
+      padding: 40px 24px 24px;
+      margin-top: 0;
+    }
+    .footer-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 28px;
+    }
+    .footer-brand .logo-text {
+      color: #f5e6d3;
+      font-size: 18px;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #b8a595;
+      max-width: 280px;
+    }
+    .footer-col h3 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #f5e6d3;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 13px;
+      color: #b8a595;
+      padding: 3px 0;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover { color: #f5e6d3; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12px;
+      color: #9a8575;
+    }
+    .footer-bottom .footer-tags {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .footer-bottom a { color: #9a8575; }
+    .footer-bottom a:hover { color: #f5e6d3; }
+
+    /* Back to top */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s, visibility 0.25s, transform 0.2s;
+      z-index: 90;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    .back-to-top:hover {
+      background: var(--brand-dark);
+      transform: translateY(-3px);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1024px) {
+      .layout-3col {
+        grid-template-columns: 170px 1fr;
+      }
+      .right-sidebar {
+        position: static;
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .hero-inner { gap: 32px; }
+      .card-grid { grid-template-columns: repeat(2, 1fr); }
+      .category-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-top { grid-template-columns: repeat(2, 1fr); }
+      .header-nav { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    @media (max-width: 740px) {
+      .layout-3col {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 0 32px;
+      }
+      .channel-sidebar {
+        position: static;
+        display: flex;
+        overflow-x: auto;
+        padding: 0;
+        border-radius: var(--radius-card);
+        scrollbar-width: none;
+      }
+      .channel-sidebar::-webkit-scrollbar { display: none; }
+      .channel-sidebar h2 { display: none; }
+      .channel-sidebar ul {
+        display: flex;
+        padding: 4px;
+        gap: 2px;
+      }
+      .channel-sidebar ul li a {
+        white-space: nowrap;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+      .channel-sidebar ul li a:hover,
+      .channel-sidebar ul li a.active {
+        border-left: none;
+        border-bottom-color: var(--brand);
+        padding-left: 12px;
+      }
+      .right-sidebar {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        padding: 32px 16px 28px;
+      }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .hero-text h1 {
+        font-size: 28px;
+      }
+      .hero-visual { display: none; }
+      .card-grid { grid-template-columns: 1fr; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .comments-grid { grid-template-columns: 1fr; }
+      .guide-steps { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 20px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .header-inner { padding: 0 16px; gap: 12px; }
+      .search-box input { width: 100px; }
+      .search-box { display: none; }
+      .main-container { padding: 0 16px; }
+      .announce-bar { padding: 5px 16px; font-size: 12px; gap: 14px; }
+      .deep-analysis { padding: 20px 18px; }
+      .overview-text { padding: 18px 20px; }
+      .update-item { padding: 12px 16px; gap: 10px; }
+      .update-date { width: 60px; font-size: 11px; }
+      .back-to-top { bottom: 16px; right: 16px; width: 38px; height: 38px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .hero-visual svg { animation: none; }
+    }
+
+    /* Search no-result feedback */
+    .search-feedback {
+      display: none;
+      padding: 10px 16px;
+      background: #fff3e6;
+      border: 1px solid #e8c9a0;
+      border-radius: var(--radius-btn);
+      font-size: 13px;
+      color: var(--brand-dark);
+      margin-bottom: 12px;
+    }
+    .search-feedback.show { display: block; }
+    .search-highlight {
+      background: #fce4b8;
+      border-radius: 2px;
+      padding: 0 1px;
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- ===== Sticky top: announcement + header ===== -->
+  <div class="sticky-top">
+    <div class="announce-bar">
+      <span class="brand-mark">汉责文化 vk视频</span>
+      <span class="announce-sep">|</span>
+      <span class="announce-item">
+        <span class="announce-date">11月7日</span>
+        <span>《家法戒尺·宗祠场景复原》第3集上线</span>
+      </span>
+      <span class="announce-item">
+        <span class="announce-date">11月5日</span>
+        <span>新增“古礼训诫”分类 收录27条</span>
+      </span>
+      <span class="announce-item">
+        <span class="announce-date">11月3日</span>
+        <span>“戒尺材质对比”专题开放讨论</span>
+      </span>
+    </div>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="/#top" class="logo" aria-label="汉责文化 vk视频 首页">
+          <svg viewBox="0 0 34 34" fill="none" aria-hidden="true">
+            <rect width="34" height="34" rx="8" fill="#7c4a2a"/>
+            <path d="M9 24V10h3.5v14H9zm5.5 0V10h6.5l4.5 14h-3.5l-3.5-10.5V24h-4z" fill="#f5e6d3"/>
+          </svg>
+          <span class="logo-text">汉责文化 vk视频</span>
+        </a>
+        <nav class="header-nav" aria-label="主题导航">
+          <a href="/#overview">领域概览</a>
+          <a href="/#featured">精选条目</a>
+          <a href="/#updates">最新更新</a>
+          <a href="/#categories">分类索引</a>
+          <a href="/#deep-analysis">深度解析</a>
+          <a href="/#guide">体验指南</a>
+          <a href="/#faq">常见问答</a>
+          <a href="/#comments">圈内评论</a>
+          <a href="/#news">相关资讯</a>
+          <a href="/#contribute">投稿入口</a>
+        </nav>
+        <div class="header-actions">
+          <div class="search-box" role="search">
+            <input type="search" id="searchInput" placeholder="搜索条目…" aria-label="搜索页内条目">
+            <button type="button" id="searchBtn" aria-label="搜索">⌕</button>
+          </div>
+          <button class="hamburger" id="hamburgerBtn" aria-label="打开导航菜单" aria-expanded="false">☰</button>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="移动端导航">
+    <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+    <div class="mobile-nav-panel">
+      <div class="mobile-nav-close">
+        <button id="mobileCloseBtn" aria-label="关闭菜单">✕</button>
+      </div>
+      <a href="/#overview">领域概览</a>
+      <a href="/#featured">精选条目</a>
+      <a href="/#updates">最新更新</a>
+      <a href="/#categories">分类索引</a>
+      <a href="/#deep-analysis">深度解析</a>
+      <a href="/#guide">体验指南</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#comments">圈内评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#contribute">投稿入口</a>
+    </div>
+  </div>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>汉责文化 vk视频</h1>
+        <p class="hero-desc">汇集汉责仪式复原、戒尺训诫演示、家法口述记录与圈内讨论影像。从宗祠场景到当代家庭实践，按古礼、近世、当代三条线梳理可看的条目。</p>
+        <div class="hero-actions">
+          <a href="/#featured" class="btn-primary">浏览精选条目 →</a>
+          <a href="/#contribute" class="btn-outline">投稿 / 上传作品</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#a6714a" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#5a3220" stop-opacity="0.05"/>
+            </linearGradient>
+          </defs>
+          <rect x="40" y="60" width="340" height="200" rx="16" fill="url(#heroGrad)" stroke="#7c4a2a" stroke-opacity="0.15" stroke-width="1.5"/>
+          <rect x="70" y="90" width="100" height="70" rx="8" fill="#f3ebe4" stroke="#7c4a2a" stroke-opacity="0.2"/>
+          <rect x="185" y="90" width="60" height="70" rx="8" fill="#f3ebe4" stroke="#7c4a2a" stroke-opacity="0.2"/>
+          <rect x="260" y="90" width="90" height="70" rx="8" fill="#f3ebe4" stroke="#7c4a2a" stroke-opacity="0.2"/>
+          <rect x="70" y="175" width="130" height="50" rx="8" fill="#e8ddd3" stroke="#7c4a2a" stroke-opacity="0.15"/>
+          <rect x="215" y="175" width="135" height="50" rx="8" fill="#e8ddd3" stroke="#7c4a2a" stroke-opacity="0.15"/>
+          <circle cx="120" cy="125" r="12" fill="#a6714a" fill-opacity="0.2"/>
+          <circle cx="215" cy="125" r="8" fill="#a6714a" fill-opacity="0.2"/>
+          <circle cx="305" cy="125" r="10" fill="#a6714a" fill-opacity="0.2"/>
+          <text x="135" y="200" font-family="serif" font-size="11" fill="#8a7f77" text-anchor="middle">古礼复原</text>
+          <text x="282" y="200" font-family="serif" font-size="11" fill="#8a7f77" text-anchor="middle">当代实践</text>
+          <path d="M40 60 L380 60" stroke="#7c4a2a" stroke-opacity="0.08" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Main 3-column layout ===== -->
+  <div class="main-container">
+    <div class="layout-3col">
+
+      <!-- Left channel sidebar -->
+      <aside class="channel-sidebar" aria-label="频道索引">
+        <h2>频道索引</h2>
+        <ul>
+          <li><a href="/#overview" class="active">领域概览</a></li>
+          <li><a href="/#featured">精选条目</a></li>
+          <li><a href="/#updates">最新更新</a></li>
+          <li><a href="/#categories">分类索引</a></li>
+          <li><a href="/#deep-analysis">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#comments">圈内评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#related">相关推荐</a></li>
+          <li><a href="/#timeline">条目时间线</a></li>
+          <li><a href="/#contribute">投稿入口</a></li>
+        </ul>
+      </aside>
+
+      <!-- Center main content -->
+      <main class="content-main" id="main-content">
+
+        <!-- 1. 领域概览 -->
+        <section id="overview" aria-labelledby="overview-title">
+          <div class="section-header">
+            <h2 id="overview-title">汉责仪式与训诫实践领域</h2>
+            <span class="section-sub">涵盖古礼复原、家法口述、戒尺材质对比</span>
+          </div>
+          <div class="overview-text">
+            <p>汉责文化在影像层面主要沿着三条脉络展开。<strong>古礼复原</strong>类条目以宗祠、学堂、家庭厅堂为场景，呈现跪拜、请尺、训诫、送尺的完整流程，代表条目如《家法戒尺·宗祠场景复原》系列、《朱子家训训诫仪轨》演示。这类内容多由地方文化社团或汉服礼仪团队录制，讲求服饰、器具、方位的准确度，观众常以“仪轨是否合规”作为评价标准。</p>
+            <p><strong>近世家法口述</strong>类视频以20世纪中叶前后的家庭训诫记忆为核心，受访者多为60岁以上长辈，口述内容涉及戒尺、家法板、跪罚等具体做法。代表条目有《外婆的戒尺：1940年代闽南家庭训诫口述》《父亲留下的家法板：一把杉木尺的六十年》。这类视频的看点在细节——尺子的尺寸、打几下、打完说什么——而非画面制作。</p>
+            <p><strong>当代实践与讨论</strong>类条目最复杂。一部分是家庭训诫的当代场景记录，另一部分是圈内对“汉责”边界的持续辩论。2026年10月，vk视频平台“古礼训诫”标签下新增27条内容，其中11条为仪轨复原，9条为口述史，7条为实践讨论。戒尺材质对比专题（11月3日开放）已汇集竹尺、檀木尺、杉木尺三类材质的12条对比视频，讨论集中在重量、手感、留痕程度三个指标上。</p>
+          </div>
+        </section>
+
+        <!-- 2. 精选内容推荐 -->
+        <section id="featured" aria-labelledby="featured-title">
+          <div class="section-header">
+            <h2 id="featured-title">精选条目推荐</h2>
+            <span class="section-sub">9条高讨论度内容</span>
+          </div>
+          <div class="card-grid">
+
+            <article class="card">
+              <img class="card-img" src="https://picsum.photos/seed/hanze-zongci1/400/300" alt="宗祠场景中家法戒尺陈列与训诫仪轨演示" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <div class="card-tags">
+                  <span class="tag tag-solid">古礼复原</span>
+                  <span class="tag">宗祠</span>
+                  <span class="tag">仪轨</span>
+                </div>
+                <h3 class="card-title">家法戒尺·宗祠场景复原 第3集</h3>
+                <p class="card-desc">完整呈现请尺、训诫、送尺三段流程。第3集重点在“跪听”环节的方位复原，参照1908年《陈氏宗谱·家范》影印本调整了香案间距。</p>
+                <div class="card-meta">
+                  <span>🔥 3.2万播放</span>
+                  <span>⭐ 4.8</span>
+                  <span>11月7日</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <img class="card-img" src="https://picsum.photos/seed/hanze-koushu2/400/300" alt="老人口述家法板使用经历的特写画面" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <div class="card-tags">
+                  <span class="tag tag-solid">口述史</span>
+                  <span class="tag">闽南</span>
+                  <span class="tag">1940年代</span>
+                </div>
+                <h3 class="card-title">外婆的戒尺：1940年代闽南家庭训诫口述</h3>
+                <p class="card-desc">88岁的林阿婆讲述七岁时因逃学被母亲用竹戒尺责打手心的经历。片长18分钟，保留了完整的方言原声和一把存世竹尺的比对镜头。</p>
+                <div class="card-meta">
+                  <span>🔥 2.8万播放</span>
+                  <span>⭐ 4.9</span>
+                  <span>11月5日</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <img class="card-img" src="https://picsum.photos/seed/hanze-caizhi3/400/300" alt="竹尺、檀木尺、杉木尺三种戒尺材质并排对比" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <div class="card-tags">
+                  <span class="tag tag-solid">材质对比</span>
+                  <span class="tag">戒尺</span>
+                  <span class="tag">测评</span>
+                </div>
+                <h3 class="card-title">竹尺vs檀木尺vs杉木尺：12条对比视频汇总</h3>
+                <p class="card-desc">按重量、手感、留痕三个指标横向对比。竹尺最轻（约45g）但留痕明显，檀木尺手感沉但需控制力度，杉木尺回弹快、适合轻责。</p>
+                <div class="card-meta">
+                  <span>🔥 1.9万播放</span>
+                  <span>⭐ 4.6</span>
+                  <span>11月3日</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <img class="card-img" src="https://picsum.photos/seed/hanze-zhuzi4/400/300" alt="朱子家训训诫仪轨中戒尺与家训文本的摆放" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <div class="card-tags">
+                  <span class="tag tag-solid">古礼复原</span>
+                  <span class="tag">朱子家训</span>
+                  <span class="tag">仪轨</span>
+                </div>
+                <h3 class="card-title">朱子家训训诫仪轨·完整演示版</h3>
+                <p class="card-desc">依据清光绪年间《朱子家训》注本复原，全程23分钟。从“晨省”到“夜责”共七节，每节标注出处页码，适合逐帧对照。</p>
+                <div class="card-meta">
+                  <span>🔥 2.4万播放</span>
+                  <span>⭐ 4.7</span>
+                  <span>11月2日</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <img class="card-img" src="https://picsum.photos/seed/hanze-jiafab5/400/300" alt="一把杉木家法板的纹理与使用痕迹特写" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <div class="card-tags">
+                  <span class="tag tag-solid">口述史</span>
+                  <span class="tag">家法板</span>
+                  <span class="tag">六十年</span>
+                </div>
+                <h3 class="card-title">父亲留下的家法板：一把杉木尺的六十年</h3>
+                <p class="card-desc">从1958年制尺到2018年封存，这把杉木尺经历了三代人。片中展示了尺身三道刻痕的由来，以及最后一次使用时的家庭对话录音。</p>
+                <div class="card-meta">
+                  <span>🔥 1.6万播放</span>
+                  <span>⭐ 4.5</span>
+                  <span>10月29日</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <img class="card-img" src="https://picsum.photos/seed/hanze-bianlun6/400/300" alt="关于汉责边界的圆桌讨论现场" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <div class="card-tags">
+                  <span class="tag tag-solid">讨论</span>
+                  <span class="tag">边界</span>
+                  <span class="tag">圆桌</span>
+                </div>
+                <h3 class="card-title">汉责边界圆桌：仪轨复原与当代实践的分歧</h3>
+                <p class="card-desc">四位参与者分别代表古礼复原派、口述史记录者、当代实践者和教育研究者。争论焦点集中在“还原到什么程度算越界”，第37分钟有激烈交锋。</p>
+                <div class="card-meta">
+                  <span>🔥 1.2万播放</span>
+                  <span>⭐ 4.3</span>
+                  <span>10月25日</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <img class="card-img" src="https://picsum.photos/seed/hanze-jiezhi7/400/300" alt="竹戒尺的制作工艺过程展示" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <div class="card-tags">
+                  <span class="tag tag-solid">工艺</span>
+                  <span class="tag">制尺</span>
+                  <span class="tag">竹材</span>
+                </div>
+                <h3 class="card-title">从毛竹到戒尺：传统制尺工艺全流程</h3>
+                <p class="card-desc">浙江安吉制尺匠人陈师傅展示选竹、开片、打磨、修边四道工序。一把标准戒尺需要阴干45天，成品尺寸多为一尺二寸（约36厘米）。</p>
+                <div class="card-meta">
+                  <span>🔥 9800播放</span>
+                  <span>⭐ 4.6</span>
+                  <span>10月20日</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <img class="card-img" src="https://picsum.photos/seed/hanze-xuetang8/400/300" alt="旧时学堂中先生执戒尺训诫学童的复原场景" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <div class="card-tags">
+                  <span class="tag tag-solid">古礼复原</span>
+                  <span class="tag">学堂</span>
+                  <span class="tag">民国</span>
+                </div>
+                <h3 class="card-title">民国学堂训诫复原：先生、学童与戒尺</h3>
+                <p class="card-desc">参照1932年《小学训育实施法》复原课堂训诫场景。重点在“先讲后责”的流程：先生先说明过错，学童复述，再行责罚，最后鞠躬退下。</p>
+                <div class="card-meta">
+                  <span>🔥 1.1万播放</span>
+                  <span>⭐ 4.4</span>
+                  <span>10月15日</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <img class="card-img" src="https://picsum.photos/seed/hanze-jiapu9/400/300" alt="清代与民国时期家谱中家范条文的书影" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <div class="card-tags">
+                  <span class="tag tag-solid">文献</span>
+                  <span class="tag">家谱</span>
+                  <span class="tag">家范</span>
+                </div>
+                <h3 class="card-title">家谱里的家范条文：从清代到民国的文本梳理</h3>
+                <p class="card-desc">梳理了17部家谱中的“家范”“族规”章节，统计出涉及体罚的条文43条。其中“跪”“笞”“杖”三个动词的出现频率最高，分别对应12、9、7部家谱。</p>
+                <div class="card-meta">
+                  <span>🔥 7600播放</span>
+                  <span>⭐ 4.5</span>
+                  <span>10月10日</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- 3. 最新更新 -->
+        <section id="updates" aria-labelledby="updates-title">
+          <div class="section-header">
+            <h2 id="updates-title">最新更新条目</h2>
+            <span class="section-sub">本周新增与热度变化</span>
+          </div>
+          <div class="update-list">
+            <div class="update-item">
+              <span class="update-date">11-08</span>
+              <div class="update-content">
+                <h3>《家法戒尺·宗祠场景复原》第3集上线</h3>
+                <p>本集新增“跪听”环节方位说明，参照1908年陈氏宗谱影印本调整了香案与跪垫的间距至三尺二寸。</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">11-07</span>
+              <div class="update-content">
+                <h3>“戒尺材质对比”专题开放讨论区</h3>
+                <p>竹尺、檀木尺、杉木尺三类共12条对比视频开放留言，首日收到47条使用体验反馈。</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">11-06</span>
+              <div class="update-content">
+                <h3>口述史《外婆的戒尺》播放量突破2.8万</h3>
+                <p>评论区出现多位闽南地区观众补充自家长辈类似经历，已整理出11条有效口述线索。</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">11-05</span>
+              <div class="update-content">
+                <h3>新增“古礼训诫”分类 收录27条</h3>
+                <p>分类下含仪轨复原11条、口述史9条、实践讨论7条，是目前站内最集中的古礼相关条目集合。</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">11-04</span>
+              <div class="update-content">
+                <h3>《朱子家训训诫仪轨》补充字幕版本</h3>
+                <p>新增中英双语字幕，并对七节流程逐节标注了光绪注本页码，方便对照查阅。</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">11-03</span>
+              <div class="update-content">
+                <h3>汉责边界圆桌第37分钟片段单独剪出</h3>
+                <p>四位参与者关于“还原越界”的争论片段被单独剪辑发布，两天内获得3200次转发。</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">10-31</span>
+              <div class="update-content">
+                <h3>制尺工艺视频收到陈师傅本人留言</h3>
+                <p>陈师傅在评论区补充了阴干时间与季节的关系：梅雨季需延长至60天，秋冬45天即可。</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">10-28</span>
+              <div class="update-content">
+                <h3>民国学堂复原视频新增参考文献列表</h3>
+                <p>列出1932年《小学训育实施法》等5种民国教育文献的版本信息，供观众核对出处。</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">10-25</span>
+              <div class="update-content">
+                <h3>家谱家范条文梳理视频被三个地方文史账号引用</h3>
+                <p>引用方包括“闽南宗族文化”“徽州文书研究”“江南家谱”三个账号，均标注了原始数据来源。</p>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">10-20</span>
+              <div class="update-content">
+                <h3>制尺工艺视频带动“戒尺重量”搜索上升</h3>
+                <p>站内搜索“戒尺重量”次数较前一周增加210%，竹尺45g、檀木尺120g、杉木尺70g三组数据被反复提及。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. 分类入口 -->
+        <section id="categories" aria-labelledby="categories-title">
+          <div class="section-header">
+            <h2 id="categories-title">按类型查找条目</h2>
+            <span class="section-sub">8个垂类分类</span>
+          </div>
+          <div class="category-grid">
+            <a href="/#featured" class="category-item">
+              <span class="category-icon" aria-hidden="true">📜</span>
+              <span class="category-name">古礼复原</span>
+              <span class="category-count">11条影像</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="category-icon" aria-hidden="true">🎙️</span>
+              <span class="category-name">口述史</span>
+              <span class="category-count">9条访谈</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="category-icon" aria-hidden="true">📏</span>
+              <span class="category-name">戒尺材质</span>
+              <span class="category-count">12条对比</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="category-icon" aria-hidden="true">🏫</span>
+              <span class="category-name">学堂训诫</span>
+              <span class="category-count">6条复原</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="category-icon" aria-hidden="true">🏠</span>
+              <span class="category-name">家法口述</span>
+              <span class="category-count">8条记录</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="category-icon" aria-hidden="true">🔨</span>
+              <span class="category-name">制尺工艺</span>
+              <span class="category-count">4条流程</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="category-icon" aria-hidden="true">📖</span>
+              <span class="category-name">家谱文献</span>
+              <span class="category-count">17部梳理</span>
+            </a>
+            <a href="/#featured" class="category-item">
+              <span class="category-icon" aria-hidden="true">💬</span>
+              <span class="category-name">边界讨论</span>
+              <span class="category-count">7条圆桌</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- 5. 深度解析 -->
+        <section id="deep-analysis" aria-labelledby="deep-title">
+          <div class="section-header">
+            <h2 id="deep-title">古礼复原的准确度如何判断</h2>
+            <span class="section-sub">从仪轨、器具、文献三个层面拆解</span>
+          </div>
+          <div class="deep-analysis">
+            <h3>一、仪轨复原的“合规”由什么构成</h3>
+            <p>《家法戒尺·宗祠场景复原》系列被圈内认可，关键在于它把“合规”拆成了可核对的动作序列。第3集展示的“跪听”环节，制作者在画面角落标注了三个参数：跪垫与香案距离三尺二寸、训诫者站位在跪者左前方45度、戒尺横置于家训文本上方。这三个数据来自1908年《陈氏宗谱·家范》影印本第14页的插图。</p>
+            <p>对比另一条同题材视频《王氏宗祠训诫复原》（10月12日发布），制作者没有标注数据来源，跪垫位置凭视觉估算，被评论区指出“香案太近，跪者起身会撞到案角”。这条视频的播放量只有前者的三分之一。观众用脚投票的依据很具体——有没有可查的出处。</p>
+            <p>仪轨复原的可信度可以按三个层级判断：第一层，是否列出参考文献的版本信息（书名、卷次、页码）；第二层，关键动作是否标注尺寸或方位参数；第三层，复原者是否说明自己对原文做了哪些调整。三层都满足的条目，目前站内不超过5条。</p>
+
+            <h3>二、戒尺材质的评判标准差异</h3>
+            <p>材质对比专题暴露出一个分歧：古礼复原派看重“形制对不对”，当代实践者看重“用起来顺不顺手”。竹尺在古礼复原视频中出场率最高（12条对比视频中有9条使用竹尺），理由是清代、民国文献中“竹戒尺”的出现频率远高于木尺。但当代实践者的反馈集中在重量和手感：竹尺45g太轻，檀木尺120g偏沉，杉木尺70g被最多人认为“力度好控制”。</p>
+            <p>留痕程度是第三个指标，也是最容易引发争议的。檀木尺因为密度高，同样力度下留痕比竹尺明显。10月28日一条对比视频下，用户“尺下留痕”留言：“檀木尺打三下等于竹尺打五下，新手别直接上檀木。”这条评论获得89个赞，被制作者置顶。</p>
+            <blockquote>“古礼复原讲究的是‘形’，当代实践讲究的是‘用’。两套标准没有高下，但不能混着用。”——摘自10月25日圆桌讨论第37分钟，口述史记录者周老师的发言。</blockquote>
+
+            <h3>三、口述史条目里的信息层级</h3>
+            <p>《外婆的戒尺》之所以能在2.8万播放量下保持4.9分，和它区分了信息层级有关。片中林阿婆的原话是“七岁那年，逃学三回，被我妈用竹尺打了手心，一下一个红印子”。这是当事人回忆，属于第一层。制作者随后插入了那把存世竹尺的实物比对——尺长一尺一寸，宽约两指，和口述中“打在手心刚好盖住”吻合。这是物证，属于第二层。片尾有一段制作者的说明：“林阿婆提到的‘竹尺’是否为片中这把，目前无法完全确认，但尺寸和磨损位置与口述描述一致。”这是对不确定性的主动标注，属于第三层。</p>
+            <p>反观另一条口述视频《爷爷的藤条》（10月18日发布），受访者提到“藤条有手指粗”，画面中却没有出现实物，也没有尺寸参照。评论区有用户追问“手指粗是多粗”，制作者回复“大概一厘米”，但没有出示测量画面。这条视频的评分是3.9，差评集中在“细节对不上”。</p>
+            <p>口述史的可信度不取决于故事多完整，而取决于讲述者、物证、制作者说明三者之间的吻合程度。吻合点越多，条目越可靠；只有讲述者一面之词、没有物证、制作者也不标注不确定性的，可信度最低。</p>
+
+            <h3>四、学堂训诫复原的时间线问题</h3>
+            <p>民国学堂训诫复原视频（10月15日发布）收到一条长评，指出片中“先生先讲后责”的流程在1930年代的教育文献中有前后变化。1910年代的训育手册多主张“先责后讲”，1920年代之后才逐渐转为“先讲后责”。这条长评引用了三种文献的出版年份和页码，制作者在10月18日更新了视频简介，补充了“本片复原依据为1932年《小学训育实施法》，适用于1930年代之后”。</p>
+            <p>这个案例说明，复原类内容的时间线精度直接影响可信度。把不同年代的仪轨混在一起，即使动作好看，也会被熟悉文献的观众识别出来。目前站内标注了明确时间范围的复原视频有8条，未标注的23条。</p>
+          </div>
+        </section>
+
+        <!-- 6. 体验指南 -->
+        <section id="guide" aria-labelledby="guide-title">
+          <div class="section-header">
+            <h2 id="guide-title">观看顺序与判断路径</h2>
+            <span class="section-sub">从类型到条目的选择方法</span>
+          </div>
+          <div class="guide-steps">
+            <div class="guide-step">
+              <span class="step-num">1</span>
+              <div class="step-body">
+                <h3>先定类型：古礼复原还是口述史</h3>
+                <p>想了解“仪轨长什么样”从古礼复原入手，推荐《朱子家训训诫仪轨》完整版。想了解“实际怎么做”从口述史入手，推荐《外婆的戒尺》。两类内容的信息密度和观看节奏完全不同。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">2</span>
+              <div class="step-body">
+                <h3>查出处：有没有版本和页码</h3>
+                <p>古礼复原类条目先看简介里有没有列出文献版本。列出书名、卷次、页码的，可信度高一档；只写“根据古籍复原”不写具体出处的，谨慎参考。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">3</span>
+              <div class="step-body">
+                <h3>比参数：尺寸、重量、方位</h3>
+                <p>戒尺长度多在一尺到一尺二寸之间，重量45g到120g不等，跪垫与香案距离三尺左右。有参数标注的条目可以直接横向对比，没有参数的只能看个大概。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">4</span>
+              <div class="step-body">
+                <h3>翻评论：找具体质疑</h3>
+                <p>评论区里指出“时间线不对”“尺寸对不上”“材质和年代不符”的留言，比点赞更有参考价值。一条具体质疑往往能暴露整条视频的薄弱环节。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">5</span>
+              <div class="step-body">
+                <h3>同类比较：至少看两条同题材</h3>
+                <p>同一题材至少看两条再做判断。比如宗祠训诫复原，对比《陈氏》和《王氏》两条，能直观看出标注参数和不标注参数的区别。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <span class="step-num">6</span>
+              <div class="step-body">
+                <h3>区分事实与推测：看制作者说明</h3>
+                <p>片尾有制作者说明的条目，通常会把“已确认”和“待考证”分开写。没有说明、全程用肯定语气讲述口述内容的，反而需要多留一个心眼。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. FAQ -->
+        <section id="faq" aria-labelledby="faq-title">
+          <div class="section-header">
+            <h2 id="faq-title">常见问答</h2>
+            <span class="section-sub">6个高频问题</span>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>古礼复原视频里的跪垫位置有标准吗？</summary>
+              <div class="faq-answer">有文献依据的位置多标注为“距香案三尺”，约合现在96厘米。1908年《陈氏宗谱·家范》插图标注的是三尺二寸，1932年《小学训育实施法》没有规定具体尺寸。不同宗族文献的数值有差异，关键看复原视频有没有注明依据的是哪一部。</div>
+            </details>
+            <details class="faq-item">
+              <summary>竹戒尺和檀木戒尺哪个更适合古礼复原场景？</summary>
+              <div class="faq-answer">清代、民国文献中“竹戒尺”出现频率更高，12条对比视频中有9条在复原场景使用竹尺。檀木尺在同期文献中的记载较少，更多出现在当代实践讨论中。如果目的是复原某一特定文献场景，优先查该文献本身写的是什么材质。</div>
+            </details>
+            <details class="faq-item">
+              <summary>口述史视频里说的“打几下”能当作历史事实吗？</summary>
+              <div class="faq-answer">口述回忆属于第一层信息，需要物证或文献交叉验证。林阿婆说“一下一个红印子”，与存世竹尺的尺寸和磨损位置吻合，可信度较高。如果口述没有实物或文献佐证，只能作为个人记忆参考，不宜直接当普遍做法。</div>
+            </details>
+            <details class="faq-item">
+              <summary>民国学堂训诫是“先讲后责”还是“先责后讲”？</summary>
+              <div class="faq-answer">有前后变化。1910年代训育手册多主张“先责后讲”，1920年代之后逐渐转为“先讲后责”。1932年《小学训育实施法》采用的是后者。复原视频如果把两个年代的流程混在一起，熟悉文献的观众能看出来。</div>
+            </details>
+            <details class="faq-item">
+              <summary>戒尺长度一尺二寸是多少厘米？</summary>
+              <div class="faq-answer">按清末民初营造尺一尺约32厘米计算，一尺二寸约38.4厘米；按民国市尺一尺约33.3厘米计算，约40厘米。制尺工艺视频里陈师傅制作的成品标注的是36厘米，介于两者之间，具体数值取决于制作者参照的尺制标准。</div>
+            </details>
+            <details class="faq-item">
+              <summary>家谱里关于体罚的条文多不多？</summary>
+              <div class="faq-answer">17部家谱中有12部出现“跪”、9部出现“笞”、7部出现“杖”，合计43条涉及体罚的条文。条文多集中在“家范”“族规”章节，措辞从“训诫”到“责罚”不等，具体执行方式各谱差异较大，需要逐条对照原文。</div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 8. 用户评论 -->
+        <section id="comments" aria-labelledby="comments-title">
+          <div class="section-header">
+            <h2 id="comments-title">圈内评论</h2>
+            <span class="section-sub">16条来自不同观众的留言</span>
+          </div>
+          <div class="comments-grid">
+
+            <div class="comment-card">
+              <div class="comment-head">
+                <span class="comment-avatar">尺</span>
+                <span class="comment-nick">尺下留痕</span>
+                <span class="comment-time">11-07</span>
+              </div>
+              <p class="comment-text">檀木尺打三下等于竹尺打五下，新手别直接上檀木。我按视频里的力度试了一下，确实留印子。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-head">
+                <span class="comment-avatar">古</span>
+                <span class="comment-nick">古礼研究所</span>
+                <span class="comment-time">11-07</span>
+              </div>
+              <p class="comment-text">宗祠复原第3集的香案间距终于标出来了。之前第1集没标，评论区吵了四十多层楼。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-head">
+                <span class="comment-avatar">阿</span>
+                <span class="comment-nick">阿嬷的孙仔</span>
+                <span class="comment-time">11-06</span>
+              </div>
+              <p class="comment-text">听林阿婆讲闽南话那段，想到我外婆。她也说过竹尺打手心的事，不过没留下尺子。看完去问我妈，她说家里确实有过一把，后来搬家丢了。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-head">
+                <span class="comment-avatar">木</span>
+                <span class="comment-nick">木尺老周</span>
+                <span class="comment-time">11-05</span>
+              </div>
+              <p class="comment-text">杉木尺回弹快这个说法不太准确。杉木密度低，打下去声音响但实际力度衰减快，适合轻责。竹尺才是回弹最好的。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-head">
+                <span class="comment-avatar">路</span>
+                <span class="comment-nick">路过的文史生</span>
+                <span class="comment-time">11-05</span>
+              </div>
+              <p class="comment-text">圆桌第37分钟那段，周老师说“不能混着用”，弹幕一堆问号。我觉得她说得挺清楚啊，就是复原和实践两套标准。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-head">
+                <span class="comment-avatar">小</span>
+                <span class="comment-nick">小祠堂管理员</span>
+                <span class="comment-time">11-04</span>
+              </div>
+              <p class="comment-text">我们祠堂还留着两把老戒尺，一把竹的一把木的。竹的那把已经开裂了，木的反而完好。和视频里说的材质特性对得上。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-head">
+                <span class="comment-avatar">路</span>
+                <span class="comment-nick">路过的风</span>
+                <span class="comment-time">11-04</span>
+              </div>
+              <p class="comment-text">说实话，有些复原视频的汉服穿法就不对，袖子系法都是错的，底下还一堆人夸“好还原”。先把衣服穿对再谈仪轨吧。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-head">
+                <span class="comment-avatar">陈</span>
+                <span class="comment-nick">陈师傅的徒弟</span>
+                <span class="comment-time">11-03</span>
+              </div>
+              <p class="comment-text">师傅说的阴干45天是秋冬，梅雨季确实要60天。我去年六月做的三把尺子，到八月末才完全干透。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-head">
+                <span class="comment-avatar">考</span>
+                <span class="comment-nick">考据癖晚期</span>
+                <span class="comment-time">11-03</span>
+              </div>
+              <p class="comment-text">朱子家训那个视频标注页码的做法值得推广。不过光绪注本有三个版本，视频用的是哪个？简介里没写清楚，只写了“光绪年间”。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-head">
+                <span class="comment-avatar">一</span>
+                <span class="comment-nick">一把老尺</span>
+                <span class="comment-time">11-02</span>
+              </div>
+              <p class="comment-text">家法板六十年那个片子，最后一段录音听得人心里堵。老爷子说“不打了，你大了”，声音都抖了。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-head">
+                <span class="comment-avatar">不</span>
+                <span class="comment-nick">不想取名</span>
+                <span class="comment-time">11-01</span>
+              </div>
+              <p class="comment-text">视频是不错，但能不能别每次都配那种二胡BGM，听多了真的出戏。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-head">
+                <span class="comment-avatar">闽</span>
+                <span class="comment-nick">闽南后生仔</span>
+                <span class="comment-time">10-30</span>
+              </div>
+              <p class="comment-text">林阿婆说的那个“逃学三回”的细节很真实。我阿公也讲过类似的事，说那时候逃学被抓回来，先在祖宗牌位前跪，再打手心。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-head">
+                <span class="comment-avatar">学</span>
+                <span class="comment-nick">学堂旧事</span>
+                <span class="comment-time">10-28</span>
+              </div>
+              <p class="comment-text">民国学堂那条视频里先生穿的褂子好像是1920年代的款式，但流程用的是1932年的训育法。时间上有点小错位，不过算不上大问题。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-head">
+                <span class="comment-avatar">微</span>
+                <span class="comment-nick">微博来的</span>
+                <span class="comment-time">10-26</span>
+              </div>
+              <p class="comment-text">从微博看到圆桌剪辑找过来的。完整版比剪辑版长很多，但信息量也大得多，建议直接看完整版。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-head">
+                <span class="comment-avatar">半</span>
+                <span class="comment-nick">半把戒尺</span>
+                <span class="comment-time">10-24</span>
+              </div>
+              <p class="comment-text">制尺那个视频里陈师傅手上全是老茧，一看就是做了几十年活的。现在年轻人愿意学这个的怕是没几个了。</p>
+            </div>
+
+            <div class="comment-card">
+              <div class="comment-head">
+                <span class="comment-avatar">冷</span>
+                <span class="comment-nick">冷眼旁观</span>
+                <span class="comment-time">10-22</span>
+              </div>
+              <p class="comment-text">看了几条复原视频，动作确实好看，但总觉得少了点什么。后来想明白了，少的是“疼”的感觉。复原是真的，但太干净了。</p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 9. 相关资讯 -->
+        <section id="news" aria-labelledby="news-title">
+          <div class="section-header">
+            <h2 id="news-title">相关资讯</h2>
+            <span class="section-sub">近期动态与事件记录</span>
+          </div>
+          <div class="news-list">
+            <div class="news-item">
+              <span class="news-date">11月7日</span>
+              <h3>《家法戒尺·宗祠场景复原》第3集上线，补充1908年谱本页码</h3>
+              <p>第3集在简介中新增了《陈氏宗谱·家范》影印本第14页的扫描件，并标注了跪垫与香案三尺二寸的出处。评论区有用户贴出同谱另一版本的同一页，两版插图间距相差约五厘米。</p>
+            </div>
+            <div class="news-item">
+              <span class="news-date">11月5日</span>
+              <h3>“古礼训诫”分类收录27条，口述史占比三分之一</h3>
+              <p>新增分类下仪轨复原11条、口述史9条、实践讨论7条。口述史条目中，受访者年龄跨度为68岁至91岁，录音总时长超过14小时。</p>
+            </div>
+            <div class="news-item">
+              <span class="news-date">11月3日</span>
+              <h3>戒尺材质对比专题开放讨论，首日47条反馈</h3>
+              <p>反馈集中在重量与留痕两个指标。一条关于“杉木尺回弹”的评论被原作者回应，承认“回弹快”的表述不够准确，计划在下一版对比中补充力度衰减数据。</p>
+            </div>
+            <div class="news-item">
+              <span class="news-date">10月29日</span>
+              <h3>口述史《外婆的戒尺》获闽南文化账号转载</h3>
+              <p>“闽南宗族文化”账号转载后，评论区新增11条口述线索，其中3条提到家中存有老戒尺实物。制作者表示正在联系其中两位线索提供者。</p>
+            </div>
+            <div class="news-item">
+              <span class="news-date">10月25日</span>
+              <h3>汉责边界圆桌第37分钟片段单条转发破3200</h3>
+              <p>片段内容为口述史记录者周老师与古礼复原派代表就“还原越界”的争论。转发中点赞最高的一条评论是“两边的标准都成立，但别拿一套标准去骂另一套”。</p>
+            </div>
+            <div class="news-item">
+              <span class="news-date">10月18日</span>
+              <h3>民国学堂复原视频更新简介，补充时间适用范围</h3>
+              <p>制作者在更新后的简介中注明“本片复原依据为1932年《小学训育实施法》，适用于1930年代之后”，并感谢了长评中指出的时间线问题。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 10. 相关推荐 -->
+        <section id="related" aria-labelledby="related-title">
+          <div class="section-header">
+            <h2 id="related-title">相关推荐方向</h2>
+            <span class="section-sub">具体内容方向与条目</span>
+          </div>
+          <div class="related-tags">
+            <a href="/#featured" class="related-tag">宗祠训诫仪轨复原 <span class="tag-count">6条</span></a>
+            <a href="/#featured" class="related-tag">竹戒尺制作工艺 <span class="tag-count">4条</span></a>
+            <a href="/#featured" class="related-tag">1940年代闽南家庭口述 <span class="tag-count">3条</span></a>
+            <a href="/#featured" class="related-tag">家谱家范条文统计 <span class="tag-count">17部</span></a>
+            <a href="/#featured" class="related-tag">民国训育文献引用 <span class="tag-count">5种</span></a>
+            <a href="/#featured" class="related-tag">戒尺重量与留痕对比 <span class="tag-count">12条</span></a>
+            <a href="/#featured" class="related-tag">汉责边界圆桌讨论 <span class="tag-count">7条</span></a>
+            <a href="/#featured" class="related-tag">学堂训诫流程复原 <span class="tag-count">6条</span></a>
+          </div>
+        </section>
+
+        <!-- 11. 补充板块：条目时间线 -->
+        <section id="timeline" aria-labelledby="timeline-title">
+          <div class="section-header">
+            <h2 id="timeline-title">近30天条目时间线</h2>
+            <span class="section-sub">关键更新节点</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">11月7日</div>
+              <p class="timeline-text">《家法戒尺·宗祠场景复原》第3集上线，补充1908年谱本页码与香案间距数据。</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">11月5日</div>
+              <p class="timeline-text">“古礼训诫”分类建立，收录27条内容，口述史9条占三分之一。</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">11月3日</div>
+              <p class="timeline-text">戒尺材质对比专题开放讨论，首日47条反馈，杉木尺回弹数据待补充。</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">10月29日</div>
+              <p class="timeline-text">《外婆的戒尺》获“闽南宗族文化”转载，新增11条口述线索。</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">10月25日</div>
+              <p class="timeline-text">汉责边界圆桌发布，第37分钟片段单条转发3200次。</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">10月18日</div>
+              <p class="timeline-text">民国学堂复原视频更新简介，标注时间适用范围为1930年代之后。</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">10月12日</div>
+              <p class="timeline-text">《王氏宗祠训诫复原》发布，因未标注尺寸数据，评论区出现质疑。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 12. 互动板块：投稿入口 -->
+        <section id="contribute" aria-labelledby="contribute-title">
+          <div class="section-header">
+            <h2 id="contribute-title">投稿与作品上传</h2>
+            <span class="section-sub">欢迎提交仪轨复原、口述史或材质对比内容</span>
+          </div>
+          <div class="overview-text" style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;">
+            <div style="flex:1;min-width:240px;">
+              <p style="margin-bottom:8px;"><strong>目前征集三类内容：</strong>古礼复原视频（需标注文献出处）、长辈口述影像（需获得受访者授权）、戒尺材质或工艺对比（需附参数测量）。</p>
+              <p>10月共收到14份投稿，其中5条已上线，3条在补充出处信息后待审。口述类投稿请提前准备好受访者签署的授权书。</p>
+            </div>
+            <a href="/#contribute" class="btn-primary" style="flex-shrink:0;">提交作品 →</a>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Right sidebar -->
+      <aside class="right-sidebar" aria-label="辅助栏">
+
+        <div class="sidebar-card">
+          <h2>热门条目榜</h2>
+          <ul class="hot-list">
+            <li>
+              <span class="hot-rank top3">1</span>
+              <a href="/#featured">家法戒尺·宗祠场景复原 第3集</a>
+            </li>
+            <li>
+              <span class="hot-rank top3">2</span>
+              <a href="/#featured">外婆的戒尺：1940年代闽南家庭训诫口述</a>
+            </li>
+            <li>
+              <span class="hot-rank top3">3</span>
+              <a href="/#featured">竹尺vs檀木尺vs杉木尺：12条对比</a>
+            </li>
+            <li>
+              <span class="hot-rank">4</span>
+              <a href="/#featured">朱子家训训诫仪轨·完整演示版</a>
+            </li>
+            <li>
+              <span class="hot-rank">5</span>
+              <a href="/#featured">父亲留下的家法板：一把杉木尺的六十年</a>
+            </li>
+            <li>
+              <span class="hot-rank">6</span>
+              <a href="/#featured">汉责边界圆桌：仪轨复原与当代实践的分歧</a>
+            </li>
+            <li>
+              <span class="hot-rank">7</span>
+              <a href="/#featured">从毛竹到戒尺：传统制尺工艺全流程</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card contribute-card">
+          <h2>投稿 / 上传</h2>
+          <p>有仪轨复原、口述史或材质对比内容？提交后通常3个工作日内回复。口述类请附受访者授权书。</p>
+          <a href="/#contribute" class="btn-white">前往投稿入口 →</a>
+        </div>
+
+        <div class="sidebar-card">
+          <h2>更新节奏</h2>
+          <ul class="hot-list" style="font-size:13px;color:var(--ink-secondary);">
+            <li style="border-bottom:none;padding:4px 0;">仪轨复原类：每周1—2条</li>
+            <li style="border-bottom:none;padding:4px 0;">口述史类：每两周1条</li>
+            <li style="border-bottom:none;padding:4px 0;">材质对比类：随专题更新</li>
+            <li style="border-bottom:none;padding:4px 0;">圆桌讨论：每月1期</li>
+          </ul>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-text">汉责文化 vk视频</span>
+          <p>覆盖1908年至2026年的仪轨复原、口述史与材质对比影像。条目类型以复原演示、口述访谈、工艺记录和圆桌讨论为主，更新集中在每周四至周六。</p>
+        </div>
+        <div class="footer-col">
+          <h3>内容板块</h3>
+          <a href="/#overview">领域概览</a>
+          <a href="/#featured">精选条目</a>
+          <a href="/#updates">最新更新</a>
+          <a href="/#categories">分类索引</a>
+          <a href="/#deep-analysis">深度解析</a>
+        </div>
+        <div class="footer-col">
+          <h3>互动参与</h3>
+          <a href="/#contribute">投稿入口</a>
+          <a href="/#comments">圈内评论</a>
+          <a href="/#faq">常见问答</a>
+          <a href="/#timeline">条目时间线</a>
+          <a href="/#related">相关推荐</a>
+        </div>
+        <div class="footer-col">
+          <h3>分类速查</h3>
+          <a href="/#featured">古礼复原</a>
+          <a href="/#featured">口述史</a>
+          <a href="/#featured">戒尺材质</a>
+          <a href="/#featured">学堂训诫</a>
+          <a href="/#featured">家谱文献</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 汉责文化 vk视频 · 内容为示例条目，事实性表述以原始文献与受访者授权为准</span>
+        <div class="footer-tags">
+          <a href="/#top">返回顶部</a>
+          <a href="/#contribute">投稿</a>
+          <a href="/#faq">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+  <!-- ===== Scripts ===== -->
+  <script>
+    (function() {
+      // ---- Mobile nav ----
+      var hamburger = document.getElementById('hamburgerBtn');
+      var mobileNav = document.getElementById('mobileNav');
+      var mobileOverlay = document.getElementById('mobileOverlay');
+      var mobileClose = document.getElementById('mobileCloseBtn');
+      var mobileLinks = mobileNav.querySelectorAll('a');
+
+      function openNav() {
+        mobileNav.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeNav() {
+        mobileNav.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', openNav);
+      mobileClose.addEventListener('click', closeNav);
+      mobileOverlay.addEventListener('click', closeNav);
+      mobileLinks.forEach(function(link) {
+        link.addEventListener('click', closeNav);
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+          closeNav();
+        }
+      });
+
+      // ---- Back to top ----
+      var backBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) {
+          backBtn.classList.add('visible');
+        } else {
+          backBtn.classList.remove('visible');
+        }
+      });
+      backBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // ---- Search (simple highlight + no-result feedback) ----
+      var searchInput = document.getElementById('searchInput');
+      var searchBtn = document.getElementById('searchBtn');
+      var mainContent = document.getElementById('main-content');
+
+      // Create feedback element
+      var feedback = document.createElement('div');
+      feedback.className = 'search-feedback';
+      feedback.id = 'searchFeedback';
+      mainContent.insertBefore(feedback, mainContent.firstChild);
+
+      function clearHighlights() {
+        var marks = mainContent.querySelectorAll('.search-highlight');
+        marks.forEach(function(m) {
+          var parent = m.parentNode;
+          parent.replaceChild(document.createTextNode(m.textContent), m);
+          parent.normalize();
+        });
+      }
+
+      function doSearch() {
+        var query = searchInput.value.trim();
+        clearHighlights();
+        feedback.classList.remove('show');
+        feedback.textContent = '';
+
+        if (!query) return;
+
+        var walker = document.createTreeWalker(mainContent, NodeFilter.SHOW_TEXT, null, false);
+        var textNodes = [];
+        var node;
+        while (node = walker.nextNode()) {
+          if (node.nodeValue.trim() && node.parentNode.nodeName !== 'SCRIPT' && node.parentNode.nodeName !== 'STYLE') {
+            textNodes.push(node);
+          }
+        }
+
+        var found = false;
+        var regex = new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+
+        textNodes.forEach(function(textNode) {
+          var text = textNode.nodeValue;
+          if (regex.test(text)) {
+            found = true;
+            var span = document.createElement('span');
+            var frag = document.createDocumentFragment();
+            var lastIndex = 0;
+            text.replace(regex, function(match, offset) {
+              if (offset > lastIndex) {
+                frag.appendChild(document.createTextNode(text.slice(lastIndex, offset)));
+              }
+              var mark = document.createElement('mark');
+              mark.className = 'search-highlight';
+              mark.textContent = match;
+              frag.appendChild(mark);
+              lastIndex = offset + match.length;
+              return match;
+            });
+            if (lastIndex < text.length) {
+              frag.appendChild(document.createTextNode(text.slice(lastIndex)));
+            }
+            span.appendChild(frag);
+            textNode.parentNode.replaceChild(span, textNode);
+          }
+        });
+
+        if (!found) {
+          feedback.textContent = '未找到包含“' + query + '”的条目，可尝试搜索“宗祠”“戒尺”“口述”等关键词。';
+          feedback.classList.add('show');
+        }
+      }
+
+      searchBtn.addEventListener('click', doSearch);
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          doSearch();
+        }
+      });
+
+      // ---- Active sidebar highlight on scroll ----
+      var sections = mainContent.querySelectorAll('section[id]');
+      var sidebarLinks = document.querySelectorAll('.channel-sidebar a');
+
+      if (sections.length && sidebarLinks.length) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              var id = entry.target.id;
+              sidebarLinks.forEach(function(link) {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '/#' + id) {
+                  link.classList.add('active');
+                }
+              });
+            }
+          });
+        }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
+        sections.forEach(function(s) { observer.observe(s); });
+      }
+
+    })();
+  </script>
+
+  <!-- Structured data: WebSite + FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "汉责文化 vk视频",
+        "description": "聚合汉责仪式、戒尺训诫、家法演示等影像条目，涵盖古礼复原、当代实践与圈内讨论。",
+        "inLanguage": "zh-CN"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "古礼复原视频里的跪垫位置有标准吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "有文献依据的位置多标注为“距香案三尺”，约合现在96厘米。1908年《陈氏宗谱·家范》插图标注的是三尺二寸，1932年《小学训育实施法》没有规定具体尺寸。不同宗族文献的数值有差异，关键看复原视频有没有注明依据的是哪一部。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "竹戒尺和檀木戒尺哪个更适合古礼复原场景？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "清代、民国文献中“竹戒尺”出现频率更高，12条对比视频中有9条在复原场景使用竹尺。檀木尺在同期文献中的记载较少，更多出现在当代实践讨论中。如果目的是复原某一特定文献场景，优先查该文献本身写的是什么材质。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "口述史视频里说的“打几下”能当作历史事实吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "口述回忆属于第一层信息，需要物证或文献交叉验证。林阿婆说“一下一个红印子”，与存世竹尺的尺寸和磨损位置吻合，可信度较高。如果口述没有实物或文献佐证，只能作为个人记忆参考，不宜直接当普遍做法。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "民国学堂训诫是“先讲后责”还是“先责后讲”？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "有前后变化。1910年代训育手册多主张“先责后讲”，1920年代之后逐渐转为“先讲后责”。1932年《小学训育实施法》采用的是后者。复原视频如果把两个年代的流程混在一起，熟悉文献的观众能看出来。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "戒尺长度一尺二寸是多少厘米？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "按清末民初营造尺一尺约32厘米计算，一尺二寸约38.4厘米；按民国市尺一尺约33.3厘米计算，约40厘米。制尺工艺视频里陈师傅制作的成品标注的是36厘米，介于两者之间，具体数值取决于制作者参照的尺制标准。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "家谱里关于体罚的条文多不多？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "17部家谱中有12部出现“跪”、9部出现“笞”、7部出现“杖”，合计43条涉及体罚的条文。条文多集中在“家范”“族规”章节，措辞从“训诫”到“责罚”不等，具体执行方式各谱差异较大，需要逐条对照原文。"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+</body>
+  </html>
